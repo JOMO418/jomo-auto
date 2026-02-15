@@ -58,41 +58,43 @@ export function CartBadge() {
 
   return (
     <>
-      {/* ALWAYS VISIBLE Floating Cart Button */}
+      {/* ALWAYS VISIBLE Floating Cart Button - Premium Dark Blue */}
       <button
         onClick={() => setQuickCartOpen(true)}
         className={`
           fixed bottom-20 md:bottom-6 right-4 z-40
-          bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800
-          rounded-full shadow-2xl hover:shadow-blue-500/50
+          bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744]
+          rounded-full shadow-2xl hover:shadow-blue-900/60
           p-4 md:p-5
           transition-all duration-300
           hover:scale-110 active:scale-95
-          border-2 border-blue-400/40
+          border-2 border-blue-400/30 hover:border-blue-400/50
           group
+          backdrop-blur-sm
           ${bounce ? "animate-cart-bounce" : ""}
         `}
         aria-label={count > 0 ? `Cart with ${count} items` : "Open cart"}
       >
         <div className="relative">
-          {/* Premium pulsing glow effect */}
-          <div className="absolute -inset-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full blur-lg opacity-0 group-hover:opacity-75 transition-opacity duration-500 animate-pulse"></div>
+          {/* Premium pulsing glow effect - Enhanced */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/30 via-blue-400/30 to-blue-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
 
-          {/* Shopping cart icon */}
-          <ShoppingCart className="relative h-6 w-6 md:h-7 md:w-7 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+          {/* Shopping cart icon with premium glow */}
+          <ShoppingCart className="relative h-6 w-6 md:h-7 md:w-7 text-white drop-shadow-[0_2px_12px_rgba(59,130,246,0.6)] group-hover:drop-shadow-[0_4px_16px_rgba(96,165,250,0.8)] transition-all duration-300" />
 
-          {/* Item count badge - ALWAYS show, even at 0 */}
+          {/* Item count badge - Premium with enhanced styling */}
           <span className={`
             absolute -top-2 -right-2
-            bg-gradient-to-br from-red-500 to-red-600
+            bg-gradient-to-br from-amber-500 to-amber-600
             text-white text-xs md:text-sm font-bold
             rounded-full min-w-[24px] h-6 md:min-w-[28px] md:h-7
             flex items-center justify-center
-            shadow-lg shadow-red-500/50
+            shadow-lg shadow-amber-500/60
             transition-all duration-300
             border-2 border-white
+            drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]
             ${showItem ? "scale-125 rotate-12" : "scale-100 rotate-0"}
-            ${count === 0 ? "opacity-70" : "opacity-100"}
+            ${count === 0 ? "opacity-70" : "opacity-100 animate-pulse-subtle"}
           `}>
             {count}
           </span>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useMemo, useCallback, useEffect, useRef } from "react";
-import { IntelligentFilterBar } from "@/components/shop/IntelligentFilterBar";
+import { PremiumShopSearch } from "@/components/shop/PremiumShopSearch";
+import { PremiumFilterBar } from "@/components/shop/PremiumFilterBar";
 import { ProductCard } from "@/components/product/ProductCard";
 import { getAllProducts } from "@/lib/dummy-data";
 import { useCartStore } from "@/lib/store";
@@ -11,6 +12,7 @@ import type { Product } from "@/lib/types";
 interface FilterState {
   vehicle: string;
   category: string;
+  searchQuery: string;
 }
 
 export default function ShopPage() {
@@ -18,6 +20,7 @@ export default function ShopPage() {
   const [filters, setFilters] = useState<FilterState>({
     vehicle: '',
     category: '',
+    searchQuery: '',
   });
   const [itemsToShow, setItemsToShow] = useState(50);
   const loadMoreRef = useRef<HTMLDivElement>(null);
@@ -27,9 +30,23 @@ export default function ShopPage() {
   const vehicles = getUniqueVehicles();
   const categories = getUniqueCategories();
 
-  // Filter products
+  // Filter products with search
   const filteredProducts = useMemo(() => {
     let products = [...allProducts];
+
+    // Filter by search query
+    if (filters.searchQuery.trim()) {
+      const query = filters.searchQuery.toLowerCase();
+      products = products.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.category.toLowerCase().includes(query) ||
+        p.compatibility.some(c => c.toLowerCase().includes(query)) ||
+        p.description?.toLowerCase().includes(query) ||
+        Object.values(p.specs || {}).some(spec =>
+          String(spec).toLowerCase().includes(query)
+        )
+      );
+    }
 
     // Filter by vehicle
     if (filters.vehicle) {
@@ -77,25 +94,24 @@ export default function ShopPage() {
     setItemsToShow(50);
   }, [filters]);
 
+  // Handle search
+  const handleSearch = useCallback((query: string) => {
+    setFilters(prev => ({ ...prev, searchQuery: query }));
+  }, []);
+
+  // Handle filter change
+  const handleFilterChange = useCallback((newFilters: { vehicle: string; category: string }) => {
+    setFilters(prev => ({ ...prev, ...newFilters }));
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Simple 3-Line Introduction */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 md:px-6 py-8 md:py-10 max-w-7xl">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 tracking-tight">
-            Shop Premium Auto Parts
-          </h1>
-          <p className="text-base md:text-lg text-gray-600 font-light leading-relaxed max-w-3xl">
-            Discover our complete collection of{" "}
-            <span className="font-semibold text-gray-900">authentic ex-Japan automotive parts</span>.
-            Filter by vehicle and category to find exactly what you need—quality guaranteed, delivered fast.
-          </p>
-        </div>
-      </div>
+      {/* Premium Search Bar - Always Active - At Very Top */}
+      <PremiumShopSearch onSearch={handleSearch} />
 
-      {/* Intelligent Premium Filter Bar */}
-      <IntelligentFilterBar
-        onFilterChange={setFilters}
+      {/* Premium Filter Bar */}
+      <PremiumFilterBar
+        onFilterChange={handleFilterChange}
         vehicles={vehicles}
         categories={categories}
         totalProducts={filteredProducts.length}
@@ -116,11 +132,11 @@ export default function ShopPage() {
               No products found
             </h3>
             <p className="text-gray-600 mb-6 max-w-md mx-auto font-light">
-              We couldn't find any products matching your filters. Try selecting different options.
+              We couldn't find any products matching your {filters.searchQuery ? 'search' : 'filters'}. Try different options.
             </p>
             <button
-              onClick={() => setFilters({ vehicle: '', category: '' })}
-              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
+              onClick={() => setFilters({ vehicle: '', category: '', searchQuery: '' })}
+              className="px-6 py-3 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] text-white font-bold rounded-xl hover:shadow-xl transition-all border border-blue-400/30 shadow-lg"
             >
               Clear All Filters
             </button>

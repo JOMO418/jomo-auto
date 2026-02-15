@@ -23,16 +23,31 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
 
   const handleOrder = async (e: React.MouseEvent) => {
     e.preventDefault();
-    if (isOutOfStock || !onAddToCart) return;
+    e.stopPropagation();
+
+    console.log("Order Now clicked!", { product: product.name, onAddToCart: !!onAddToCart });
+
+    if (isOutOfStock) {
+      console.log("Product is out of stock");
+      return;
+    }
+
+    if (!onAddToCart) {
+      console.error("onAddToCart is not provided to ProductCard!");
+      alert("Error: Cart functionality not connected. Please refresh the page.");
+      return;
+    }
 
     // Trigger adding state
     setIsAdding(true);
+    console.log("Adding to cart...");
     onAddToCart(product);
 
     // Show "Added!" state
     setTimeout(() => {
       setIsAdding(false);
       setJustAdded(true);
+      console.log("Item added to cart!");
     }, 600);
 
     // Reset to normal after showing success
@@ -104,14 +119,15 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
             w-full py-2.5 md:py-3 rounded-lg font-bold text-sm md:text-base
             transition-all duration-300 transform
             flex items-center justify-center gap-2
-            shadow-md hover:shadow-lg
+            shadow-lg hover:shadow-xl
+            border border-transparent
             ${isOutOfStock
               ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
               : justAdded
                 ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white scale-95 shadow-green-500/50'
                 : isAdding
-                  ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white scale-95'
-                  : 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 hover:scale-[1.02] active:scale-95'
+                  ? 'bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] text-white scale-95'
+                  : 'bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] text-white hover:from-[#1E3A5F] hover:via-[#0A1E3D] hover:to-[#1E3A5F] hover:scale-[1.02] active:scale-95 shadow-blue-900/40 hover:shadow-blue-800/60 border-blue-400/20 hover:border-blue-400/40'
             }
             disabled:cursor-not-allowed disabled:opacity-60
           `}
