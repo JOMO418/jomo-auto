@@ -7,7 +7,7 @@ import type { ProductWithDetails, ProductWithCategory } from "@/lib/supabase";
 import { useCartStore } from "@/lib/store";
 import { PLACEHOLDER_IMAGE } from "@/lib/constants";
 import { ProductCard } from "./ProductCard";
-import { OptimizedOptimizedImage } from "@/components/ui/optimized-image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface ProductPageClientProps {
   product: ProductWithDetails;
