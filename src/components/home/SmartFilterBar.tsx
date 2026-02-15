@@ -211,23 +211,30 @@ export function SmartFilterBar() {
                 </div>
               </div>
 
-              {/* Vehicle Grid - Ultra Premium Design */}
-              <div className="flex-1 overflow-y-auto p-6 md:p-8">
+              {/* Vehicle Horizontal Scroll - Premium Mobile UX */}
+              <div className="flex-1 overflow-x-auto overflow-y-hidden p-6 md:p-8 scrollbar-hide">
                 {filteredVehicles.length === 0 ? (
                   <div className="text-center py-20">
                     <p className="text-lg font-semibold text-gray-400 mb-2">No vehicles found</p>
                     <p className="text-sm text-gray-400">Try a different search term</p>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {filteredVehicles.map((vehicle, index) => (
+                  <>
+                    {/* Mobile: Swipe hint */}
+                    <div className="md:hidden mb-4 flex items-center justify-center gap-2 text-sm text-gray-500">
+                      <span>Swipe to browse</span>
+                      <span className="text-blue-600">→</span>
+                    </div>
+
+                    <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 pb-4 snap-x snap-mandatory md:snap-none scroll-smooth">
+                      {filteredVehicles.map((vehicle, index) => (
                       <button
                         key={vehicle.slug}
                         onClick={() => handleVehicleSelect(vehicle.slug)}
-                        className="group relative overflow-hidden text-left"
+                        className="group relative overflow-hidden text-left flex-shrink-0 w-[280px] md:w-auto snap-start"
                       >
                         {/* Premium Card with Luxury Design */}
-                        <div className="relative h-full bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-blue-500 hover:shadow-2xl transition-all duration-300">
+                        <div className="relative h-full bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 min-h-[200px]">
                           {/* Popular Badge - Top Right */}
                           {vehicle.popular && index < 6 && (
                             <div className="absolute top-4 right-4">
@@ -282,8 +289,9 @@ export function SmartFilterBar() {
                           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 to-blue-600/0 group-hover:from-blue-500/5 group-hover:to-blue-600/10 transition-all duration-300 pointer-events-none"></div>
                         </div>
                       </button>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  </>
                 )}
               </div>
 
@@ -345,15 +353,22 @@ export function SmartFilterBar() {
                 </div>
               </div>
 
-              {/* Category Grid - Ultra Premium Design */}
-              <div className="flex-1 overflow-y-auto p-6 md:p-8">
+              {/* Category Horizontal Scroll - Premium Mobile UX */}
+              <div className="flex-1 overflow-x-auto overflow-y-hidden p-6 md:p-8 scrollbar-hide">
                 {filteredCategories.length === 0 ? (
                   <div className="text-center py-20">
                     <p className="text-lg font-semibold text-gray-400 mb-2">No categories found</p>
                     <p className="text-sm text-gray-400">Try a different search term</p>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <>
+                    {/* Mobile: Swipe hint */}
+                    <div className="md:hidden mb-4 flex items-center justify-center gap-2 text-sm text-gray-500">
+                      <span>Swipe to browse</span>
+                      <span className="text-green-600">→</span>
+                    </div>
+
+                    <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 pb-4 snap-x snap-mandatory md:snap-none scroll-smooth">
                     {filteredCategories.map((category, index) => {
                       // Define colors for each category
                       const categoryColors: Record<string, { from: string; to: string; text: string; hover: string }> = {
@@ -378,7 +393,7 @@ export function SmartFilterBar() {
                         <button
                           key={category}
                           onClick={() => handleCategorySelect(category)}
-                          className={`group relative overflow-hidden text-left bg-white border-2 border-gray-100 rounded-2xl p-6 ${colors.hover} hover:shadow-2xl transition-all duration-300`}
+                          className={`group relative overflow-hidden text-left bg-white border-2 border-gray-100 rounded-2xl p-6 ${colors.hover} hover:shadow-2xl transition-all duration-300 flex-shrink-0 w-[240px] md:w-auto min-h-[180px] snap-start`}
                         >
                           {/* Gradient Accent Bar */}
                           <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${colors.from} ${colors.to}`}></div>
@@ -409,9 +424,10 @@ export function SmartFilterBar() {
                           {/* Hover Glow Effect */}
                           <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors.from} ${colors.to} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}></div>
                         </button>
-                      );
-                    })}
-                  </div>
+                        );
+                      })}
+                    </div>
+                  </>
                 )}
               </div>
 
