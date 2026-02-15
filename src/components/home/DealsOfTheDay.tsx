@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Flame, Clock, Tag, Percent, TrendingDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { Zap, Clock, Tag, Percent, TrendingDown, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Product } from "@/lib/types";
 import { PLACEHOLDER_IMAGE } from "@/lib/constants";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface Deal extends Product {
   discountPercent: number;
@@ -68,90 +68,86 @@ export function DealsOfTheDay({ deals }: DealsOfTheDayProps) {
   };
 
   return (
-    <section className="relative py-12 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] overflow-hidden">
-      {/* Premium Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 via-transparent to-orange-600/10 animate-shimmer"></div>
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5"></div>
+    <section className="relative py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      {/* Clean minimal accent */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500"></div>
 
-      <div className="relative container mx-auto px-4 max-w-7xl">
-        {/* Header with Countdown Timer */}
+      <div className="relative container mx-auto px-3 sm:px-4 max-w-7xl">
+        {/* Header with Countdown Timer - Cleaner Design */}
         <div className="mb-8">
           {/* Title Section */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-orange-500/40 rounded-full blur-lg animate-pulse-slow"></div>
-                  <Flame className="relative h-8 w-8 text-orange-400 drop-shadow-[0_0_12px_rgba(251,146,60,0.8)]" />
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                  <Zap className="h-5 w-5 text-white" />
                 </div>
-                <h2 className="font-heading text-3xl md:text-4xl font-bold text-transparent bg-gradient-to-br from-white via-orange-50 to-amber-100 bg-clip-text tracking-tight">
-                  Today's Hot Deals
-                </h2>
+                <div>
+                  <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900">
+                    Flash Deals
+                  </h2>
+                  <p className="text-gray-600 text-sm">Limited time offers</p>
+                </div>
               </div>
-              <p className="text-blue-200/80 text-sm md:text-base ml-11">
-                Limited time offers • Prices drop at midnight
-              </p>
             </div>
 
-            {/* Countdown Timer */}
+            {/* Countdown Timer - Clean Minimal */}
             {mounted && (
-              <div className="flex items-center gap-3 bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-xl border border-orange-400/30 rounded-2xl px-6 py-4 shadow-2xl shadow-orange-500/20">
-                <Clock className="h-5 w-5 text-orange-300 animate-pulse" />
-                <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 bg-white border-2 border-orange-200 rounded-xl px-4 py-3 shadow-sm">
+                <Clock className="h-4 w-4 text-orange-600" />
+                <div className="flex items-center gap-1.5">
                   <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white font-mono tabular-nums">
+                    <div className="text-xl font-bold text-gray-900 font-mono">
                       {String(timeLeft.hours).padStart(2, "0")}
                     </div>
-                    <div className="text-[10px] text-orange-200/70 uppercase tracking-wider">Hours</div>
                   </div>
-                  <span className="text-2xl text-orange-300 font-bold">:</span>
+                  <span className="text-gray-400 font-bold">:</span>
                   <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white font-mono tabular-nums">
+                    <div className="text-xl font-bold text-gray-900 font-mono">
                       {String(timeLeft.minutes).padStart(2, "0")}
                     </div>
-                    <div className="text-[10px] text-orange-200/70 uppercase tracking-wider">Mins</div>
                   </div>
-                  <span className="text-2xl text-orange-300 font-bold">:</span>
+                  <span className="text-gray-400 font-bold">:</span>
                   <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white font-mono tabular-nums">
+                    <div className="text-xl font-bold text-orange-600 font-mono">
                       {String(timeLeft.seconds).padStart(2, "0")}
                     </div>
-                    <div className="text-[10px] text-orange-200/70 uppercase tracking-wider">Secs</div>
                   </div>
                 </div>
+                <span className="text-xs text-gray-500 ml-1">left</span>
               </div>
             )}
           </div>
 
-          {/* Subtle divider */}
-          <div className="h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"></div>
+          {/* Clean divider */}
+          <div className="h-px bg-gray-200"></div>
         </div>
 
         {/* Scroll hint - Above cards */}
         <div className="md:hidden mb-4">
-          <p className="text-xs text-blue-200/70 flex items-center justify-center gap-2">
+          <p className="text-xs text-gray-500 flex items-center justify-center gap-2">
             <span>Swipe to see more deals</span>
-            <span className="animate-pulse">→</span>
+            <ChevronRight className="h-3 w-3" />
           </p>
         </div>
 
         {/* Horizontal Scroll Container */}
         <div className="relative group">
-          {/* Navigation Buttons - Desktop */}
+          {/* Navigation Buttons - Desktop - Cleaner */}
           <button
             onClick={() => scrollContainer("left")}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 items-center justify-center bg-white/90 hover:bg-white backdrop-blur-sm rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 w-10 h-10 items-center justify-center bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity"
             aria-label="Scroll left"
           >
-            <ChevronLeft className="h-6 w-6 text-gray-900" />
+            <ChevronLeft className="h-5 w-5 text-gray-700" />
           </button>
 
           <button
             onClick={() => scrollContainer("right")}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 items-center justify-center bg-white/90 hover:bg-white backdrop-blur-sm rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 w-10 h-10 items-center justify-center bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity"
             aria-label="Scroll right"
           >
-            <ChevronRight className="h-6 w-6 text-gray-900" />
+            <ChevronRight className="h-5 w-5 text-gray-700" />
           </button>
 
           {/* Scrollable Deals Container */}
@@ -173,99 +169,87 @@ export function DealsOfTheDay({ deals }: DealsOfTheDayProps) {
   );
 }
 
-// Individual Deal Card Component
+// Individual Deal Card Component - Premium & Clean
 function DealCard({ deal, index }: { deal: Deal; index: number }) {
   const savings = (deal.originalPrice || deal.price) - deal.price;
 
   return (
     <Link
       href={`/product/${deal.slug}`}
-      className="group relative flex-shrink-0 w-[280px] md:w-[300px] snap-start"
+      className="group relative flex-shrink-0 w-[260px] md:w-[280px] snap-start"
     >
-      <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-        {/* Discount Badge - Prominent */}
-        <div className="absolute top-2 left-2 z-10">
-          <div className="relative">
-            <div className="absolute inset-0 bg-red-500 rounded-lg blur-md opacity-70"></div>
-            <div className="relative bg-gradient-to-br from-red-500 to-red-600 text-white px-2.5 py-1 rounded-lg shadow-lg">
-              <div className="flex items-center gap-1">
-                <Percent className="h-3.5 w-3.5" />
-                <span className="font-bold text-base">-{deal.discountPercent}%</span>
-              </div>
+      <div className="relative h-full bg-white rounded-xl overflow-hidden border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 hover:shadow-lg">
+        {/* Discount Badge - Clean & Prominent */}
+        <div className="absolute top-3 left-3 z-10">
+          <div className="bg-red-600 text-white px-2.5 py-1 rounded-lg shadow-md">
+            <div className="flex items-center gap-1">
+              <Percent className="h-3 w-3" />
+              <span className="font-bold text-sm">-{deal.discountPercent}%</span>
             </div>
           </div>
         </div>
 
-        {/* Stock Badge - If low */}
+        {/* Stock Badge - Clean */}
         {deal.stock && deal.stock <= 10 && (
-          <div className="absolute top-2 right-2 z-10">
-            <div className="bg-orange-500 text-white px-2 py-0.5 rounded-full text-[10px] font-bold shadow-lg animate-pulse">
-              Only {deal.stock} left!
+          <div className="absolute top-3 right-3 z-10">
+            <div className="bg-orange-500 text-white px-2.5 py-1 rounded-lg text-[10px] font-bold shadow-md">
+              {deal.stock} left
             </div>
           </div>
         )}
 
-        {/* Product Image - Reduced height */}
-        <div className="relative h-36 bg-gray-100 overflow-hidden">
-          <Image
+        {/* Product Image - Clean */}
+        <div className="relative h-40 bg-gray-50 overflow-hidden">
+          <OptimizedImage
             src={deal.images?.[0] || PLACEHOLDER_IMAGE}
             alt={deal.name}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-700"
-            sizes="300px"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="280px"
           />
-          {/* Gradient overlay on hover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
 
-        {/* Product Info - Reduced padding */}
+        {/* Product Info - Clean & Organized */}
         <div className="p-4">
-          {/* Category & Vehicle */}
-          <div className="flex items-center gap-2 mb-1.5">
+          {/* Category */}
+          <div className="flex items-center gap-2 mb-2">
             <span className="text-[10px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
               {deal.category}
             </span>
-            {deal.compatibility && deal.compatibility.length > 0 && (
-              <span className="text-[10px] text-gray-500 truncate">
-                {deal.compatibility[0]}
-              </span>
-            )}
           </div>
 
-          {/* Product Name - Reduced min-height */}
-          <h3 className="font-semibold text-sm text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors min-h-[40px]">
+          {/* Product Name */}
+          <h3 className="font-semibold text-sm text-gray-900 mb-3 line-clamp-2 group-hover:text-orange-600 transition-colors min-h-[40px]">
             {deal.name}
           </h3>
 
-          {/* Pricing - More compact */}
-          <div className="space-y-1.5">
-            {/* Original Price - Strikethrough */}
+          {/* Pricing - Clean Layout */}
+          <div className="space-y-2 mb-3">
+            {/* Original Price */}
             {deal.originalPrice && (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-400 line-through">
                   KSh {deal.originalPrice.toLocaleString()}
                 </span>
-                <div className="flex items-center gap-0.5 text-green-600 text-[10px] font-semibold">
-                  <TrendingDown className="h-3 w-3" />
-                  <span>Save {savings.toLocaleString()}</span>
-                </div>
+                <span className="text-[10px] font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded">
+                  Save {savings.toLocaleString()}
+                </span>
               </div>
             )}
 
-            {/* Deal Price - Prominent */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-baseline gap-1">
-                <Tag className="h-3.5 w-3.5 text-orange-500" />
-                <span className="text-xl font-bold text-gray-900">
-                  KSh {deal.price.toLocaleString()}
-                </span>
-              </div>
+            {/* Deal Price */}
+            <div className="flex items-baseline gap-1">
+              <Tag className="h-4 w-4 text-orange-600" />
+              <span className="text-2xl font-bold text-gray-900">
+                {deal.price.toLocaleString()}
+              </span>
+              <span className="text-sm text-gray-600">KSh</span>
             </div>
           </div>
 
-          {/* CTA Button - Reduced padding */}
-          <button className="mt-3 w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30 group-hover:scale-[1.02] text-sm">
-            Grab Deal Now
+          {/* CTA Button - Clean */}
+          <button className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-semibold py-2.5 rounded-lg transition-all duration-200 text-sm">
+            Get Deal
           </button>
         </div>
       </div>
