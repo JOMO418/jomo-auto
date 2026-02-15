@@ -4,7 +4,8 @@ import { HeroBillboard, defaultBillboardSlides } from "@/components/home/HeroBil
 import { SmartFilterBar } from "@/components/home/SmartFilterBar";
 import { CategorySection } from "@/components/product/CategorySection";
 import { DealsOfTheDay } from "@/components/home/DealsOfTheDay";
-import { getProductsByCategory, getFeaturedProducts } from "@/lib/dummy-data";
+import { NewArrivals } from "@/components/home/NewArrivals";
+import { getProductsByCategory, getFeaturedProducts, getAllProducts } from "@/lib/dummy-data";
 import { useCartStore } from "@/lib/store";
 import type { Product } from "@/lib/types";
 
@@ -30,6 +31,12 @@ export default function HomePage() {
       discountPercent: Math.round(((p.originalPrice! - p.price) / p.originalPrice!) * 100),
       dealEndsAt: new Date(Date.now() + 24 * 60 * 60 * 1000), // Ends in 24 hours
     }));
+
+  // Get newest products (sorted by createdAt date)
+  const allProducts = getAllProducts();
+  const newArrivals = allProducts
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    .slice(0, 12); // Get 12 newest products
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -78,6 +85,14 @@ export default function HomePage() {
 
       {/* Deals of the Day - Premium Section */}
       {deals.length > 0 && <DealsOfTheDay deals={deals} />}
+
+      {/* New Arrivals - Premium Section */}
+      {newArrivals.length > 0 && (
+        <NewArrivals
+          products={newArrivals}
+          onAddToCart={handleAddToCart}
+        />
+      )}
     </div>
   );
 }
