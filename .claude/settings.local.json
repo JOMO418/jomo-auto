@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(npm install:*)",
+      "WebSearch",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(npm run migrate:smart:*)",
+      "Bash(npm run dev:*)",
+      "Bash(wc:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run sync:data:*)",
+      "Bash(npm run analyze:distribution:*)",
+      "Bash(npm run update:products:*)",
+      "Bash(npm run distribute:vehicles:*)",
+      "Bash(npm run setup:deals:*)",
+      "Bash(npm run build:*)",
+      "Bash(head:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git remote set-url:*)"
+    ]
+  }
+}

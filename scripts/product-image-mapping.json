@@ -1,0 +1,641 @@
+[
+  {
+    "image": "77.jfif",
+    "name": "Premium Wheel Hub Assembly",
+    "category": "Wheels & Tires",
+    "description": "High-quality wheel hub assembly designed for smooth rotation and bearing support. Ensures stable wheel performance and longevity.",
+    "condition": "New",
+    "price": 4500,
+    "stock": 25
+  },
+  {
+    "image": "778.jfif",
+    "name": "Brake Drum Set",
+    "category": "Brakes",
+    "description": "Durable brake drum for reliable braking performance. Manufactured to OEM specifications for optimal safety.",
+    "condition": "New",
+    "price": 5200,
+    "stock": 18
+  },
+  {
+    "image": "air bug.webp",
+    "name": "Air Filter Element",
+    "category": "Engine",
+    "description": "High-efficiency air filter that protects engine from dust and debris. Ensures optimal air flow and engine performance.",
+    "condition": "New",
+    "price": 1200,
+    "stock": 45
+  },
+  {
+    "image": "Aircleaner.jfif",
+    "name": "Complete Air Cleaner Assembly",
+    "category": "Engine",
+    "description": "Complete air cleaner housing with integrated filter. Provides superior engine protection and improved fuel efficiency.",
+    "condition": "Used",
+    "price": 3500,
+    "stock": 12
+  },
+  {
+    "image": "Aircleaner.jpg",
+    "name": "Heavy Duty Air Cleaner Box",
+    "category": "Engine",
+    "description": "Robust air cleaner assembly suitable for various engine types. Features durable construction for long-lasting performance.",
+    "condition": "Refurbished",
+    "price": 2800,
+    "stock": 15
+  },
+  {
+    "image": "alt pump.jfif",
+    "name": "Alternator Assembly",
+    "category": "Electrical",
+    "description": "High-output alternator for reliable battery charging and electrical system power. Compatible with multiple vehicle models.",
+    "condition": "Refurbished",
+    "price": 8500,
+    "stock": 10
+  },
+  {
+    "image": "alt.webp",
+    "name": "Compact Alternator Unit",
+    "category": "Electrical",
+    "description": "Efficient alternator designed for small to mid-size vehicles. Delivers consistent electrical power output.",
+    "condition": "Used",
+    "price": 7200,
+    "stock": 14
+  },
+  {
+    "image": "arms control.webp",
+    "name": "Lower Control Arm Set",
+    "category": "Suspension",
+    "description": "Precision-engineered lower control arms for superior suspension performance. Reduces vibration and improves handling.",
+    "condition": "New",
+    "price": 6800,
+    "stock": 20
+  },
+  {
+    "image": "audi body.jfif",
+    "name": "Body Panel Replacement",
+    "category": "Body",
+    "description": "OEM-quality body panel for seamless fitment and finish. Professionally restored to original specifications.",
+    "condition": "Used",
+    "price": 12000,
+    "stock": 5
+  },
+  {
+    "image": "axle.webp",
+    "name": "CV Axle Shaft",
+    "category": "Transmission",
+    "description": "Heavy-duty CV axle shaft with constant velocity joints. Ensures smooth power transfer from transmission to wheels.",
+    "condition": "New",
+    "price": 9500,
+    "stock": 16
+  },
+  {
+    "image": "ball joint.jfif",
+    "name": "Ball Joint Assembly",
+    "category": "Suspension",
+    "description": "Premium ball joint for reliable suspension articulation. Essential component for safe steering and handling.",
+    "condition": "New",
+    "price": 2800,
+    "stock": 35
+  },
+  {
+    "image": "balll joint.jfif",
+    "name": "Heavy Duty Ball Joint",
+    "category": "Suspension",
+    "description": "Reinforced ball joint designed for heavy loads and rough terrain. Provides exceptional durability and performance.",
+    "condition": "New",
+    "price": 3200,
+    "stock": 28
+  },
+  {
+    "image": "caber bolt.webp",
+    "name": "Camber Adjustment Bolt Kit",
+    "category": "Suspension",
+    "description": "Precision camber bolts for accurate wheel alignment adjustment. Improves tire wear and vehicle stability.",
+    "condition": "New",
+    "price": 1500,
+    "stock": 40
+  },
+  {
+    "image": "clock.webp",
+    "name": "Dashboard Clock Unit",
+    "category": "Interior",
+    "description": "Factory replacement dashboard clock with clear display. Direct fit for easy installation.",
+    "condition": "Used",
+    "price": 2500,
+    "stock": 8
+  },
+  {
+    "image": "clutch plate.webp",
+    "name": "Clutch Disc Set",
+    "category": "Transmission",
+    "description": "High-friction clutch disc for smooth engagement and long service life. Manufactured to OEM standards.",
+    "condition": "New",
+    "price": 7500,
+    "stock": 22
+  },
+  {
+    "image": "control arm.jfif",
+    "name": "Upper Control Arm",
+    "category": "Suspension",
+    "description": "Precision upper control arm for optimal suspension geometry. Features durable bushings and ball joints.",
+    "condition": "New",
+    "price": 5800,
+    "stock": 24
+  },
+  {
+    "image": "control.webp",
+    "name": "Control Arm Assembly Kit",
+    "category": "Suspension",
+    "description": "Complete control arm assembly with integrated bushings. Restores factory ride quality and handling.",
+    "condition": "Refurbished",
+    "price": 6500,
+    "stock": 18
+  },
+  {
+    "image": "drilldown.jfif",
+    "name": "Brake Caliper Assembly",
+    "category": "Brakes",
+    "description": "Remanufactured brake caliper with smooth piston operation. Ensures even brake pad wear and stopping power.",
+    "condition": "Refurbished",
+    "price": 5800,
+    "stock": 15
+  },
+  {
+    "image": "drive shaft.webp",
+    "name": "Drive Shaft Complete",
+    "category": "Transmission",
+    "description": "Balanced drive shaft assembly for vibration-free operation. Critical component for rear-wheel and 4WD vehicles.",
+    "condition": "Used",
+    "price": 11000,
+    "stock": 10
+  },
+  {
+    "image": "drum.webp",
+    "name": "Rear Brake Drum",
+    "category": "Brakes",
+    "description": "Cast iron brake drum for dependable braking. Precision-machined for smooth brake shoe contact.",
+    "condition": "New",
+    "price": 4200,
+    "stock": 20
+  },
+  {
+    "image": "fan belt.jfif",
+    "name": "Serpentine Belt",
+    "category": "Engine",
+    "description": "High-quality serpentine belt for driving alternator, water pump, and AC compressor. Resists cracking and wear.",
+    "condition": "New",
+    "price": 1800,
+    "stock": 50
+  },
+  {
+    "image": "fan.jfif",
+    "name": "Radiator Cooling Fan",
+    "category": "Engine",
+    "description": "Electric radiator fan with high CFM rating. Maintains optimal engine temperature in all conditions.",
+    "condition": "Used",
+    "price": 6500,
+    "stock": 12
+  },
+  {
+    "image": "fuel filter.jfif",
+    "name": "Fuel Filter Element",
+    "category": "Engine",
+    "description": "High-efficiency fuel filter that removes contaminants from fuel. Protects fuel injectors and ensures smooth engine operation.",
+    "condition": "New",
+    "price": 1500,
+    "stock": 45
+  },
+  {
+    "image": "Headgasket.webp",
+    "name": "Cylinder Head Gasket",
+    "category": "Engine",
+    "description": "Multi-layer steel head gasket for reliable sealing. Prevents oil and coolant leaks between engine block and head.",
+    "condition": "New",
+    "price": 4500,
+    "stock": 20
+  },
+  {
+    "image": "headswitches.jfif",
+    "name": "Headlight Switch Assembly",
+    "category": "Electrical",
+    "description": "OEM replacement headlight switch with multiple lighting modes. Ensures reliable headlight operation.",
+    "condition": "Used",
+    "price": 2200,
+    "stock": 15
+  },
+  {
+    "image": "horse up.jfif",
+    "name": "Engine Hoist Bracket",
+    "category": "Engine",
+    "description": "Heavy-duty engine lifting bracket for safe engine removal. Essential tool for engine repair and replacement.",
+    "condition": "Used",
+    "price": 3500,
+    "stock": 8
+  },
+  {
+    "image": "hub.webp",
+    "name": "Front Wheel Hub",
+    "category": "Wheels & Tires",
+    "description": "Precision wheel hub with integrated bearings. Ensures smooth wheel rotation and proper ABS sensor function.",
+    "condition": "New",
+    "price": 5500,
+    "stock": 25
+  },
+  {
+    "image": "hubby.jfif",
+    "name": "Wheel Hub Bearing Unit",
+    "category": "Wheels & Tires",
+    "description": "Sealed wheel bearing hub assembly for maintenance-free operation. Reduces wheel noise and improves ride quality.",
+    "condition": "Refurbished",
+    "price": 4800,
+    "stock": 22
+  },
+  {
+    "image": "hubs.jfif",
+    "name": "Rear Wheel Hub Assembly",
+    "category": "Wheels & Tires",
+    "description": "Complete rear wheel hub with integrated ABS sensor ring. Engineered for precise fitment and durability.",
+    "condition": "Used",
+    "price": 4200,
+    "stock": 18
+  },
+  {
+    "image": "hubs.webp",
+    "name": "Premium Hub Assembly Set",
+    "category": "Wheels & Tires",
+    "description": "Pair of wheel hubs for complete axle replacement. Features premium bearings for extended service life.",
+    "condition": "New",
+    "price": 9500,
+    "stock": 12
+  },
+  {
+    "image": "link.jfif",
+    "name": "Stabilizer Link Rod",
+    "category": "Suspension",
+    "description": "Sway bar link for reduced body roll during cornering. Improves vehicle stability and handling response.",
+    "condition": "New",
+    "price": 1800,
+    "stock": 40
+  },
+  {
+    "image": "master cylinder.jfif",
+    "name": "Brake Master Cylinder",
+    "category": "Brakes",
+    "description": "Remanufactured brake master cylinder with smooth piston action. Critical component for safe brake system operation.",
+    "condition": "Refurbished",
+    "price": 7500,
+    "stock": 14
+  },
+  {
+    "image": "memeber arms.webp",
+    "name": "Suspension Member Arm",
+    "category": "Suspension",
+    "description": "Structural suspension arm for proper wheel alignment. Maintains correct suspension geometry under load.",
+    "condition": "Used",
+    "price": 5200,
+    "stock": 16
+  },
+  {
+    "image": "oil filter.jfif",
+    "name": "Engine Oil Filter",
+    "category": "Engine",
+    "description": "Premium oil filter with high dirt-holding capacity. Protects engine from contaminants and extends oil life.",
+    "condition": "New",
+    "price": 800,
+    "stock": 60
+  },
+  {
+    "image": "oil seal.jfif",
+    "name": "Crankshaft Oil Seal",
+    "category": "Engine",
+    "description": "High-quality rubber oil seal prevents engine oil leaks. Essential for maintaining proper oil pressure.",
+    "condition": "New",
+    "price": 1200,
+    "stock": 35
+  },
+  {
+    "image": "piston.jfif",
+    "name": "Engine Piston Set",
+    "category": "Engine",
+    "description": "Forged aluminum pistons with rings for engine rebuild. Precision-machined for optimal compression and power.",
+    "condition": "New",
+    "price": 15000,
+    "stock": 8
+  },
+  {
+    "image": "plug set.webp",
+    "name": "Spark Plug Wire Set",
+    "category": "Electrical",
+    "description": "High-performance ignition wire set with low resistance. Ensures reliable spark delivery to all cylinders.",
+    "condition": "New",
+    "price": 3500,
+    "stock": 25
+  },
+  {
+    "image": "presure clutch plate.webp",
+    "name": "Clutch Pressure Plate",
+    "category": "Transmission",
+    "description": "Heavy-duty pressure plate for firm clutch engagement. Works with clutch disc for smooth power transfer.",
+    "condition": "New",
+    "price": 8500,
+    "stock": 18
+  },
+  {
+    "image": "propellor shaft.webp",
+    "name": "Propeller Shaft Assembly",
+    "category": "Transmission",
+    "description": "Balanced propeller shaft for 4WD and RWD vehicles. Features universal joints for smooth power delivery.",
+    "condition": "Refurbished",
+    "price": 12500,
+    "stock": 9
+  },
+  {
+    "image": "rack.jfif",
+    "name": "Power Steering Rack",
+    "category": "Suspension",
+    "description": "Remanufactured power steering rack for precise steering control. Eliminates steering play and wandering.",
+    "condition": "Refurbished",
+    "price": 18000,
+    "stock": 7
+  },
+  {
+    "image": "rack.webp",
+    "name": "Manual Steering Rack",
+    "category": "Suspension",
+    "description": "Durable manual steering rack assembly. Provides direct steering feel and reliable operation.",
+    "condition": "Used",
+    "price": 12000,
+    "stock": 10
+  },
+  {
+    "image": "rackend.webp",
+    "name": "Steering Rack End",
+    "category": "Suspension",
+    "description": "Inner/outer tie rod end for steering rack connection. Essential for proper steering geometry and alignment.",
+    "condition": "New",
+    "price": 2500,
+    "stock": 30
+  },
+  {
+    "image": "radfan.jfif",
+    "name": "Radiator Fan Motor",
+    "category": "Electrical",
+    "description": "Electric fan motor for engine cooling system. High-quality replacement for failed cooling fans.",
+    "condition": "Used",
+    "price": 4500,
+    "stock": 12
+  },
+  {
+    "image": "rear wheel hub.webp",
+    "name": "Rear Axle Hub Bearing",
+    "category": "Wheels & Tires",
+    "description": "Complete rear hub bearing assembly with ABS sensor provision. Ensures quiet and smooth rear wheel operation.",
+    "condition": "New",
+    "price": 5200,
+    "stock": 20
+  },
+  {
+    "image": "release bearing.jfif",
+    "name": "Clutch Release Bearing",
+    "category": "Transmission",
+    "description": "Hydraulic release bearing for smooth clutch disengagement. Critical component for manual transmission operation.",
+    "condition": "New",
+    "price": 3800,
+    "stock": 22
+  },
+  {
+    "image": "release.jfif",
+    "name": "Clutch Release Fork",
+    "category": "Transmission",
+    "description": "Clutch fork mechanism for actuating release bearing. Ensures proper clutch engagement and disengagement.",
+    "condition": "Used",
+    "price": 2200,
+    "stock": 15
+  },
+  {
+    "image": "rings.jfif",
+    "name": "Piston Ring Set",
+    "category": "Engine",
+    "description": "Complete piston ring set for engine rebuild. Restores compression and reduces oil consumption.",
+    "condition": "New",
+    "price": 6500,
+    "stock": 18
+  },
+  {
+    "image": "shaft drive.webp",
+    "name": "Half Shaft Assembly",
+    "category": "Transmission",
+    "description": "CV joint half shaft for front-wheel drive vehicles. Features new boots and grease for extended life.",
+    "condition": "Refurbished",
+    "price": 8800,
+    "stock": 16
+  },
+  {
+    "image": "shock.webp",
+    "name": "Gas Shock Absorber",
+    "category": "Suspension",
+    "description": "High-performance gas-charged shock absorber. Provides superior damping and ride comfort.",
+    "condition": "New",
+    "price": 4500,
+    "stock": 30
+  },
+  {
+    "image": "shocks.webp",
+    "name": "Front Shock Absorber Set",
+    "category": "Suspension",
+    "description": "Pair of front shock absorbers for balanced suspension performance. Reduces bounce and improves handling.",
+    "condition": "New",
+    "price": 9000,
+    "stock": 20
+  },
+  {
+    "image": "shockss.webp",
+    "name": "Rear Shock Absorber Pair",
+    "category": "Suspension",
+    "description": "Heavy-duty rear shock absorbers for load-carrying vehicles. Maintains ride height under varying loads.",
+    "condition": "New",
+    "price": 8500,
+    "stock": 18
+  },
+  {
+    "image": "shoe brake.webp",
+    "name": "Brake Shoe Set",
+    "category": "Brakes",
+    "description": "Premium brake shoe set with bonded linings. Provides reliable stopping power for drum brake systems.",
+    "condition": "New",
+    "price": 3500,
+    "stock": 25
+  },
+  {
+    "image": "Spark plug.webp",
+    "name": "Iridium Spark Plugs",
+    "category": "Electrical",
+    "description": "Long-life iridium spark plugs for improved ignition. Enhances fuel efficiency and engine performance.",
+    "condition": "New",
+    "price": 2800,
+    "stock": 40
+  },
+  {
+    "image": "stabaliser link.webp",
+    "name": "Front Stabilizer Link",
+    "category": "Suspension",
+    "description": "Anti-roll bar link for reduced body lean. Improves cornering stability and driver confidence.",
+    "condition": "New",
+    "price": 1600,
+    "stock": 35
+  },
+  {
+    "image": "start.jfif",
+    "name": "Starter Motor Assembly",
+    "category": "Electrical",
+    "description": "Remanufactured starter motor with high-torque output. Ensures reliable engine starting in all conditions.",
+    "condition": "Refurbished",
+    "price": 9500,
+    "stock": 12
+  },
+  {
+    "image": "starter.jfif",
+    "name": "Heavy Duty Starter",
+    "category": "Electrical",
+    "description": "Industrial-grade starter motor for diesel engines. Features reinforced components for extended service life.",
+    "condition": "Used",
+    "price": 8200,
+    "stock": 10
+  },
+  {
+    "image": "starter.webp",
+    "name": "Compact Starter Motor",
+    "category": "Electrical",
+    "description": "Space-saving starter motor for tight engine bays. Delivers reliable cranking power in compact design.",
+    "condition": "New",
+    "price": 10500,
+    "stock": 14
+  },
+  {
+    "image": "starters.jfif",
+    "name": "Rebuilt Starter Unit",
+    "category": "Electrical",
+    "description": "Professionally rebuilt starter with new solenoid. Tested for consistent performance and durability.",
+    "condition": "Refurbished",
+    "price": 8800,
+    "stock": 11
+  },
+  {
+    "image": "stebeliser bar.webp",
+    "name": "Stabilizer Bar Assembly",
+    "category": "Suspension",
+    "description": "Complete sway bar assembly with bushings and links. Reduces vehicle roll during aggressive maneuvering.",
+    "condition": "Used",
+    "price": 5500,
+    "stock": 12
+  },
+  {
+    "image": "steering rack full.webp",
+    "name": "Complete Steering Rack Kit",
+    "category": "Suspension",
+    "description": "Full steering rack assembly with tie rod ends included. Complete solution for steering system repair.",
+    "condition": "Refurbished",
+    "price": 22000,
+    "stock": 6
+  },
+  {
+    "image": "steering rack.webp",
+    "name": "OEM Steering Rack",
+    "category": "Suspension",
+    "description": "Original equipment steering rack for precise steering response. Factory-quality replacement part.",
+    "condition": "Used",
+    "price": 15000,
+    "stock": 8
+  },
+  {
+    "image": "sterring box.webp",
+    "name": "Steering Gearbox",
+    "category": "Suspension",
+    "description": "Recirculating ball steering gearbox for trucks and SUVs. Provides durable steering control for heavy vehicles.",
+    "condition": "Refurbished",
+    "price": 16500,
+    "stock": 7
+  },
+  {
+    "image": "temp gauge.webp",
+    "name": "Temperature Gauge Sensor",
+    "category": "Electrical",
+    "description": "Engine temperature sensor for accurate coolant monitoring. Ensures early warning of overheating conditions.",
+    "condition": "New",
+    "price": 1500,
+    "stock": 30
+  },
+  {
+    "image": "tie rod.jfif",
+    "name": "Tie Rod End Assembly",
+    "category": "Suspension",
+    "description": "High-quality tie rod end for precise steering linkage. Critical component for proper wheel alignment.",
+    "condition": "New",
+    "price": 2200,
+    "stock": 35
+  },
+  {
+    "image": "tierod racks.webp",
+    "name": "Inner Tie Rod Set",
+    "category": "Suspension",
+    "description": "Inner tie rod ends for steering rack connection. Essential for maintaining steering precision and safety.",
+    "condition": "New",
+    "price": 4500,
+    "stock": 25
+  },
+  {
+    "image": "tierod.webp",
+    "name": "Outer Tie Rod End",
+    "category": "Suspension",
+    "description": "Durable outer tie rod end with grease fitting. Connects steering knuckle to steering system.",
+    "condition": "New",
+    "price": 1800,
+    "stock": 40
+  },
+  {
+    "image": "timing.jfif",
+    "name": "Timing Belt Kit",
+    "category": "Engine",
+    "description": "Complete timing belt kit with tensioner and idler pulleys. Prevents catastrophic engine damage from belt failure.",
+    "condition": "New",
+    "price": 8500,
+    "stock": 15
+  },
+  {
+    "image": "up.jfif",
+    "name": "Jack Stand Set",
+    "category": "Interior",
+    "description": "Heavy-duty jack stands for safe vehicle support during maintenance. Essential safety equipment for repairs.",
+    "condition": "Used",
+    "price": 3500,
+    "stock": 10
+  },
+  {
+    "image": "valvecover.webp",
+    "name": "Valve Cover Assembly",
+    "category": "Engine",
+    "description": "Engine valve cover with integrated gasket. Prevents oil leaks and maintains clean engine bay appearance.",
+    "condition": "Used",
+    "price": 4200,
+    "stock": 14
+  },
+  {
+    "image": "vbl.jfif",
+    "name": "Vacuum Brake Booster",
+    "category": "Brakes",
+    "description": "Power brake booster for effortless brake pedal operation. Amplifies braking force for improved safety.",
+    "condition": "Refurbished",
+    "price": 8500,
+    "stock": 10
+  },
+  {
+    "image": "water pump.jfif",
+    "name": "Water Pump Assembly",
+    "category": "Engine",
+    "description": "Coolant circulation pump for engine temperature control. Features sealed bearings for leak-free operation.",
+    "condition": "New",
+    "price": 5500,
+    "stock": 20
+  }
+]

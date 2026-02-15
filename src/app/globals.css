@@ -1,0 +1,528 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em; /* Inter's optimal tracking */
+  }
+
+  /* Premium headings with Outfit - geometric, modern, clean */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    font-weight: 600;
+    letter-spacing: -0.02em; /* Tighter for headings */
+    line-height: 1.2;
+  }
+
+  /* Optimized font weights for better hierarchy */
+  h1 { font-weight: 700; }
+  h2 { font-weight: 600; }
+  h3 { font-weight: 600; }
+  h4, h5, h6 { font-weight: 500; }
+
+  /* Body text with Inter - best screen readability */
+  p, span, a, button, input, textarea, select, label {
+    @apply font-sans;
+  }
+
+  /* Improved readability for body text */
+  p {
+    line-height: 1.6;
+  }
+
+  /* Strong emphasis */
+  strong, b {
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  /* Professional subtle pulse animation */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+
+  /* Subtle glow effect */
+  .shadow-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  /* ========== PREMIUM ELEGANT ANIMATIONS ========== */
+
+  /* Elegant fade-in animation for brand name */
+  @keyframes elegant-fade {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-elegant-fade {
+    animation: elegant-fade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Delayed elegant fade for subtitle */
+  @keyframes elegant-fade-delay {
+    0% {
+      opacity: 0;
+      transform: translateY(-8px);
+      filter: blur(3px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-elegant-fade-delay {
+    animation: elegant-fade-delay 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    opacity: 0;
+  }
+
+  /* Subtle twinkle for sparkles */
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(0.9) rotate(0deg);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1) rotate(180deg);
+    }
+  }
+
+  .animate-twinkle {
+    animation: twinkle 4s ease-in-out infinite;
+  }
+
+  .animate-twinkle-delay {
+    animation: twinkle 4s ease-in-out infinite 0.5s;
+  }
+
+  /* Radial gradient background */
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+
+  /* Luxury text shadow */
+  .text-shadow-luxury {
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.05),
+      0 2px 4px rgba(0, 0, 0, 0.05),
+      0 4px 8px rgba(217, 119, 6, 0.1);
+  }
+
+  /* Smooth backdrop blur enhancement */
+  .backdrop-blur-elegant {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  /* Premium shimmer effect for header background */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 8s ease-in-out infinite;
+  }
+
+  /* Search modal animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-from-top-4 {
+    from {
+      transform: translateY(-1rem) translateX(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) translateX(-50%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-from-top-2 {
+    from {
+      transform: translateY(-0.5rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-in {
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    animation: fade-in 0.2s ease-out;
+  }
+
+  .slide-in-from-top-4 {
+    animation: slide-in-from-top-4 0.3s ease-out;
+  }
+
+  .slide-in-from-top-2 {
+    animation: slide-in-from-top-2 0.2s ease-out;
+  }
+
+  .duration-200 {
+    animation-duration: 200ms;
+  }
+
+  .duration-300 {
+    animation-duration: 300ms;
+  }
+}
+/* ============================================
+   JOMO AUTO WORLD - Custom Animations
+   ============================================ */
+
+/* Shimmer Effect - For Header and ContactBar */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer-slow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* Elegant Pulse Effect - For Phone Number */
+@keyframes pulse-elegant {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-elegant-delay {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmer-subtle {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Cart Badge Animations */
+@keyframes cart-bounce {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  25% {
+    transform: scale(1.1) translateY(-8px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-4px);
+  }
+  75% {
+    transform: scale(1.08) translateY(-6px);
+  }
+}
+
+@keyframes item-to-cart {
+  0% {
+    transform: translate(-20px, -30px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-10px, -15px) scale(0.7);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Realistic item flying to cart - arcing motion */
+@keyframes fly-to-cart {
+  0% {
+    transform: translate(-80px, -100px) scale(1.2) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-60px, -80px) scale(1.1) rotate(45deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-30px, -40px) scale(0.9) rotate(90deg);
+    opacity: 0.9;
+  }
+  90% {
+    transform: translate(-5px, -5px) scale(0.4) rotate(135deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0) scale(0.2) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Twinkle Effects - For Sparkle Icons */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes twinkle-delay {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(-180deg);
+  }
+}
+
+/* Elegant Fade Animations - For Text */
+@keyframes elegant-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes elegant-fade-delay {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Animation Utility Classes
+   ============================================ */
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+.animate-shimmer-slow {
+  animation: shimmer-slow 8s infinite;
+}
+
+.animate-pulse-elegant {
+  animation: pulse-elegant 3s ease-in-out infinite;
+}
+
+.animate-pulse-elegant-delay {
+  animation: pulse-elegant-delay 3.5s ease-in-out infinite 0.3s;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-shimmer-subtle {
+  animation: shimmer-subtle 6s linear infinite;
+  background-size: 200% auto;
+}
+
+.animate-cart-bounce {
+  animation: cart-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-item-to-cart {
+  animation: item-to-cart 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-fly-to-cart {
+  animation: fly-to-cart 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.animate-twinkle-delay {
+  animation: twinkle-delay 4s ease-in-out infinite 0.5s;
+}
+
+.animate-elegant-fade {
+  animation: elegant-fade 1s ease-out forwards;
+}
+
+.animate-elegant-fade-delay {
+  animation: elegant-fade-delay 1s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+/* ============================================
+   Custom Gradient Utilities
+   ============================================ */
+
+/* Radial Gradient - For glow effects */
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+/* ============================================
+   Responsive Breakpoint Extensions
+   ============================================ */
+
+/* Extra small screens (for 'xs' breakpoint) */
+@media (min-width: 475px) {
+  .xs\:inline {
+    display: inline;
+  }
+  
+  .xs\:block {
+    display: block;
+  }
+}
