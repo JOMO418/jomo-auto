@@ -246,22 +246,31 @@ export function QuickCart({ open, onClose }: QuickCartProps) {
               </div>
 
               {/* Action Buttons */}
-              <div className="relative space-y-1.5">
+              <div className="relative space-y-2">
+                {/* PRIMARY: Proceed to Checkout */}
                 <Link href="/cart" onClick={onClose} className="block">
-                  <Button className="w-full h-9 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all duration-300 border-0 text-xs uppercase tracking-wide">
-                    <Eye className="h-3.5 w-3.5 mr-1.5" />
-                    View Full Cart
+                  <Button className="w-full h-11 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold shadow-xl shadow-green-500/30 hover:shadow-green-500/50 transition-all duration-300 border-0 text-sm uppercase tracking-wide hover:scale-[1.02] active:scale-95">
+                    <ShoppingBag className="h-4 w-4 mr-2" />
+                    Proceed to Checkout
                   </Button>
                 </Link>
 
-                <Button
+                {/* SECONDARY: View Cart Details */}
+                <Link href="/cart" onClick={onClose} className="block">
+                  <Button variant="outline" className="w-full h-9 bg-white/10 hover:bg-white/20 border-2 border-white/30 hover:border-white/50 text-white font-semibold transition-all duration-300 text-xs uppercase tracking-wide">
+                    <Eye className="h-3.5 w-3.5 mr-1.5" />
+                    View Cart Details
+                  </Button>
+                </Link>
+
+                {/* Tertiary: Clear Cart */}
+                <button
                   onClick={handleClearCart}
-                  variant="outline"
-                  className="w-full h-9 bg-white/10 hover:bg-red-500/20 border-2 border-white/20 hover:border-red-400/50 text-white hover:text-red-300 font-semibold transition-all duration-300 text-xs uppercase tracking-wide"
+                  className="w-full text-center text-xs text-red-300/70 hover:text-red-300 font-semibold transition-colors uppercase tracking-wide pt-1"
                 >
-                  <Trash2 className="h-3.5 w-3.5 mr-1.5" />
+                  <Trash2 className="h-3 w-3 inline mr-1" />
                   Clear Cart
-                </Button>
+                </button>
               </div>
 
               {/* Continue Shopping Link */}

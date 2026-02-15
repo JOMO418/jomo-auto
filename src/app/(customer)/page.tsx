@@ -5,6 +5,8 @@ import { SmartFilterBar } from "@/components/home/SmartFilterBar";
 import { CategorySection } from "@/components/product/CategorySection";
 import { DealsOfTheDay } from "@/components/home/DealsOfTheDay";
 import { NewArrivals } from "@/components/home/NewArrivals";
+import { AboutSection } from "@/components/home/AboutSection";
+import { MapSection } from "@/components/home/MapSection";
 import { getProductsByCategory, getFeaturedProducts, getAllProducts } from "@/lib/dummy-data";
 import { useCartStore } from "@/lib/store";
 import type { Product } from "@/lib/types";
@@ -93,6 +95,12 @@ export default function HomePage() {
           onAddToCart={handleAddToCart}
         />
       )}
+
+      {/* About Section - Premium Copy */}
+      <AboutSection />
+
+      {/* Map Section - Location */}
+      <MapSection />
     </div>
   );
 }

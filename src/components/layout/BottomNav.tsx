@@ -25,10 +25,10 @@ export function BottomNav({ onSearchClick }: BottomNavProps) {
 
   const navItems = [
     {
-      href: "/",
+      href: "/shop",
       icon: Home,
       label: "Shop",
-      active: pathname === "/",
+      active: pathname === "/shop",
       type: "link" as const,
     },
     {

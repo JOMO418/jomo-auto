@@ -5,7 +5,6 @@ import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { CartBadge } from "@/components/layout/CartBadge";
 import { BottomNav } from "@/components/layout/BottomNav";
-import { Footer } from "@/components/layout/Footer";
 import { SearchBar } from "@/components/search/SearchBar";
 import { SearchResults } from "@/components/search/SearchResults";
 import { useInstantSearch } from "@/hooks/useInstantSearch";
@@ -15,7 +14,11 @@ import { useState, useCallback, useRef, useMemo } from "react";
 import { Product } from "@/lib/types";
 import Fuse from "fuse.js";
 
-export function RootLayoutClient({ children }: { children: React.ReactNode }) {
+/**
+ * Shop Page Layout - NO FOOTER
+ * Custom layout for shop page without footer for better UX
+ */
+export default function ShopLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const { isOpen, open, close } = useInstantSearch();
@@ -102,8 +105,7 @@ export function RootLayoutClient({ children }: { children: React.ReactNode }) {
         )}
       </main>
 
-      {/* Footer - Premium */}
-      <Footer />
+      {/* NO FOOTER - Shop page doesn't need footer */}
 
       {/* Sidebar */}
       <Sidebar

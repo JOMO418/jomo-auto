@@ -50,6 +50,18 @@ export function Sidebar({ open, onClose }: SidebarProps) {
 
           {/* Scrollable Content - Compact */}
           <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
+            {/* Shop All - Featured Link */}
+            <Link
+              href="/shop"
+              onClick={onClose}
+              className="block w-full py-3 px-4 bg-gradient-to-r from-amber-400 to-amber-500 text-gray-900 font-bold rounded-lg hover:from-amber-500 hover:to-amber-600 transition-all duration-200 shadow-lg text-center"
+            >
+              <div className="flex items-center justify-center gap-2">
+                <ShoppingBag className="h-4 w-4" />
+                <span>Shop All Products</span>
+              </div>
+            </Link>
+
             {/* Shop by Part */}
             <div>
               <h3 className="font-heading text-[10px] font-semibold text-amber-200/90 uppercase tracking-wider mb-2 flex items-center gap-1.5">
