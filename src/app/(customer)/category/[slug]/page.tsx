@@ -42,10 +42,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Breadcrumb Navigation */}
       <div className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 py-3">
+        <div className="container mx-auto px-3 sm:px-4 py-3">
           <nav className="flex items-center gap-2 text-sm" aria-label="Breadcrumb">
             <Link
               href="/"
@@ -64,7 +64,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
       {/* Category Header */}
       <div className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 py-6 md:py-10">
+        <div className="container mx-auto px-3 sm:px-4 py-6 md:py-10">
           <div className="flex items-start gap-4">
             {/* Icon */}
             <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
@@ -91,7 +91,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       </div>
 
       {/* Products Grouped by Vehicle */}
-      <div className="container mx-auto px-4 py-6 md:py-8 max-w-7xl">
+      <div className="container mx-auto px-3 sm:px-4 py-6 md:py-8 max-w-7xl">
         {vehicles.length === 0 ? (
           <div className="text-center py-16">
             <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
@@ -165,7 +165,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       </div>
 
       {/* Back to All Categories */}
-      <div className="container mx-auto px-4 pb-8">
+      <div className="container mx-auto px-3 sm:px-4 pb-8">
         <div className="text-center">
           <Link
             href="/"

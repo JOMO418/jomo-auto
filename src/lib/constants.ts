@@ -234,10 +234,10 @@ export const VEHICLE_MODELS = ["Mazda Demio","Mazda Demio","Nissan Tiida","Nissa
 
 // Contact information
 export const CONTACT_INFO = {
-  phone: "+254 712 345 678",
+  phone: "0798433973",
   email: "info@jomoautoworld.com",
   address: "Nairobi, Kenya",
-  whatsapp: "+254712345678",
+  whatsapp: "254798433973",
   mpesaTill: "123456"
 } as const;
 

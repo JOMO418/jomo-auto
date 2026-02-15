@@ -80,8 +80,8 @@ export default function CartPage() {
   // Empty cart state
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
+      <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+        <div className="container mx-auto px-3 sm:px-4 py-8 md:py-16 max-w-4xl">
           <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12 text-center">
             {/* Empty cart icon */}
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center mx-auto mb-6">
@@ -142,10 +142,10 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 md:pb-8">
+    <div className="min-h-screen bg-gray-50 pb-24 md:pb-8 overflow-x-hidden">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 sticky top-0 z-30">
-        <div className="container mx-auto px-4 py-4 md:py-5">
+        <div className="container mx-auto px-3 sm:px-4 py-4 md:py-5 max-w-full">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-xl md:text-3xl font-bold text-gray-900">
@@ -166,8 +166,8 @@ export default function CartPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-6 md:py-8 max-w-7xl">
-        <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
+      <div className="container mx-auto px-3 sm:px-4 py-6 md:py-8 max-w-7xl">
+        <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {/* Low stock warning */}
@@ -195,24 +195,24 @@ export default function CartPage() {
                   ${removingId === item.product.id ? "opacity-0 scale-95" : "opacity-100 scale-100"}
                 `}
               >
-                <div className="p-4 md:p-5">
-                  <div className="flex gap-4">
+                <div className="p-3 sm:p-4 md:p-5">
+                  <div className="flex gap-2 sm:gap-3 md:gap-4">
                     {/* Product Image */}
                     <Link
                       href={`/product/${item.product.slug}`}
-                      className="relative w-20 h-20 md:w-28 md:h-28 flex-shrink-0 bg-gray-100 rounded-lg md:rounded-xl overflow-hidden group"
+                      className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex-shrink-0 bg-gray-100 rounded-lg md:rounded-xl overflow-hidden group"
                     >
                       <Image
                         src={item.product.images[0] || PLACEHOLDER_IMAGE}
                         alt={item.product.name}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 768px) 80px, 112px"
+                        sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 112px"
                       />
                     </Link>
 
                     {/* Product Info */}
-                    <div className="flex-1 min-w-0">
+                    <div className="flex-1 min-w-0 overflow-hidden">
                       <div className="flex items-start justify-between gap-2 mb-2">
                         <Link
                           href={`/product/${item.product.slug}`}
@@ -249,20 +249,20 @@ export default function CartPage() {
                       </div>
 
                       {/* Price and quantity - Mobile/Desktop layout */}
-                      <div className="flex items-center justify-between gap-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         {/* Quantity selector */}
-                        <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
+                        <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1 w-fit">
                           <button
                             onClick={() =>
                               updateQuantity(item.product.id, item.quantity - 1)
                             }
                             disabled={item.quantity <= 1}
-                            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-md hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-95"
+                            className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center rounded-md hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-95"
                             aria-label="Decrease quantity"
                           >
-                            <Minus className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
+                            <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gray-700" />
                           </button>
-                          <span className="font-bold text-gray-900 w-8 md:w-10 text-center text-sm md:text-base">
+                          <span className="font-bold text-gray-900 w-7 sm:w-8 md:w-10 text-center text-sm md:text-base">
                             {item.quantity}
                           </span>
                           <button
@@ -270,16 +270,16 @@ export default function CartPage() {
                               updateQuantity(item.product.id, item.quantity + 1)
                             }
                             disabled={item.quantity >= item.product.stock}
-                            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-md hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-95"
+                            className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center rounded-md hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-95"
                             aria-label="Increase quantity"
                           >
-                            <Plus className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
+                            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gray-700" />
                           </button>
                         </div>
 
                         {/* Price */}
-                        <div className="text-right">
-                          <p className="text-lg md:text-xl font-bold text-red-600">
+                        <div className="text-left sm:text-right">
+                          <p className="text-base sm:text-lg md:text-xl font-bold text-red-600">
                             {formatPrice(item.product.price * item.quantity)}
                           </p>
                           {item.quantity > 1 && (
@@ -392,19 +392,19 @@ export default function CartPage() {
 
         {/* Suggested Products */}
         {suggestedProducts.length > 0 && (
-          <div className="mt-12 pt-12 border-t border-gray-200">
-            <div className="flex items-center justify-between mb-6">
+          <div className="mt-8 md:mt-12 pt-8 md:pt-12 border-t border-gray-200">
+            <div className="flex items-center justify-between mb-4 md:mb-6">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900">
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
                   You May Also Like
                 </h3>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-xs md:text-sm text-gray-600 mt-1">
                   Popular parts other customers purchased
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {suggestedProducts.map((product) => (
                 <div
                   key={product.id}
@@ -445,18 +445,18 @@ export default function CartPage() {
       </div>
 
       {/* Mobile Sticky Checkout Bar */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-2xl z-40">
-        <div className="flex items-center justify-between gap-4 mb-3">
-          <div>
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 sm:p-4 shadow-2xl z-40 max-w-full">
+        <div className="flex items-center justify-between gap-2 sm:gap-3">
+          <div className="flex-shrink-0">
             <p className="text-xs text-gray-600">Total ({totalItems} items)</p>
-            <p className="text-xl font-bold text-red-600">{formatPrice(total)}</p>
+            <p className="text-lg sm:text-xl font-bold text-red-600 whitespace-nowrap">{formatPrice(total)}</p>
           </div>
           <Link
             href="/checkout"
-            className="flex-1 max-w-xs py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center font-bold rounded-xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 active:scale-95 flex items-center justify-center gap-2"
+            className="flex-1 max-w-[200px] sm:max-w-xs py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center font-bold rounded-xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 active:scale-95 flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base"
           >
             Checkout
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </Link>
         </div>
       </div>

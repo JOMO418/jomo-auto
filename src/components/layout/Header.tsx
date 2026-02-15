@@ -10,8 +10,8 @@ interface HeaderProps {
 
 export function Header({ onMenuClick, onSearchClick }: HeaderProps) {
   return (
-    <header className="sticky top-10 z-40 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] backdrop-blur-xl border-b border-blue-400/20 shadow-2xl shadow-blue-900/40 before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-600/10 before:via-transparent before:to-blue-600/10 before:animate-shimmer">
-      <div className="relative h-20 md:h-24 px-3 md:px-8 flex items-center justify-between gap-2 md:gap-4 max-w-7xl mx-auto">
+    <header className="sticky top-10 z-40 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] backdrop-blur-xl border-b border-blue-400/20 shadow-2xl shadow-blue-900/40 before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-600/10 before:via-transparent before:to-blue-600/10 before:animate-shimmer overflow-x-hidden">
+      <div className="relative h-20 md:h-24 px-3 md:px-8 flex items-center justify-between gap-2 md:gap-4 max-w-7xl mx-auto w-full">
         {/* Left: Premium Search Button */}
         <button
           onClick={onSearchClick}

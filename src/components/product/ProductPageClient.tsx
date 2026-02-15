@@ -40,10 +40,10 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
   const images = product.images && product.images.length > 0 ? product.images : [PLACEHOLDER_IMAGE];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Breadcrumb */}
       <div className="bg-white border-b">
-        <div className="container mx-auto px-4 py-4 max-w-7xl">
+        <div className="container mx-auto px-3 sm:px-4 py-4 max-w-7xl">
           <Link
             href="/"
             className="inline-flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors"
@@ -64,8 +64,8 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
       </div>
 
       {/* Product Detail */}
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6 md:p-8">
+      <div className="container mx-auto px-3 sm:px-4 py-8 max-w-7xl">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
           {/* Image Gallery */}
           <div>
             {/* Main Image */}
@@ -89,7 +89,7 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
 
             {/* Thumbnail Gallery */}
             {images.length > 1 && (
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
                 {images.map((image, index) => (
                   <button
                     key={index}
@@ -195,60 +195,64 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
             <div className="mb-6">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-semibold text-gray-900">Quantity:</span>
-                <span className="text-sm text-gray-600">
+                <span className={`text-sm font-medium ${product.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
                   {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"}
                 </span>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center border border-gray-300 rounded-lg">
+
+              {/* Quantity Selector */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-sm text-gray-600">Select Quantity:</span>
+                <div className="flex items-center border-2 border-gray-300 rounded-lg overflow-hidden">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     disabled={isOutOfStock}
-                    className="px-4 py-2 hover:bg-gray-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="px-4 py-2.5 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 transition-colors disabled:opacity-40 disabled:cursor-not-allowed font-semibold text-gray-700"
                   >
                     −
                   </button>
-                  <span className="px-4 py-2 font-semibold min-w-[60px] text-center">
+                  <span className="px-6 py-2.5 font-bold text-gray-900 min-w-[60px] text-center bg-white">
                     {quantity}
                   </span>
                   <button
                     onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
                     disabled={isOutOfStock || quantity >= product.stock}
-                    className="px-4 py-2 hover:bg-gray-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="px-4 py-2.5 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 transition-colors disabled:opacity-40 disabled:cursor-not-allowed font-semibold text-gray-700"
                   >
                     +
                   </button>
                 </div>
-
-                {/* Add to Cart Button */}
-                <button
-                  onClick={handleAddToCart}
-                  disabled={isOutOfStock || isAdding}
-                  className={`
-                    flex-1 py-3 px-6 rounded-lg font-semibold text-white
-                    transition-all duration-300 flex items-center justify-center gap-2
-                    ${
-                      isOutOfStock
-                        ? "bg-gray-400 cursor-not-allowed"
-                        : isAdding
-                        ? "bg-green-500"
-                        : "bg-blue-600 hover:bg-blue-700 hover:shadow-lg"
-                    }
-                  `}
-                >
-                  {isAdding ? (
-                    <>
-                      <Check className="h-5 w-5" />
-                      Added to Cart!
-                    </>
-                  ) : (
-                    <>
-                      <ShoppingCart className="h-5 w-5" />
-                      {isOutOfStock ? "Out of Stock" : "Add to Cart"}
-                    </>
-                  )}
-                </button>
               </div>
+
+              {/* Add to Cart Button - Full Width */}
+              <button
+                onClick={handleAddToCart}
+                disabled={isOutOfStock || isAdding}
+                className={`
+                  w-full py-4 px-6 rounded-xl font-bold text-lg text-white
+                  transition-all duration-300 flex items-center justify-center gap-3
+                  shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]
+                  ${
+                    isOutOfStock
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : isAdding
+                      ? "bg-green-600 hover:bg-green-700"
+                      : "bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600"
+                  }
+                `}
+              >
+                {isAdding ? (
+                  <>
+                    <Check className="h-6 w-6" />
+                    <span>Added to Cart!</span>
+                  </>
+                ) : (
+                  <>
+                    <ShoppingCart className="h-6 w-6" />
+                    <span>{isOutOfStock ? "Out of Stock" : "Add to Cart"}</span>
+                  </>
+                )}
+              </button>
             </div>
 
             {/* Features */}
@@ -280,9 +284,9 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Products</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-8 md:mt-12">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Related Products</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {relatedProducts.map((relatedProduct) => {
                 const cartProduct = {
                   ...relatedProduct,

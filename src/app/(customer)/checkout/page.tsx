@@ -136,12 +136,12 @@ Please confirm availability and delivery details.`;
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-6 max-w-7xl">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+      <div className="container mx-auto px-3 sm:px-4 py-6 max-w-7xl">
         <h1 className="text-3xl font-bold mb-6">Checkout</h1>
 
         <form onSubmit={handleSubmit}>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {/* Customer Info Form */}
             <div className="lg:col-span-2 space-y-6">
               <div className="bg-white rounded-lg shadow-sm p-6">

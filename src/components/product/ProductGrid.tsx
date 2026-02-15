@@ -13,7 +13,7 @@ interface ProductGridProps {
 export function ProductGrid({ products, onAddToCart, loading }: ProductGridProps) {
   if (loading) {
     return (
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 sm:gap-5 md:gap-6">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         {Array.from({ length: 12 }).map((_, i) => (
           <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden">
             <Skeleton className="aspect-[4/3] w-full rounded-none" />
@@ -45,7 +45,7 @@ export function ProductGrid({ products, onAddToCart, loading }: ProductGridProps
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 sm:gap-5 md:gap-6 auto-rows-fr">
+    <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 auto-rows-fr">
       {products.map((product) => (
         <ProductCard
           key={product.id}

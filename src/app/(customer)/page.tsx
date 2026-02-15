@@ -32,7 +32,7 @@ export default function HomePage() {
     }));
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Hero Billboard Carousel */}
       <HeroBillboard slides={defaultBillboardSlides} />
 
@@ -40,7 +40,7 @@ export default function HomePage() {
       <SmartFilterBar />
 
       {/* Optional: Featured Products Section */}
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <div className="container mx-auto px-3 sm:px-4 py-8 max-w-7xl">
         {/* Featured/Popular Products - Minimal Showcase */}
         <div className="mb-8">
           <div className="text-center mb-8">

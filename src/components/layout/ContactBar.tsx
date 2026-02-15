@@ -3,8 +3,8 @@ import { CONTACT_INFO } from "@/lib/constants";
 
 export function ContactBar() {
   return (
-    <div className="relative bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] backdrop-blur-xl border-b border-blue-400/20 shadow-2xl shadow-blue-900/40 before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-600/10 before:via-transparent before:to-blue-600/10 before:animate-shimmer">
-      <div className="relative h-12 md:h-14 flex items-center justify-center px-3 md:px-6">
+    <div className="relative bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] backdrop-blur-xl border-b border-blue-400/20 shadow-2xl shadow-blue-900/40 before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-600/10 before:via-transparent before:to-blue-600/10 before:animate-shimmer overflow-x-hidden">
+      <div className="relative h-12 md:h-14 flex items-center justify-center px-3 md:px-6 w-full">
         <a
           href={`tel:${CONTACT_INFO.phone}`}
           className="flex items-center gap-2 md:gap-3 hover:scale-[1.02] transition-all duration-500 group"

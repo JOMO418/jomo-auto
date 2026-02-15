@@ -70,7 +70,7 @@ export function RootLayoutClient({ children }: { children: React.ReactNode }) {
   const showSearchResults = isOpen && searchQuery.trim();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden max-w-full">
       {/* Contact Bar */}
       <ContactBar />
 

@@ -98,10 +98,10 @@ export default function VehiclePage({ params }: VehiclePageProps) {
   const categories = Object.keys(productsByCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Breadcrumb Navigation */}
       <div className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 py-3">
+        <div className="container mx-auto px-3 sm:px-4 py-3">
           <nav
             className="flex items-center gap-2 text-sm"
             aria-label="Breadcrumb"
@@ -129,7 +129,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
 
       {/* Vehicle Header with Year Selector */}
       <div className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 py-6 md:py-10">
+        <div className="container mx-auto px-3 sm:px-4 py-6 md:py-10">
           <div className="flex items-start gap-4 flex-wrap">
             {/* Icon */}
             <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
@@ -323,7 +323,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
       </div>
 
       {/* Products by Category */}
-      <div className="container mx-auto px-4 py-6 md:py-8 max-w-7xl">
+      <div className="container mx-auto px-3 sm:px-4 py-6 md:py-8 max-w-7xl">
         {categories.length === 0 ? (
           <div className="text-center py-16">
             <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
@@ -374,7 +374,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
       </div>
 
       {/* Back to All Vehicles */}
-      <div className="container mx-auto px-4 pb-8">
+      <div className="container mx-auto px-3 sm:px-4 pb-8">
         <div className="text-center">
           <Link
             href="/"
