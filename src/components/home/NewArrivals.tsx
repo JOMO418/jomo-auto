@@ -18,13 +18,8 @@ export function NewArrivals({ products, onAddToCart }: NewArrivalsProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [addingToCart, setAddingToCart] = useState<string | null>(null);
 
-  // Filter products by category
-  const filteredProducts = selectedCategory === "All"
-    ? products
-    : products.filter(p => p.category === selectedCategory);
-
-  // Limit to 8 products for display
-  const displayProducts = filteredProducts.slice(0, 8);
+  // Show only first 4 products on home page
+  const displayProducts = products.slice(0, 4);
 
   const handleAddToCart = (product: Product) => {
     setAddingToCart(product.id);
@@ -56,25 +51,6 @@ export function NewArrivals({ products, onAddToCart }: NewArrivalsProps) {
           </p>
         </div>
 
-        {/* Category Filter Tabs - Premium Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`
-                px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300
-                ${selectedCategory === category
-                  ? "bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/30 scale-105"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105"
-                }
-              `}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
         {/* Products Grid - Premium Layout */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-10">
           {displayProducts.map((product, index) => (
@@ -91,7 +67,7 @@ export function NewArrivals({ products, onAddToCart }: NewArrivalsProps) {
         {/* View All Button - Premium CTA */}
         <div className="text-center">
           <Link
-            href="/"
+            href="/new-arrivals"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-semibold rounded-xl hover:from-gray-800 hover:to-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group"
           >
             <span>View All New Arrivals</span>
