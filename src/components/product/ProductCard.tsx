@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/lib/types";
 import { PLACEHOLDER_IMAGE } from "@/lib/constants";
 import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface ProductCardProps {
   product: Product;
@@ -43,7 +43,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
           )}
 
           {/* Product Image - Full width, no padding */}
-          <Image
+          <OptimizedImage
             src={product.images[0] || PLACEHOLDER_IMAGE}
             alt={product.name}
             fill

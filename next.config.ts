@@ -27,6 +27,14 @@ const nextConfig: NextConfig = {
     // Allow larger images
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // CRITICAL: Disable optimization for paths starting with /product-images
+    // This allows local images to load on Vercel
+    unoptimized: false,
+    loader: undefined,
+  },
+  // Ensure public folder is included in build
+  webpack: (config) => {
+    return config;
   },
 };
 

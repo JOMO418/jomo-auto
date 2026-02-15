@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import {
   Minus,
   Plus,
@@ -117,7 +117,7 @@ export default function CartPage() {
                       className="group bg-gray-50 rounded-xl p-3 hover:bg-blue-50 transition-all duration-200 border border-gray-100 hover:border-blue-200"
                     >
                       <div className="relative aspect-square rounded-lg overflow-hidden bg-white mb-2">
-                        <Image
+                        <OptimizedImage
                           src={product.images[0] || PLACEHOLDER_IMAGE}
                           alt={product.name}
                           fill
@@ -202,7 +202,7 @@ export default function CartPage() {
                       href={`/product/${item.product.slug}`}
                       className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex-shrink-0 bg-gray-100 rounded-lg md:rounded-xl overflow-hidden group"
                     >
-                      <Image
+                      <OptimizedImage
                         src={item.product.images[0] || PLACEHOLDER_IMAGE}
                         alt={item.product.name}
                         fill
@@ -412,7 +412,7 @@ export default function CartPage() {
                 >
                   <Link href={`/product/${product.slug}`}>
                     <div className="relative aspect-square bg-gray-100">
-                      <Image
+                      <OptimizedImage
                         src={product.images[0] || PLACEHOLDER_IMAGE}
                         alt={product.name}
                         fill

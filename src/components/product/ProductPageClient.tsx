@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart, Check, Package, Shield, Truck, ArrowLeft } from "lucide-react";
 import type { ProductWithDetails, ProductWithCategory } from "@/lib/supabase";
 import { useCartStore } from "@/lib/store";
 import { PLACEHOLDER_IMAGE } from "@/lib/constants";
 import { ProductCard } from "./ProductCard";
+import { OptimizedOptimizedImage } from "@/components/ui/optimized-image";
 
 interface ProductPageClientProps {
   product: ProductWithDetails;
@@ -66,9 +66,9 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
       {/* Product Detail */}
       <div className="container mx-auto px-3 sm:px-4 py-8 max-w-7xl">
         <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
-          {/* Image Gallery */}
+          {/* OptimizedImage Gallery */}
           <div>
-            {/* Main Image */}
+            {/* Main OptimizedImage */}
             <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden mb-4">
               {isOutOfStock && (
                 <div className="absolute inset-0 z-10 bg-black/60 backdrop-blur-sm flex items-center justify-center">
@@ -77,7 +77,7 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
                   </span>
                 </div>
               )}
-              <Image
+              <OptimizedImage
                 src={images[selectedImage]}
                 alt={product.name}
                 fill
@@ -100,7 +100,7 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                   >
-                    <Image
+                    <OptimizedImage
                       src={image}
                       alt={`${product.name} - ${index + 1}`}
                       fill
