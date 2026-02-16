@@ -49,30 +49,30 @@ export function SmartFilterBar() {
     <>
       {/* Premium Filter Bar */}
       <section className="relative w-full bg-gradient-to-b from-white to-gray-50 border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-8">
           {/* Elegant Header */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-6 lg:mb-6">
             <div className="inline-block relative">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 tracking-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-gray-900 mb-2 tracking-tight">
                 Find Your Auto Parts
               </h2>
-              <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
+              <div className="h-1 w-20 lg:w-20 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
             </div>
-            <p className="text-sm md:text-base text-gray-600 mt-3 max-w-2xl mx-auto">
+            <p className="text-sm md:text-base lg:text-base text-gray-600 mt-3 max-w-2xl mx-auto">
               Browse by vehicle model or shop by part category
             </p>
           </div>
 
           {/* Premium Filter Buttons */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6 max-w-4xl lg:max-w-4xl mx-auto">
             {/* Vehicle Filter Button */}
             <button
               onClick={() => setVehicleModalOpen(true)}
               className="
                 group relative overflow-hidden
                 bg-white border-2 border-gray-200
-                rounded-xl md:rounded-2xl
-                px-6 md:px-8 py-6 md:py-8
+                rounded-xl md:rounded-2xl lg:rounded-2xl
+                px-6 md:px-8 lg:px-8 py-6 md:py-6 lg:py-6
                 transition-all duration-300
                 hover:border-blue-500 hover:shadow-xl
                 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20
@@ -81,27 +81,27 @@ export function SmartFilterBar() {
               {/* Background Gradient Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-blue-50/0 to-blue-50/0 group-hover:from-blue-50/80 group-hover:via-blue-50/40 group-hover:to-transparent transition-all duration-500"></div>
 
-              <div className="relative flex items-center gap-4">
+              <div className="relative flex items-center gap-4 lg:gap-4">
                 {/* Icon */}
-                <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <Car className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Car className="w-7 h-7 md:w-8 md:h-8 lg:w-8 lg:h-8 text-white" />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 text-left">
-                  <div className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-1">
+                  <div className="text-xs lg:text-xs font-semibold text-blue-600 uppercase tracking-wider mb-1">
                     Shop by Vehicle
                   </div>
-                  <div className="text-base md:text-lg font-bold text-gray-900 mb-1">
+                  <div className="text-base md:text-lg lg:text-lg font-bold text-gray-900 mb-1">
                     Select Your Vehicle
                   </div>
-                  <div className="text-xs md:text-sm text-gray-500">
+                  <div className="text-xs md:text-sm lg:text-sm text-gray-500">
                     {vehicles.length} vehicles available
                   </div>
                 </div>
 
                 {/* Arrow */}
-                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
               </div>
             </button>
 
@@ -111,8 +111,8 @@ export function SmartFilterBar() {
               className="
                 group relative overflow-hidden
                 bg-white border-2 border-gray-200
-                rounded-xl md:rounded-2xl
-                px-6 md:px-8 py-6 md:py-8
+                rounded-xl md:rounded-2xl lg:rounded-2xl
+                px-6 md:px-8 lg:px-8 py-6 md:py-6 lg:py-6
                 transition-all duration-300
                 hover:border-green-500 hover:shadow-xl
                 focus:outline-none focus:border-green-500 focus:ring-4 focus:ring-green-500/20
@@ -121,33 +121,33 @@ export function SmartFilterBar() {
               {/* Background Gradient Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-green-50/0 via-green-50/0 to-green-50/0 group-hover:from-green-50/80 group-hover:via-green-50/40 group-hover:to-transparent transition-all duration-500"></div>
 
-              <div className="relative flex items-center gap-4">
+              <div className="relative flex items-center gap-4 lg:gap-4">
                 {/* Icon */}
-                <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <Package className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Package className="w-7 h-7 md:w-8 md:h-8 lg:w-8 lg:h-8 text-white" />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 text-left">
-                  <div className="text-xs font-semibold text-green-600 uppercase tracking-wider mb-1">
+                  <div className="text-xs lg:text-xs font-semibold text-green-600 uppercase tracking-wider mb-1">
                     Shop by Category
                   </div>
-                  <div className="text-base md:text-lg font-bold text-gray-900 mb-1">
+                  <div className="text-base md:text-lg lg:text-lg font-bold text-gray-900 mb-1">
                     Browse Categories
                   </div>
-                  <div className="text-xs md:text-sm text-gray-500">
+                  <div className="text-xs md:text-sm lg:text-sm text-gray-500">
                     {categories.length} categories available
                   </div>
                 </div>
 
                 {/* Arrow */}
-                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300" />
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300" />
               </div>
             </button>
           </div>
 
           {/* Trust Badges - Elegant */}
-          <div className="flex items-center justify-center gap-6 md:gap-8 mt-8 text-xs md:text-sm text-gray-500">
+          <div className="flex items-center justify-center gap-6 md:gap-8 lg:gap-8 mt-6 lg:mt-6 text-xs md:text-sm lg:text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
               <span>Genuine Parts</span>

@@ -81,25 +81,25 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-        <div className="container mx-auto px-3 sm:px-4 py-8 md:py-16 max-w-4xl">
-          <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12 text-center">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 md:py-16 lg:py-20 max-w-4xl lg:max-w-5xl">
+          <div className="bg-white rounded-2xl lg:rounded-3xl shadow-sm p-8 md:p-12 lg:p-16 text-center">
             {/* Empty cart icon */}
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center mx-auto mb-6">
-              <ShoppingBag className="w-12 h-12 text-gray-400" />
+            <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center mx-auto mb-6 lg:mb-8">
+              <ShoppingBag className="w-12 h-12 lg:w-16 lg:h-16 text-gray-400" />
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 lg:mb-4">
               Your Cart is Empty
             </h2>
-            <p className="text-gray-600 mb-8 max-w-md mx-auto">
+            <p className="text-gray-600 md:text-lg lg:text-xl mb-8 lg:mb-10 max-w-md lg:max-w-lg mx-auto">
               Start adding quality auto parts to your cart and get them delivered fast!
             </p>
 
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl"
+              className="inline-flex items-center gap-2 lg:gap-3 px-8 lg:px-10 py-4 lg:py-5 text-base lg:text-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl"
             >
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-5 h-5 lg:w-6 lg:w-6" />
               Start Shopping
             </Link>
 
@@ -145,29 +145,29 @@ export default function CartPage() {
     <div className="min-h-screen bg-gray-50 pb-24 md:pb-8 overflow-x-hidden">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 sticky top-0 z-30">
-        <div className="container mx-auto px-3 sm:px-4 py-4 md:py-5 max-w-full">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-4 md:py-5 lg:py-6 max-w-full">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-xl md:text-3xl font-bold text-gray-900">
+              <h1 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
                 Shopping Cart
               </h1>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm md:text-base lg:text-lg text-gray-600 mt-1">
                 {totalItems} {totalItems === 1 ? "item" : "items"} in your cart
               </p>
             </div>
             <Link
               href="/"
-              className="hidden md:inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+              className="hidden md:inline-flex items-center gap-2 lg:gap-3 text-base lg:text-lg text-blue-600 hover:text-blue-700 font-medium transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4 lg:w-5 lg:h-5" />
               Continue Shopping
             </Link>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-3 sm:px-4 py-6 md:py-8 max-w-7xl">
-        <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-6 md:py-8 lg:py-10 xl:py-12 max-w-[1920px] 2xl:max-w-full">
+        <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 xl:gap-10">
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {/* Low stock warning */}
@@ -200,23 +200,23 @@ export default function CartPage() {
                     {/* Product Image */}
                     <Link
                       href={`/product/${item.product.slug}`}
-                      className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex-shrink-0 bg-gray-100 rounded-lg md:rounded-xl overflow-hidden group"
+                      className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 flex-shrink-0 bg-gray-100 rounded-lg md:rounded-xl overflow-hidden group"
                     >
                       <OptimizedImage
                         src={item.product.images[0] || PLACEHOLDER_IMAGE}
                         alt={item.product.name}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 112px"
+                        sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, (max-width: 1024px) 112px, (max-width: 1280px) 128px, 144px"
                       />
                     </Link>
 
                     {/* Product Info */}
                     <div className="flex-1 min-w-0 overflow-hidden">
-                      <div className="flex items-start justify-between gap-2 mb-2">
+                      <div className="flex items-start justify-between gap-2 lg:gap-3 mb-2">
                         <Link
                           href={`/product/${item.product.slug}`}
-                          className="font-semibold text-sm md:text-base text-gray-900 hover:text-blue-600 line-clamp-2 transition-colors"
+                          className="font-semibold text-sm md:text-base lg:text-lg xl:text-xl text-gray-900 hover:text-blue-600 line-clamp-2 transition-colors"
                         >
                           {item.product.name}
                         </Link>
@@ -257,12 +257,12 @@ export default function CartPage() {
                               updateQuantity(item.product.id, item.quantity - 1)
                             }
                             disabled={item.quantity <= 1}
-                            className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center rounded-md hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-95"
+                            className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-md hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-95"
                             aria-label="Decrease quantity"
                           >
-                            <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gray-700" />
+                            <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-700" />
                           </button>
-                          <span className="font-bold text-gray-900 w-7 sm:w-8 md:w-10 text-center text-sm md:text-base">
+                          <span className="font-bold text-gray-900 w-7 sm:w-8 md:w-10 lg:w-12 text-center text-sm md:text-base lg:text-lg">
                             {item.quantity}
                           </span>
                           <button
@@ -270,20 +270,20 @@ export default function CartPage() {
                               updateQuantity(item.product.id, item.quantity + 1)
                             }
                             disabled={item.quantity >= item.product.stock}
-                            className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center rounded-md hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-95"
+                            className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-md hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-95"
                             aria-label="Increase quantity"
                           >
-                            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gray-700" />
+                            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-700" />
                           </button>
                         </div>
 
                         {/* Price */}
                         <div className="text-left sm:text-right">
-                          <p className="text-base sm:text-lg md:text-xl font-bold text-red-600">
+                          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-red-600">
                             {formatPrice(item.product.price * item.quantity)}
                           </p>
                           {item.quantity > 1 && (
-                            <p className="text-xs text-gray-500">
+                            <p className="text-xs md:text-sm lg:text-base text-gray-500">
                               {formatPrice(item.product.price)} each
                             </p>
                           )}
@@ -316,31 +316,31 @@ export default function CartPage() {
 
           {/* Cart Summary - Desktop Sticky */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 lg:sticky lg:top-24 space-y-6">
-              <h2 className="text-xl font-bold text-gray-900">Order Summary</h2>
+            <div className="bg-white rounded-2xl lg:rounded-3xl shadow-sm border border-gray-200 p-6 lg:p-8 xl:p-10 lg:sticky lg:top-24 space-y-6 lg:space-y-8">
+              <h2 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900">Order Summary</h2>
 
               {/* Price breakdown */}
-              <div className="space-y-3">
-                <div className="flex justify-between text-gray-600">
+              <div className="space-y-3 lg:space-y-4">
+                <div className="flex justify-between text-gray-600 text-sm lg:text-base xl:text-lg">
                   <span>Subtotal ({totalItems} items)</span>
                   <span className="font-semibold text-gray-900">
                     {formatPrice(total)}
                   </span>
                 </div>
 
-                <div className="flex justify-between text-gray-600">
-                  <span className="flex items-center gap-1">
-                    <Truck className="w-4 h-4" />
+                <div className="flex justify-between text-gray-600 text-sm lg:text-base xl:text-lg">
+                  <span className="flex items-center gap-1 lg:gap-2">
+                    <Truck className="w-4 h-4 lg:w-5 lg:h-5" />
                     Delivery
                   </span>
-                  <span className="text-sm font-medium text-green-600">
+                  <span className="text-sm lg:text-base font-medium text-green-600">
                     Calculated at checkout
                   </span>
                 </div>
 
                 <div className="h-px bg-gray-200"></div>
 
-                <div className="flex justify-between text-lg md:text-xl font-bold">
+                <div className="flex justify-between text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">
                   <span className="text-gray-900">Total</span>
                   <span className="text-red-600">{formatPrice(total)}</span>
                 </div>
@@ -349,40 +349,40 @@ export default function CartPage() {
               {/* Checkout button */}
               <Link
                 href="/checkout"
-                className="block w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center font-bold rounded-xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:scale-[1.02] active:scale-100"
+                className="block w-full py-4 lg:py-5 xl:py-6 text-base lg:text-lg xl:text-xl bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center font-bold rounded-xl lg:rounded-2xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:scale-[1.02] active:scale-100"
               >
                 Proceed to Checkout
               </Link>
 
               {/* Trust badges */}
-              <div className="pt-6 border-t border-gray-200 space-y-3">
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-5 h-5 text-green-600" />
+              <div className="pt-6 lg:pt-8 border-t border-gray-200 space-y-3 lg:space-y-4">
+                <div className="flex items-center gap-3 lg:gap-4 text-sm lg:text-base text-gray-600">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-lg lg:rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-5 h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-green-600" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium text-gray-900">Secure Checkout</p>
-                    <p className="text-xs text-gray-500">Your payment is safe</p>
+                    <p className="font-medium text-gray-900 text-sm lg:text-base xl:text-lg">Secure Checkout</p>
+                    <p className="text-xs lg:text-sm text-gray-500">Your payment is safe</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
-                    <Truck className="w-5 h-5 text-blue-600" />
+                <div className="flex items-center gap-3 lg:gap-4 text-sm lg:text-base text-gray-600">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-lg lg:rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <Truck className="w-5 h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-blue-600" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium text-gray-900">Fast Delivery</p>
-                    <p className="text-xs text-gray-500">Same-day available</p>
+                    <p className="font-medium text-gray-900 text-sm lg:text-base xl:text-lg">Fast Delivery</p>
+                    <p className="text-xs lg:text-sm text-gray-500">Same-day available</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
-                    <Package className="w-5 h-5 text-amber-600" />
+                <div className="flex items-center gap-3 lg:gap-4 text-sm lg:text-base text-gray-600">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-lg lg:rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+                    <Package className="w-5 h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-amber-600" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium text-gray-900">Genuine Parts</p>
-                    <p className="text-xs text-gray-500">Warranty backed</p>
+                    <p className="font-medium text-gray-900 text-sm lg:text-base xl:text-lg">Genuine Parts</p>
+                    <p className="text-xs lg:text-sm text-gray-500">Warranty backed</p>
                   </div>
                 </div>
               </div>
@@ -392,19 +392,19 @@ export default function CartPage() {
 
         {/* Suggested Products */}
         {suggestedProducts.length > 0 && (
-          <div className="mt-8 md:mt-12 pt-8 md:pt-12 border-t border-gray-200">
-            <div className="flex items-center justify-between mb-4 md:mb-6">
+          <div className="mt-8 md:mt-12 lg:mt-14 xl:mt-16 pt-8 md:pt-12 lg:pt-14 xl:pt-16 border-t border-gray-200">
+            <div className="flex items-center justify-between mb-4 md:mb-6 lg:mb-8">
               <div>
-                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
+                <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900">
                   You May Also Like
                 </h3>
-                <p className="text-xs md:text-sm text-gray-600 mt-1">
+                <p className="text-xs md:text-sm lg:text-base text-gray-600 mt-1">
                   Popular parts other customers purchased
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3 md:gap-4 lg:gap-5 xl:gap-6">
               {suggestedProducts.map((product) => (
                 <div
                   key={product.id}

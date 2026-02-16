@@ -63,22 +63,22 @@ export function PremiumFilterBar({
   return (
     <>
       {/* Filter Bar - Sticky below search */}
-      <div className="sticky top-[140px] md:top-[156px] z-30 bg-white border-b border-gray-200 shadow-md">
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+      <div className="sticky top-[160px] md:top-[177px] lg:top-[177px] z-30 bg-white border-b border-gray-200 shadow-md">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 max-w-[1920px] 2xl:max-w-full">
           {/* DESKTOP VIEW */}
-          <div className="hidden md:block py-4">
-            <div className="flex items-center gap-4">
+          <div className="hidden md:block py-4 lg:py-5 xl:py-6">
+            <div className="flex items-center gap-4 lg:gap-5 xl:gap-6">
               {/* Vehicle Filter */}
               <div className="flex-1">
-                <label className="block text-xs font-bold text-gray-700 mb-2 uppercase tracking-wider">
+                <label className="block text-xs lg:text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">
                   Vehicle
                 </label>
                 <div className="relative">
-                  <Car className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <Car className="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 h-5 w-5 lg:h-6 lg:w-6 text-gray-400" />
                   <select
                     value={selectedVehicle}
                     onChange={(e) => setSelectedVehicle(e.target.value)}
-                    className="w-full pl-10 pr-10 py-3 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl text-gray-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-md"
+                    className="w-full pl-10 lg:pl-12 pr-10 lg:pr-12 py-3 lg:py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl lg:rounded-2xl text-gray-900 font-semibold text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-md"
                   >
                     <option value="">All Vehicles</option>
                     {vehicles.map((vehicle) => (
@@ -87,21 +87,21 @@ export function PremiumFilterBar({
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                  <ChevronDown className="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 h-5 w-5 lg:h-6 lg:w-6 text-gray-400 pointer-events-none" />
                 </div>
               </div>
 
               {/* Category Filter */}
               <div className="flex-1">
-                <label className="block text-xs font-bold text-gray-700 mb-2 uppercase tracking-wider">
+                <label className="block text-xs lg:text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">
                   Category
                 </label>
                 <div className="relative">
-                  <Grid3x3 className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <Grid3x3 className="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 h-5 w-5 lg:h-6 lg:w-6 text-gray-400" />
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full pl-10 pr-10 py-3 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl text-gray-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-md"
+                    className="w-full pl-10 lg:pl-12 pr-10 lg:pr-12 py-3 lg:py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl lg:rounded-2xl text-gray-900 font-semibold text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-md"
                   >
                     <option value="">All Categories</option>
                     {categories.map((category) => (
@@ -110,15 +110,15 @@ export function PremiumFilterBar({
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                  <ChevronDown className="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 h-5 w-5 lg:h-6 lg:w-6 text-gray-400 pointer-events-none" />
                 </div>
               </div>
 
               {/* Results Count & Reset */}
-              <div className="flex items-end gap-3">
+              <div className="flex items-end gap-3 lg:gap-4">
                 {/* Product Count */}
-                <div className="px-5 py-3 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] rounded-xl border border-blue-400/30 shadow-lg">
-                  <p className="text-sm font-bold text-white whitespace-nowrap">
+                <div className="px-5 lg:px-6 xl:px-7 py-3 lg:py-4 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] rounded-xl lg:rounded-2xl border border-blue-400/30 shadow-lg">
+                  <p className="text-sm lg:text-base xl:text-lg font-bold text-white whitespace-nowrap">
                     {totalProducts.toLocaleString()} {totalProducts === 1 ? 'Product' : 'Products'}
                   </p>
                 </div>
@@ -127,9 +127,9 @@ export function PremiumFilterBar({
                 {hasActiveFilters && (
                   <button
                     onClick={clearFilters}
-                    className="px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-xl transition-all flex items-center gap-2 shadow-md hover:shadow-lg"
+                    className="px-4 lg:px-5 xl:px-6 py-3 lg:py-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm lg:text-base rounded-xl lg:rounded-2xl transition-all flex items-center gap-2 lg:gap-3 shadow-md hover:shadow-lg"
                   >
-                    <RotateCcw className="h-4 w-4" />
+                    <RotateCcw className="h-4 w-4 lg:h-5 lg:w-5" />
                     Reset
                   </button>
                 )}

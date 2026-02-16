@@ -78,7 +78,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
             alt={product.name}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-            sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+            sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1536px) 20vw, 16.66vw"
             priority={false}
           />
 
@@ -88,17 +88,17 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
       </Link>
 
       {/* Product Details */}
-      <div className="p-3 md:p-3.5 flex flex-col flex-grow">
+      <div className="p-3 md:p-3.5 lg:p-4 xl:p-5 flex flex-col flex-grow">
         {/* Product Name */}
         <Link href={`/product/${product.slug}`}>
-          <h3 className="text-sm md:text-base font-semibold text-gray-900 line-clamp-2 hover:text-blue-600 transition-colors duration-300 leading-tight mb-1.5">
+          <h3 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 line-clamp-2 hover:text-blue-600 transition-colors duration-300 leading-tight mb-1.5 lg:mb-2">
             {product.name}
           </h3>
         </Link>
 
         {/* Vehicle Compatibility */}
         {product.compatibility && product.compatibility.length > 0 && (
-          <p className="text-[10px] md:text-xs text-gray-500 line-clamp-1 mb-2">
+          <p className="text-[10px] md:text-xs lg:text-sm text-gray-500 line-clamp-1 mb-2 lg:mb-3">
             Fits: {product.compatibility.slice(0, 2).join(", ")}
           </p>
         )}
@@ -107,7 +107,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
         <div className="flex-grow"></div>
 
         {/* Price */}
-        <p className="text-lg md:text-xl font-bold text-red-600 tabular-nums mb-3">
+        <p className="text-lg md:text-xl lg:text-2xl font-bold text-red-600 tabular-nums mb-3 lg:mb-4">
           KSh {priceNumber}
         </p>
 
@@ -116,9 +116,9 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
           onClick={handleOrder}
           disabled={isOutOfStock || isAdding}
           className={`
-            w-full py-2.5 md:py-3 rounded-lg font-bold text-sm md:text-base
+            w-full py-2.5 md:py-3 lg:py-3.5 xl:py-4 rounded-lg lg:rounded-xl font-bold text-sm md:text-base lg:text-lg
             transition-all duration-300 transform
-            flex items-center justify-center gap-2
+            flex items-center justify-center gap-2 lg:gap-3
             shadow-lg hover:shadow-xl
             border border-transparent
             ${isOutOfStock
@@ -135,18 +135,18 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
         >
           {isAdding ? (
             <>
-              <div className="w-5 h-5 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-5 h-5 lg:w-6 lg:h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
               <span className="animate-pulse">Adding...</span>
             </>
           ) : justAdded ? (
             <>
-              <Check className="h-5 w-5 animate-bounce" />
+              <Check className="h-5 w-5 lg:h-6 lg:w-6 animate-bounce" />
               <span className="font-bold">Added to Cart!</span>
-              <Sparkles className="h-4 w-4 animate-pulse" />
+              <Sparkles className="h-4 w-4 lg:h-5 lg:w-5 animate-pulse" />
             </>
           ) : (
             <>
-              <ShoppingCart className={`h-5 w-5 transition-transform duration-300 ${!isOutOfStock && 'group-hover:rotate-12'}`} />
+              <ShoppingCart className={`h-5 w-5 lg:h-6 lg:w-6 transition-transform duration-300 ${!isOutOfStock && 'group-hover:rotate-12'}`} />
               <span className="font-bold">{isOutOfStock ? 'Unavailable' : 'Order Now'}</span>
             </>
           )}

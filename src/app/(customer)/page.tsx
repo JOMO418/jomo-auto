@@ -49,37 +49,37 @@ export default function HomePage() {
       <SmartFilterBar />
 
       {/* Optional: Featured Products Section */}
-      <div className="container mx-auto px-3 sm:px-4 py-8 max-w-7xl">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-8 md:py-10 lg:py-12 xl:py-14 max-w-[1920px] 2xl:max-w-full">
         {/* Featured/Popular Products - Minimal Showcase */}
-        <div className="mb-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+        <div className="mb-8 lg:mb-10 xl:mb-12">
+          <div className="text-center mb-8 lg:mb-10">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-2 lg:mb-3">
               Featured Products
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 md:text-lg lg:text-xl">
               Popular auto parts across all vehicles
             </p>
           </div>
 
-          {/* Category Sections - Compact */}
+          {/* Category Sections - Responsive: 4 mobile, 6 md, 8 lg, 12 xl */}
           <CategorySection
             category="Suspension"
             products={suspensionProducts}
-            limit={4}
+            limit={12}
             onAddToCart={handleAddToCart}
           />
 
           <CategorySection
             category="Brakes"
             products={brakeProducts}
-            limit={4}
+            limit={12}
             onAddToCart={handleAddToCart}
           />
 
           <CategorySection
             category="Engine"
             products={engineProducts}
-            limit={4}
+            limit={12}
             onAddToCart={handleAddToCart}
           />
         </div>

@@ -114,7 +114,7 @@ export function HeroBillboard({
       aria-live="polite"
     >
       {/* Slides Container */}
-      <div className="relative w-full aspect-[16/9] md:aspect-[21/9] lg:h-[28rem]">
+      <div className="relative w-full aspect-[16/9] md:aspect-[21/9] lg:h-[22rem]">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -146,15 +146,15 @@ export function HeroBillboard({
                 {/* Optional Text Content */}
                 {(slide.title || slide.subtitle || slide.cta) && (
                   <div className="absolute inset-0 flex items-end">
-                    <div className="container mx-auto px-4 md:px-6 pb-12 md:pb-16">
+                    <div className="container mx-auto px-4 md:px-6 pb-12 md:pb-14">
                       <div className="max-w-2xl">
                         {slide.title && (
-                          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg">
+                          <h2 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg">
                             {slide.title}
                           </h2>
                         )}
                         {slide.subtitle && (
-                          <p className="text-base md:text-xl text-white/90 mb-4 md:mb-6 drop-shadow-md">
+                          <p className="text-base md:text-xl lg:text-lg text-white/90 mb-4 md:mb-5 drop-shadow-md">
                             {slide.subtitle}
                           </p>
                         )}
@@ -174,6 +174,46 @@ export function HeroBillboard({
             ) : null}
           </div>
         ))}
+      </div>
+
+      {/* Centered Shop Now Button - Always Visible on All Slides */}
+      <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+        <a
+          href="/shop"
+          className="pointer-events-auto group relative px-8 md:px-12 lg:px-14 py-4 md:py-5 lg:py-6 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold text-base md:text-lg lg:text-xl rounded-xl md:rounded-2xl shadow-2xl shadow-blue-900/50 hover:shadow-blue-800/60 transition-all duration-300 hover:scale-105 active:scale-100 border-2 border-white/20 backdrop-blur-sm"
+        >
+          <span className="relative z-10 flex items-center gap-2 md:gap-3">
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              />
+            </svg>
+            Shop Now
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </span>
+          {/* Animated shine effect */}
+          <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+        </a>
       </div>
 
       {/* Navigation Dots ONLY - Clean, Minimal */}
