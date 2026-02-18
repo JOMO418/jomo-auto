@@ -8,23 +8,23 @@ import { MapPin, Phone, Clock, Navigation } from "lucide-react";
  */
 export function MapSection() {
   return (
-    <section id="map" className="relative py-20 md:py-24 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 overflow-hidden">
-      {/* Ambient Glow */}
-      <div className="absolute inset-0 opacity-10">
+    <section id="map" className="relative py-10 md:py-14 bg-[#0A0A0A] overflow-hidden">
+      {/* Subtle brand glow */}
+      <div className="absolute inset-0 opacity-[0.06]">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#E8002D] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-slate-500 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#E8002D] rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 tracking-tight">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 tracking-tight">
             Visit Our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8002D] to-red-300">
               Showroom
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light">
+          <p className="text-sm md:text-base text-gray-400 max-w-xl mx-auto font-light">
             Experience our extensive collection of premium auto parts in person
           </p>
         </div>
@@ -34,7 +34,7 @@ export function MapSection() {
           {/* Contact Cards - Left Side */}
           <div className="lg:col-span-2 space-y-5">
             {/* Location Card */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/[0.15] hover:border-white/30 transition-all duration-300 group">
+            <div className="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10 hover:border-[#E8002D]/40 transition-all duration-300 group">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#E8002D] to-[#B8001F] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <MapPin className="h-6 w-6 text-white" />
@@ -48,7 +48,7 @@ export function MapSection() {
                     href="https://www.google.com/maps/search/?api=1&query=Kirinyaga+Road+Nairobi"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold text-sm transition-colors group"
+                    className="inline-flex items-center gap-2 text-[#E8002D] hover:text-[#FF3355] font-semibold text-sm transition-colors group"
                   >
                     <Navigation className="h-4 w-4" />
                     <span>Get Directions</span>
@@ -58,9 +58,9 @@ export function MapSection() {
             </div>
 
             {/* Phone Card */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/[0.15] hover:border-white/30 transition-all duration-300 group">
+            <div className="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10 hover:border-[#E8002D]/40 transition-all duration-300 group">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#E8002D] to-[#B8001F] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div className="flex-1">
@@ -77,9 +77,9 @@ export function MapSection() {
             </div>
 
             {/* Hours Card */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/[0.15] hover:border-white/30 transition-all duration-300 group">
+            <div className="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10 hover:border-[#E8002D]/40 transition-all duration-300 group">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#2D2D2D] to-[#1A1A1A] border border-white/10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <div className="flex-1">

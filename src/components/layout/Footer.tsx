@@ -73,19 +73,19 @@ export function Footer() {
                 </p>
               </li>
               <li className="flex items-start gap-2.5 lg:gap-3">
-                <Phone className="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-6 text-emerald-400 mt-0.5 flex-shrink-0" />
+                <Phone className="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-6 text-[#E8002D] mt-0.5 flex-shrink-0" />
                 <a
                   href="tel:+254700000000"
-                  className="text-gray-300 hover:text-emerald-400 text-sm lg:text-base xl:text-lg font-light transition-colors"
+                  className="text-gray-300 hover:text-[#E8002D] text-sm lg:text-base xl:text-lg font-light transition-colors"
                 >
                   +254 700 000 000
                 </a>
               </li>
               <li className="flex items-start gap-2.5 lg:gap-3">
-                <Mail className="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-6 text-orange-400 mt-0.5 flex-shrink-0" />
+                <Mail className="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-6 text-[#E8002D] mt-0.5 flex-shrink-0" />
                 <a
                   href="mailto:info@jomoautoworld.co.ke"
-                  className="text-gray-300 hover:text-orange-400 text-sm lg:text-base xl:text-lg font-light transition-colors"
+                  className="text-gray-300 hover:text-[#E8002D] text-sm lg:text-base xl:text-lg font-light transition-colors"
                 >
                   info@jomoautoworld.co.ke
                 </a>
