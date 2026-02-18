@@ -86,7 +86,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
           </p>
           <Link
             href="/"
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white font-semibold rounded-lg hover:from-[#B8001F] hover:to-[#8A0015] transition-all"
           >
             Back to Home
           </Link>
@@ -108,7 +108,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
           >
             <Link
               href="/"
-              className="flex items-center gap-1 text-gray-600 hover:text-blue-600 transition-colors"
+              className="flex items-center gap-1 text-gray-600 hover:text-[#E8002D] transition-colors"
             >
               <Home className="w-4 h-4" />
               <span className="hidden sm:inline">Home</span>
@@ -120,7 +120,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
             {selectedYear && (
               <>
                 <ChevronRight className="w-4 h-4 text-gray-400" />
-                <span className="font-medium text-blue-600">{selectedYear}</span>
+                <span className="font-medium text-[#E8002D]">{selectedYear}</span>
               </>
             )}
           </nav>
@@ -132,7 +132,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
         <div className="container mx-auto px-3 sm:px-4 py-6 md:py-10">
           <div className="flex items-start gap-4 flex-wrap">
             {/* Icon */}
-            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-[#E8002D] to-[#B8001F] flex items-center justify-center flex-shrink-0 shadow-lg">
               <Car className="w-6 h-6 md:w-8 md:h-8 text-white" />
             </div>
 
@@ -149,7 +149,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                   </span>
                 )}
                 {vehicle.models.length > 0 && <span className="text-gray-300">•</span>}
-                <span className="font-semibold text-blue-600">
+                <span className="font-semibold text-[#E8002D]">
                   {filteredProducts.length} parts
                   {selectedYear && ` for ${selectedYear}`}
                 </span>
@@ -168,8 +168,8 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                     border-2 border-gray-200
                     rounded-xl
                     flex items-center justify-between gap-3
-                    hover:border-blue-500 hover:from-blue-50 hover:to-white
-                    focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10
+                    hover:border-[#E8002D] hover:from-red-50 hover:to-white
+                    focus:outline-none focus:border-[#E8002D] focus:ring-4 focus:ring-[#E8002D]/10
                     transition-all duration-300
                     shadow-sm hover:shadow-md
                   "
@@ -211,7 +211,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                           flex items-center justify-between
                           ${
                             selectedYear === null
-                              ? "bg-blue-50 text-blue-600 font-semibold"
+                              ? "bg-red-50 text-[#E8002D] font-semibold"
                               : "text-gray-700 hover:bg-gray-50"
                           }
                           transition-colors border-b border-gray-100
@@ -220,7 +220,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                         <span>All Years</span>
                         {selectedYear === null && (
                           <svg
-                            className="w-5 h-5 text-blue-600"
+                            className="w-5 h-5 text-[#E8002D]"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -254,7 +254,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                                 flex items-center justify-between
                                 ${
                                   selectedYear === year
-                                    ? "bg-blue-50 text-blue-600 font-semibold"
+                                    ? "bg-red-50 text-[#E8002D] font-semibold"
                                     : "text-gray-700 hover:bg-gray-50"
                                 }
                                 transition-colors
@@ -266,7 +266,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                               </span>
                               {selectedYear === year && (
                                 <svg
-                                  className="w-5 h-5 text-blue-600 ml-2"
+                                  className="w-5 h-5 text-[#E8002D] ml-2"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -292,9 +292,9 @@ export default function VehiclePage({ params }: VehiclePageProps) {
 
           {/* Year Info Message */}
           {selectedYear && (
-            <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg flex items-start gap-2">
+            <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2">
               <svg
-                className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"
+                className="w-5 h-5 text-[#E8002D] flex-shrink-0 mt-0.5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -306,7 +306,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <div className="text-sm text-blue-800">
+              <div className="text-sm text-red-800">
                 <span className="font-medium">
                   Showing {filteredProducts.length} parts compatible with {selectedYear} {vehicle.name}.
                 </span>
@@ -339,7 +339,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                   <br />
                   <button
                     onClick={() => setSelectedYear(null)}
-                    className="text-blue-600 hover:underline mt-2"
+                    className="text-[#E8002D] hover:underline mt-2"
                   >
                     View all years
                   </button>
@@ -354,7 +354,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
             </p>
             <Link
               href="/"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-block px-6 py-3 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white font-semibold rounded-lg hover:from-[#B8001F] hover:to-[#8A0015] transition-all"
             >
               Browse All Parts
             </Link>
@@ -378,7 +378,7 @@ export default function VehiclePage({ params }: VehiclePageProps) {
         <div className="text-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-[#E8002D] hover:text-[#B8001F] font-medium transition-colors"
           >
             <ChevronRight className="w-4 h-4 rotate-180" />
             Browse other vehicles

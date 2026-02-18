@@ -11,11 +11,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] text-white overflow-hidden">
       {/* Subtle Ambient Glow */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-slate-600 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gray-800 rounded-full blur-3xl" />
       </div>
 
       {/* Main Footer Content - Compact */}
@@ -26,7 +26,7 @@ export function Footer() {
             {/* Logo */}
             <Link href="/" className="inline-block group mb-4 lg:mb-5">
               <div className="flex items-center gap-2.5 lg:gap-3">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 bg-gradient-to-br from-[#E8002D] to-[#B8001F] rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg shadow-red-900/40 group-hover:scale-110 transition-transform duration-300">
                   <Sparkles className="h-5 w-5 lg:h-6 lg:w-6 xl:h-7 xl:w-7 text-white" />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ export function Footer() {
                     href={`/${link.toLowerCase().replace(' ', '-')}`}
                     className="text-gray-300 hover:text-white transition-colors font-light text-sm lg:text-base xl:text-lg inline-flex items-center gap-2 lg:gap-3 group"
                   >
-                    <span className="w-1 h-1 lg:w-1.5 lg:h-1.5 bg-blue-500 rounded-full group-hover:w-2 group-hover:bg-blue-400 transition-all duration-200" />
+                    <span className="w-1 h-1 lg:w-1.5 lg:h-1.5 bg-red-500 rounded-full group-hover:w-2 group-hover:bg-red-400 transition-all duration-200" />
                     {link}
                   </Link>
                 </li>
@@ -67,7 +67,7 @@ export function Footer() {
             <h4 className="text-sm lg:text-base xl:text-lg font-bold text-white mb-4 lg:mb-5 tracking-tight">Contact</h4>
             <ul className="space-y-2.5 lg:space-y-3">
               <li className="flex items-start gap-2.5 lg:gap-3">
-                <MapPin className="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-6 text-blue-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-6 text-red-400 mt-0.5 flex-shrink-0" />
                 <p className="text-gray-300 text-sm lg:text-base xl:text-lg font-light">
                   Kirinyaga Road, Nairobi
                 </p>

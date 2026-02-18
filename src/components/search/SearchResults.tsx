@@ -62,7 +62,7 @@ export function SearchResults({ results, query, onAddToCart }: SearchResultsProp
             Search Results
           </h1>
           <p className="text-gray-600">
-            Found <span className="font-semibold text-blue-600">{results.length}</span> product{results.length !== 1 ? 's' : ''} matching "{query}"
+            Found <span className="font-semibold text-[#E8002D]">{results.length}</span> product{results.length !== 1 ? 's' : ''} matching "{query}"
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export function SearchResults({ results, query, onAddToCart }: SearchResultsProp
               <Link
                 key={product.id}
                 href={`/product/${product.slug}`}
-                className="group bg-white rounded-lg md:rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all duration-200 flex flex-col"
+                className="group bg-white rounded-lg md:rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-[#E8002D]/30 transition-all duration-200 flex flex-col"
               >
                 {/* Product Image */}
                 <div className="relative aspect-square bg-gray-100 overflow-hidden">
@@ -104,7 +104,7 @@ export function SearchResults({ results, query, onAddToCart }: SearchResultsProp
                 <div className="p-2 md:p-3 flex-1 flex flex-col">
                   {/* Category Badge */}
                   <div className="flex items-center gap-1 mb-1.5">
-                    <span className="inline-flex items-center gap-0.5 text-[10px] md:text-xs px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded-full font-medium">
+                    <span className="inline-flex items-center gap-0.5 text-[10px] md:text-xs px-1.5 py-0.5 bg-red-100 text-[#E8002D] rounded-full font-medium">
                       <Tag className="h-2.5 w-2.5 md:h-3 md:w-3" />
                       <span className="hidden sm:inline">{product.category}</span>
                       <span className="sm:hidden">{product.category.slice(0, 4)}</span>
@@ -117,7 +117,7 @@ export function SearchResults({ results, query, onAddToCart }: SearchResultsProp
                   </div>
 
                   {/* Product Name */}
-                  <h3 className="font-semibold text-xs md:text-sm text-gray-900 mb-1 md:mb-1.5 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
+                  <h3 className="font-semibold text-xs md:text-sm text-gray-900 mb-1 md:mb-1.5 line-clamp-2 group-hover:text-[#E8002D] transition-colors leading-tight">
                     {product.name}
                   </h3>
 
@@ -150,7 +150,7 @@ export function SearchResults({ results, query, onAddToCart }: SearchResultsProp
                           ? "bg-green-500 text-white"
                           : isOutOfStock
                           ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                          : "bg-blue-600 text-white hover:bg-blue-700 active:scale-95"
+                          : "bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white hover:from-[#B8001F] hover:to-[#8A0015] active:scale-95"
                       }`}
                     >
                       {isAdded ? (

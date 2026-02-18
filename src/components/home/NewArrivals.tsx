@@ -30,14 +30,14 @@ export function NewArrivals({ products, onAddToCart }: NewArrivalsProps) {
   return (
     <section className="relative py-16 md:py-20 bg-white overflow-hidden">
       {/* Decorative Elements - Subtle */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-20 -z-10"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full blur-3xl opacity-20 -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-50 rounded-full blur-3xl opacity-20 -z-10"></div>
 
       <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
         {/* Header Section - Premium Design */}
         <div className="text-center mb-12">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-orange-50 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-50 to-orange-50 rounded-full mb-4">
             <Sparkles className="h-4 w-4 text-orange-600" />
             <span className="text-sm font-semibold text-gray-700">Fresh Stock</span>
           </div>
@@ -97,11 +97,11 @@ function ProductCard({
   return (
     <div className="group relative">
       {/* Card Container */}
-      <div className="relative bg-white rounded-2xl overflow-hidden border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 hover:shadow-xl">
+      <div className="relative bg-white rounded-2xl overflow-hidden border-2 border-gray-100 hover:border-[#E8002D]/40 transition-all duration-300 hover:shadow-xl">
         {/* NEW Badge - Premium */}
         {isNew && (
           <div className="absolute top-3 left-3 z-10">
-            <div className="flex items-center gap-1 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-2.5 py-1 rounded-lg shadow-lg">
+            <div className="flex items-center gap-1 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white px-2.5 py-1 rounded-lg shadow-lg">
               <Star className="h-3 w-3 fill-white" />
               <span className="text-xs font-bold">NEW</span>
             </div>
@@ -136,7 +136,7 @@ function ProductCard({
               sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
             />
             {/* Premium Overlay on Hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </Link>
 
@@ -144,14 +144,14 @@ function ProductCard({
         <div className="p-4">
           {/* Category Badge */}
           <div className="mb-2">
-            <span className="inline-block text-[10px] font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">
+            <span className="inline-block text-[10px] font-semibold text-[#E8002D] bg-red-50 px-2 py-1 rounded">
               {product.category}
             </span>
           </div>
 
           {/* Product Name */}
           <Link href={`/product/${product.slug}`}>
-            <h3 className="font-semibold text-sm text-gray-900 mb-2 line-clamp-2 min-h-[40px] group-hover:text-blue-600 transition-colors">
+            <h3 className="font-semibold text-sm text-gray-900 mb-2 line-clamp-2 min-h-[40px] group-hover:text-[#E8002D] transition-colors">
               {product.name}
             </h3>
           </Link>
@@ -197,7 +197,7 @@ function ProductCard({
                 ? "bg-gray-200 text-gray-500 cursor-not-allowed"
                 : isAdding
                 ? "bg-green-600 text-white"
-                : "bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-700 hover:to-blue-600 hover:shadow-lg hover:scale-[1.02] active:scale-95"
+                : "bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white hover:from-[#B8001F] hover:to-[#8A0015] hover:shadow-lg hover:scale-[1.02] active:scale-95"
               }
             `}
           >

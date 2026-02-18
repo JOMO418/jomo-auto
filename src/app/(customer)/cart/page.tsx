@@ -64,8 +64,8 @@ export default function CartPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center mx-auto mb-4 animate-pulse">
-            <ShoppingBag className="w-8 h-8 text-blue-600" />
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center mx-auto mb-4 animate-pulse">
+            <ShoppingBag className="w-8 h-8 text-[#E8002D]" />
           </div>
           <p className="text-gray-500 font-medium">Loading your cart...</p>
         </div>
@@ -97,7 +97,7 @@ export default function CartPage() {
 
             <Link
               href="/"
-              className="inline-flex items-center gap-2 lg:gap-3 px-8 lg:px-10 py-4 lg:py-5 text-base lg:text-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl"
+              className="inline-flex items-center gap-2 lg:gap-3 px-8 lg:px-10 py-4 lg:py-5 text-base lg:text-lg bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white font-semibold rounded-xl hover:from-[#B8001F] hover:to-[#8A0015] transition-all duration-300 shadow-lg shadow-red-900/30 hover:shadow-xl"
             >
               <ArrowLeft className="w-5 h-5 lg:w-6 lg:w-6" />
               Start Shopping
@@ -114,7 +114,7 @@ export default function CartPage() {
                     <Link
                       key={product.id}
                       href={`/product/${product.slug}`}
-                      className="group bg-gray-50 rounded-xl p-3 hover:bg-blue-50 transition-all duration-200 border border-gray-100 hover:border-blue-200"
+                      className="group bg-gray-50 rounded-xl p-3 hover:bg-red-50 transition-all duration-200 border border-gray-100 hover:border-red-200"
                     >
                       <div className="relative aspect-square rounded-lg overflow-hidden bg-white mb-2">
                         <OptimizedImage
@@ -124,7 +124,7 @@ export default function CartPage() {
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <p className="text-xs font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600">
+                      <p className="text-xs font-medium text-gray-900 line-clamp-2 group-hover:text-[#E8002D]">
                         {product.name}
                       </p>
                       <p className="text-sm font-bold text-red-600 mt-1">
@@ -144,24 +144,38 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-gray-50 pb-24 md:pb-8 overflow-x-hidden">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-30">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-4 md:py-5 lg:py-6 max-w-full">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-30 shadow-sm">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-3 md:py-4 lg:py-5 max-w-full">
+          <div className="flex items-center justify-between gap-3">
+            {/* Left: title + count */}
+            <div className="min-w-0">
+              <h1 className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
                 Shopping Cart
               </h1>
-              <p className="text-sm md:text-base lg:text-lg text-gray-600 mt-1">
-                {totalItems} {totalItems === 1 ? "item" : "items"} in your cart
+              <p className="text-xs md:text-sm lg:text-base text-gray-500 mt-0.5">
+                {totalItems} {totalItems === 1 ? "item" : "items"}
               </p>
             </div>
-            <Link
-              href="/"
-              className="hidden md:inline-flex items-center gap-2 lg:gap-3 text-base lg:text-lg text-blue-600 hover:text-blue-700 font-medium transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4 lg:w-5 lg:h-5" />
-              Continue Shopping
-            </Link>
+
+            {/* Right: Continue Shopping + Complete Order */}
+            <div className="flex items-center gap-3 lg:gap-4 flex-shrink-0">
+              <Link
+                href="/"
+                className="hidden sm:inline-flex items-center gap-1.5 text-sm lg:text-base text-gray-500 hover:text-[#E8002D] font-medium transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Continue Shopping
+              </Link>
+
+              {/* PRIMARY CTA — top of page */}
+              <Link
+                href="/checkout"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 md:px-6 lg:px-8 py-2.5 md:py-3 lg:py-3.5 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white font-bold rounded-xl text-sm md:text-base lg:text-lg hover:from-[#B8001F] hover:to-[#8A0015] transition-all duration-300 shadow-lg shadow-red-900/30 hover:shadow-xl hover:scale-[1.02] active:scale-100 whitespace-nowrap"
+              >
+                Complete Order
+                <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -216,7 +230,7 @@ export default function CartPage() {
                       <div className="flex items-start justify-between gap-2 lg:gap-3 mb-2">
                         <Link
                           href={`/product/${item.product.slug}`}
-                          className="font-semibold text-sm md:text-base lg:text-lg xl:text-xl text-gray-900 hover:text-blue-600 line-clamp-2 transition-colors"
+                          className="font-semibold text-sm md:text-base lg:text-lg xl:text-xl text-gray-900 hover:text-[#E8002D] line-clamp-2 transition-colors"
                         >
                           {item.product.name}
                         </Link>
@@ -307,7 +321,7 @@ export default function CartPage() {
             {/* Mobile: Continue shopping link */}
             <Link
               href="/"
-              className="md:hidden flex items-center justify-center gap-2 text-blue-600 hover:text-blue-700 font-medium py-4"
+              className="md:hidden flex items-center justify-center gap-2 text-[#E8002D] hover:text-[#B8001F] font-medium py-4"
             >
               <ArrowLeft className="w-4 h-4" />
               Continue Shopping
@@ -349,9 +363,10 @@ export default function CartPage() {
               {/* Checkout button */}
               <Link
                 href="/checkout"
-                className="block w-full py-4 lg:py-5 xl:py-6 text-base lg:text-lg xl:text-xl bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center font-bold rounded-xl lg:rounded-2xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:scale-[1.02] active:scale-100"
+                className="block w-full py-4 lg:py-5 xl:py-6 text-base lg:text-lg xl:text-xl bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white text-center font-bold rounded-xl lg:rounded-2xl hover:from-[#B8001F] hover:to-[#8A0015] transition-all duration-300 shadow-lg shadow-red-900/30 hover:shadow-xl hover:scale-[1.02] active:scale-100 flex items-center justify-center gap-2"
               >
-                Proceed to Checkout
+                Complete Order
+                <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
               </Link>
 
               {/* Trust badges */}
@@ -367,8 +382,8 @@ export default function CartPage() {
                 </div>
 
                 <div className="flex items-center gap-3 lg:gap-4 text-sm lg:text-base text-gray-600">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-lg lg:rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
-                    <Truck className="w-5 h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-blue-600" />
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-lg lg:rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+                    <Truck className="w-5 h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-[#E8002D]" />
                   </div>
                   <div className="flex-1">
                     <p className="font-medium text-gray-900 text-sm lg:text-base xl:text-lg">Fast Delivery</p>
@@ -408,7 +423,7 @@ export default function CartPage() {
               {suggestedProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl border border-gray-200 overflow-hidden group hover:shadow-lg hover:border-blue-200 transition-all duration-300"
+                  className="bg-white rounded-xl border border-gray-200 overflow-hidden group hover:shadow-lg hover:border-red-200 transition-all duration-300"
                 >
                   <Link href={`/product/${product.slug}`}>
                     <div className="relative aspect-square bg-gray-100">
@@ -423,7 +438,7 @@ export default function CartPage() {
                   </Link>
                   <div className="p-3 md:p-4">
                     <Link href={`/product/${product.slug}`}>
-                      <p className="text-xs md:text-sm font-medium text-gray-900 line-clamp-2 hover:text-blue-600 mb-2">
+                      <p className="text-xs md:text-sm font-medium text-gray-900 line-clamp-2 hover:text-[#E8002D] mb-2">
                         {product.name}
                       </p>
                     </Link>
@@ -432,7 +447,7 @@ export default function CartPage() {
                     </p>
                     <button
                       onClick={() => addItem(product, 1)}
-                      className="w-full py-2 text-sm font-semibold text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-200 active:scale-95"
+                      className="w-full py-2 text-sm font-semibold text-[#E8002D] border-2 border-[#E8002D] rounded-lg hover:bg-[#E8002D] hover:text-white transition-all duration-200 active:scale-95"
                     >
                       Add to Cart
                     </button>
@@ -453,9 +468,9 @@ export default function CartPage() {
           </div>
           <Link
             href="/checkout"
-            className="flex-1 max-w-[200px] sm:max-w-xs py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center font-bold rounded-xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-blue-500/30 active:scale-95 flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base"
+            className="flex-1 max-w-[200px] sm:max-w-xs py-3 sm:py-4 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white text-center font-bold rounded-xl hover:from-[#B8001F] hover:to-[#8A0015] transition-all duration-300 shadow-lg shadow-red-900/30 active:scale-95 flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base"
           >
-            Checkout
+            Complete Order
             <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </Link>
         </div>

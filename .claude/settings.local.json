@@ -22,7 +22,9 @@
       "Bash(git push:*)",
       "Bash(git reset:*)",
       "Bash(git remote set-url:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm run lint:*)",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }

@@ -78,7 +78,7 @@ export function PremiumFilterBar({
                   <select
                     value={selectedVehicle}
                     onChange={(e) => setSelectedVehicle(e.target.value)}
-                    className="w-full pl-10 lg:pl-12 pr-10 lg:pr-12 py-3 lg:py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl lg:rounded-2xl text-gray-900 font-semibold text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-md"
+                    className="w-full pl-10 lg:pl-12 pr-10 lg:pr-12 py-3 lg:py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl lg:rounded-2xl text-gray-900 font-semibold text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-[#E8002D] focus:border-[#E8002D] transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-md"
                   >
                     <option value="">All Vehicles</option>
                     {vehicles.map((vehicle) => (
@@ -101,7 +101,7 @@ export function PremiumFilterBar({
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full pl-10 lg:pl-12 pr-10 lg:pr-12 py-3 lg:py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl lg:rounded-2xl text-gray-900 font-semibold text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-md"
+                    className="w-full pl-10 lg:pl-12 pr-10 lg:pr-12 py-3 lg:py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl lg:rounded-2xl text-gray-900 font-semibold text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-[#E8002D] focus:border-[#E8002D] transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-md"
                   >
                     <option value="">All Categories</option>
                     {categories.map((category) => (
@@ -117,7 +117,7 @@ export function PremiumFilterBar({
               {/* Results Count & Reset */}
               <div className="flex items-end gap-3 lg:gap-4">
                 {/* Product Count */}
-                <div className="px-5 lg:px-6 xl:px-7 py-3 lg:py-4 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] rounded-xl lg:rounded-2xl border border-blue-400/30 shadow-lg">
+                <div className="px-5 lg:px-6 xl:px-7 py-3 lg:py-4 bg-gradient-to-br from-[#E8002D] to-[#B8001F] rounded-xl lg:rounded-2xl border border-red-400/30 shadow-lg">
                   <p className="text-sm lg:text-base xl:text-lg font-bold text-white whitespace-nowrap">
                     {totalProducts.toLocaleString()} {totalProducts === 1 ? 'Product' : 'Products'}
                   </p>
@@ -142,24 +142,24 @@ export function PremiumFilterBar({
                 <span className="text-xs font-bold text-gray-600 uppercase tracking-wider">Active:</span>
                 <div className="flex flex-wrap gap-2">
                   {selectedVehicle && (
-                    <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-br from-blue-50 to-blue-100 text-blue-700 text-xs font-bold rounded-lg border border-blue-200">
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-br from-red-50 to-red-100 text-red-700 text-xs font-bold rounded-lg border border-red-200">
                       <Car className="h-3.5 w-3.5" />
                       {selectedVehicle}
                       <button
                         onClick={() => setSelectedVehicle('')}
-                        className="hover:bg-blue-200 rounded-full p-0.5 transition-colors"
+                        className="hover:bg-red-200 rounded-full p-0.5 transition-colors"
                       >
                         <X className="h-3 w-3" />
                       </button>
                     </span>
                   )}
                   {selectedCategory && (
-                    <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-br from-blue-50 to-blue-100 text-blue-700 text-xs font-bold rounded-lg border border-blue-200">
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-br from-red-50 to-red-100 text-red-700 text-xs font-bold rounded-lg border border-red-200">
                       <Grid3x3 className="h-3.5 w-3.5" />
                       {selectedCategory}
                       <button
                         onClick={() => setSelectedCategory('')}
-                        className="hover:bg-blue-200 rounded-full p-0.5 transition-colors"
+                        className="hover:bg-red-200 rounded-full p-0.5 transition-colors"
                       >
                         <X className="h-3 w-3" />
                       </button>
@@ -178,8 +178,8 @@ export function PremiumFilterBar({
                 onClick={() => setVehicleModalOpen(true)}
                 className={`flex-1 flex items-center justify-center gap-1.5 px-2.5 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95 relative ${
                   selectedVehicle
-                    ? 'bg-gradient-to-br from-amber-500 to-amber-600 text-white border border-amber-400/50'
-                    : 'bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] text-white border border-blue-400/30'
+                    ? 'bg-gradient-to-br from-[#E8002D] to-[#B8001F] text-white border border-red-400/50'
+                    : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-gray-300'
                 }`}
               >
                 <Car className="h-4 w-4 flex-shrink-0" />
@@ -193,8 +193,8 @@ export function PremiumFilterBar({
                 onClick={() => setCategoryModalOpen(true)}
                 className={`flex-1 flex items-center justify-center gap-1.5 px-2.5 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95 relative ${
                   selectedCategory
-                    ? 'bg-gradient-to-br from-amber-500 to-amber-600 text-white border border-amber-400/50'
-                    : 'bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] text-white border border-blue-400/30'
+                    ? 'bg-gradient-to-br from-[#E8002D] to-[#B8001F] text-white border border-red-400/50'
+                    : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-gray-300'
                 }`}
               >
                 <Grid3x3 className="h-4 w-4 flex-shrink-0" />
@@ -217,8 +217,8 @@ export function PremiumFilterBar({
               )}
 
               {/* Product Count */}
-              <div className="px-3 py-3.5 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-200 shadow-md">
-                <p className="text-xs font-bold text-blue-900 whitespace-nowrap tabular-nums">
+              <div className="px-3 py-3.5 bg-[#0A0A0A] rounded-xl border border-[#E8002D]/40 shadow-md">
+                <p className="text-xs font-bold text-white whitespace-nowrap tabular-nums">
                   {totalProducts.toLocaleString()}
                 </p>
               </div>
@@ -229,19 +229,19 @@ export function PremiumFilterBar({
               <div className="flex items-center gap-2 mt-3">
                 <div className="flex flex-wrap gap-2 flex-1">
                   {selectedVehicle && (
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg border border-blue-200">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-red-50 text-red-700 text-xs font-bold rounded-lg border border-red-200">
                       <Car className="h-3 w-3" />
                       {selectedVehicle.length > 15 ? selectedVehicle.substring(0, 15) + '...' : selectedVehicle}
-                      <button onClick={() => setSelectedVehicle('')} className="hover:bg-blue-200 rounded-full p-0.5">
+                      <button onClick={() => setSelectedVehicle('')} className="hover:bg-red-200 rounded-full p-0.5">
                         <X className="h-2.5 w-2.5" />
                       </button>
                     </span>
                   )}
                   {selectedCategory && (
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg border border-blue-200">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-red-50 text-red-700 text-xs font-bold rounded-lg border border-red-200">
                       <Grid3x3 className="h-3 w-3" />
                       {selectedCategory}
-                      <button onClick={() => setSelectedCategory('')} className="hover:bg-blue-200 rounded-full p-0.5">
+                      <button onClick={() => setSelectedCategory('')} className="hover:bg-red-200 rounded-full p-0.5">
                         <X className="h-2.5 w-2.5" />
                       </button>
                     </span>
@@ -249,7 +249,7 @@ export function PremiumFilterBar({
                 </div>
                 <button
                   onClick={clearFilters}
-                  className="text-xs font-bold text-blue-600 hover:text-blue-700 px-2"
+                  className="text-xs font-bold text-red-600 hover:text-red-700 px-2"
                 >
                   Clear
                 </button>
@@ -271,10 +271,10 @@ export function PremiumFilterBar({
           {/* Bottom Sheet */}
           <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl shadow-2xl max-h-[70vh] overflow-hidden flex flex-col animate-slideUp">
             {/* Header */}
-            <div className="flex-shrink-0 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] px-6 py-5 rounded-t-3xl border-b border-blue-400/20">
+            <div className="flex-shrink-0 bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] px-6 py-5 rounded-t-3xl border-b border-[#E8002D]/20">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Car className="h-6 w-6 text-amber-400" />
+                  <Car className="h-6 w-6 text-red-400" />
                   <h3 className="text-xl font-bold text-white">Select Vehicle</h3>
                 </div>
                 <button
@@ -296,7 +296,7 @@ export function PremiumFilterBar({
                 }}
                 className={`w-full px-6 py-4 text-left font-semibold transition-all border-b border-gray-100 ${
                   !selectedVehicle
-                    ? 'bg-blue-50 text-blue-900'
+                    ? 'bg-red-50 text-red-900'
                     : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
               >
@@ -316,7 +316,7 @@ export function PremiumFilterBar({
                   }}
                   className={`w-full px-6 py-4 text-left font-semibold transition-all border-b border-gray-100 ${
                     selectedVehicle === vehicle.fullName
-                      ? 'bg-amber-50 text-amber-900'
+                      ? 'bg-red-50 text-red-900'
                       : 'bg-white text-gray-700 hover:bg-gray-50'
                   }`}
                 >
@@ -340,10 +340,10 @@ export function PremiumFilterBar({
           {/* Bottom Sheet */}
           <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl shadow-2xl max-h-[70vh] overflow-hidden flex flex-col animate-slideUp">
             {/* Header */}
-            <div className="flex-shrink-0 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] px-6 py-5 rounded-t-3xl border-b border-blue-400/20">
+            <div className="flex-shrink-0 bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] px-6 py-5 rounded-t-3xl border-b border-[#E8002D]/20">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Grid3x3 className="h-6 w-6 text-amber-400" />
+                  <Grid3x3 className="h-6 w-6 text-red-400" />
                   <h3 className="text-xl font-bold text-white">Select Category</h3>
                 </div>
                 <button
@@ -365,7 +365,7 @@ export function PremiumFilterBar({
                 }}
                 className={`w-full px-6 py-4 text-left font-semibold transition-all border-b border-gray-100 ${
                   !selectedCategory
-                    ? 'bg-blue-50 text-blue-900'
+                    ? 'bg-red-50 text-red-900'
                     : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
               >
@@ -382,7 +382,7 @@ export function PremiumFilterBar({
                   }}
                   className={`w-full px-6 py-4 text-left font-semibold transition-all border-b border-gray-100 ${
                     selectedCategory === category
-                      ? 'bg-amber-50 text-amber-900'
+                      ? 'bg-red-50 text-red-900'
                       : 'bg-white text-gray-700 hover:bg-gray-50'
                   }`}
                 >

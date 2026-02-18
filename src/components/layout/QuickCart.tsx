@@ -49,19 +49,19 @@ export function QuickCart({ open, onClose }: QuickCartProps) {
       <SheetContent
         side="left"
         hideCloseButton
-        className="w-full max-w-[85vw] sm:max-w-[60vw] md:max-w-[50vw] lg:max-w-[40vw] p-0 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] border-r border-blue-400/20"
+        className="w-full max-w-[85vw] sm:max-w-[60vw] md:max-w-[50vw] lg:max-w-[40vw] p-0 bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] border-r border-[#E8002D]/20"
       >
         <div className="flex flex-col h-full">
           {/* Premium Header */}
           <div className="relative px-5 py-5 border-b border-white/10">
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-amber-400/10 to-blue-600/10 opacity-50"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600/8 via-red-400/5 to-red-600/8 opacity-50"></div>
 
             {/* Title with Cart Count */}
             <div className="relative flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <ShoppingBag className="h-6 w-6 text-amber-400" />
+                  <ShoppingBag className="h-6 w-6 text-[#E8002D]" />
                   {itemCount > 0 && (
                     <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">
                       {itemCount}
@@ -69,10 +69,10 @@ export function QuickCart({ open, onClose }: QuickCartProps) {
                   )}
                 </div>
                 <div>
-                  <h2 className="font-heading text-xl md:text-2xl font-bold text-transparent bg-gradient-to-br from-white via-blue-50 to-amber-50 bg-clip-text">
+                  <h2 className="font-heading text-xl md:text-2xl font-bold text-transparent bg-gradient-to-br from-white via-gray-100 to-red-50 bg-clip-text">
                     Quick Cart
                   </h2>
-                  <p className="text-xs text-blue-200/70 mt-0.5">
+                  <p className="text-xs text-gray-300/70 mt-0.5">
                     {itemCount} {itemCount === 1 ? "item" : "items"}
                   </p>
                 </div>
@@ -94,19 +94,19 @@ export function QuickCart({ open, onClose }: QuickCartProps) {
             {items.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full text-center space-y-4 py-12">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-2xl"></div>
+                  <div className="absolute inset-0 bg-red-400/20 rounded-full blur-2xl"></div>
                   <ShoppingBag className="relative h-20 w-20 text-white/30" />
                 </div>
                 <div>
                   <h3 className="font-heading text-xl font-bold text-white/90 mb-2">
                     Your cart is empty
                   </h3>
-                  <p className="text-sm text-blue-200/70">
+                  <p className="text-sm text-gray-300/70">
                     Add some amazing products to get started!
                   </p>
                 </div>
                 <Link href="/" onClick={onClose}>
-                  <Button className="mt-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white border-0">
+                  <Button className="mt-4 bg-gradient-to-r from-[#E8002D] to-[#B8001F] hover:from-[#B8001F] hover:to-[#8A0015] text-white border-0">
                     Start Shopping
                   </Button>
                 </Link>
@@ -139,7 +139,7 @@ export function QuickCart({ open, onClose }: QuickCartProps) {
                           <Link
                             href={`/product/${item.product.slug}`}
                             onClick={onClose}
-                            className="font-[family-name:var(--font-playfair)] font-semibold text-xs sm:text-sm text-[#0A1E3D] hover:text-[#1E3A5F] line-clamp-2 leading-tight transition-colors"
+                            className="font-[family-name:var(--font-playfair)] font-semibold text-xs sm:text-sm text-[#0A0A0A] hover:text-[#E8002D] line-clamp-2 leading-tight transition-colors"
                           >
                             {item.product.name}
                           </Link>
@@ -224,9 +224,9 @@ export function QuickCart({ open, onClose }: QuickCartProps) {
 
           {/* Footer with Total and Actions */}
           {items.length > 0 && (
-            <div className="relative border-t border-white/10 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] px-4 py-2.5 space-y-2">
+            <div className="relative border-t border-white/10 bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] px-4 py-2.5 space-y-2">
               {/* Background Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-amber-400/10 to-blue-600/10 opacity-50"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600/8 via-red-400/5 to-red-600/8 opacity-50"></div>
 
               {/* Total */}
               <div className="relative flex items-center justify-between pb-2 border-b border-white/10">
@@ -239,7 +239,7 @@ export function QuickCart({ open, onClose }: QuickCartProps) {
                   </span>
                 </div>
                 <div className="text-right">
-                  <span className="font-sans text-xl font-extrabold text-amber-400 tabular-nums leading-none drop-shadow-[0_2px_8px_rgba(251,191,36,0.4)]">
+                  <span className="font-sans text-xl font-extrabold text-[#E8002D] tabular-nums leading-none drop-shadow-[0_2px_8px_rgba(232,0,45,0.4)]">
                     {formatPrice(total)}
                   </span>
                 </div>
@@ -276,7 +276,7 @@ export function QuickCart({ open, onClose }: QuickCartProps) {
               {/* Continue Shopping Link */}
               <button
                 onClick={onClose}
-                className="relative w-full text-center text-xs text-blue-200/70 hover:text-white font-semibold transition-colors uppercase tracking-wide pt-1"
+                className="relative w-full text-center text-xs text-gray-300/70 hover:text-white font-semibold transition-colors uppercase tracking-wide pt-1"
               >
                 Continue Shopping
               </button>

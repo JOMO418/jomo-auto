@@ -28,19 +28,19 @@ export function CategorySection({
       <div className="flex items-end justify-between mb-6 border-b border-gray-200 pb-3">
         {/* Classic Category Header */}
         <div className="relative">
-          <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl lg:text-3xl font-bold text-[#0A1E3D] tracking-tight leading-tight">
+          <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl lg:text-3xl font-bold text-[#0A0A0A] tracking-tight leading-tight">
             {category}
           </h2>
 
           {/* Classic single underline accent */}
-          <div className="absolute -bottom-3 left-0 h-0.5 w-12 md:w-16 bg-[#0A1E3D]"></div>
+          <div className="absolute -bottom-3 left-0 h-0.5 w-12 md:w-16 bg-[#E8002D]"></div>
         </div>
 
         <Link
           href={`/category/${slugify(category)}`}
-          className="group flex items-center gap-1 text-xs font-[family-name:var(--font-playfair)] text-[#0A1E3D] hover:text-[#1E3A5F] uppercase tracking-wider font-semibold transition-colors duration-200 mb-0.5"
+          className="group flex items-center gap-1 text-xs font-[family-name:var(--font-playfair)] text-[#0A0A0A] hover:text-[#E8002D] uppercase tracking-wider font-semibold transition-colors duration-200 mb-0.5"
         >
-          <span className="border-b border-[#0A1E3D]/30 group-hover:border-[#1E3A5F] pb-0.5">
+          <span className="border-b border-[#0A0A0A]/30 group-hover:border-[#E8002D] pb-0.5">
             View All
           </span>
           <ChevronRight className="h-3.5 w-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" />
@@ -62,10 +62,6 @@ export function CategorySection({
           </div>
         </div>
 
-        {/* Scroll hint for mobile */}
-        <div className="md:hidden text-center mt-2">
-          <p className="text-xs text-gray-500">← Swipe to see more →</p>
-        </div>
       </div>
     </section>
   );

@@ -5,16 +5,78 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCartStore } from "@/lib/store";
 import { useEffect, useState } from "react";
-import { QuickCart } from "./QuickCart";
 
 interface BottomNavProps {
   onSearchClick?: () => void;
 }
 
+// Per-icon colour config — always visible, blazing when active
+const COLORS = {
+  shop: {
+    iconActive:    "text-amber-400",
+    iconInactive:  "text-amber-300/80",
+    glowActive:    "drop-shadow-[0_0_12px_rgba(251,191,36,1)] drop-shadow-[0_2px_6px_rgba(251,191,36,0.6)]",
+    glowInactive:  "drop-shadow-[0_0_8px_rgba(251,191,36,0.7)]",
+    bgActive:      "from-amber-500/30 to-amber-600/15",
+    borderActive:  "border-amber-400/70",
+    shadowActive:  "shadow-amber-500/30",
+    bgInactive:    "from-amber-500/8 to-amber-600/4",
+    borderInactive:"border-amber-400/25",
+    ping:          "bg-amber-400/25",
+    labelActive:   "text-amber-400",
+    labelGlow:     "drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]",
+    labelInactive: "text-amber-300/70",
+  },
+  search: {
+    iconActive:    "text-sky-400",
+    iconInactive:  "text-sky-300/80",
+    glowActive:    "drop-shadow-[0_0_12px_rgba(56,189,248,1)] drop-shadow-[0_2px_6px_rgba(56,189,248,0.6)]",
+    glowInactive:  "drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]",
+    bgActive:      "from-sky-500/30 to-sky-600/15",
+    borderActive:  "border-sky-400/70",
+    shadowActive:  "shadow-sky-500/30",
+    bgInactive:    "from-sky-500/8 to-sky-600/4",
+    borderInactive:"border-sky-400/25",
+    ping:          "bg-sky-400/25",
+    labelActive:   "text-sky-400",
+    labelGlow:     "drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]",
+    labelInactive: "text-sky-300/70",
+  },
+  cart: {
+    iconActive:    "text-red-400",
+    iconInactive:  "text-red-300/80",
+    glowActive:    "drop-shadow-[0_0_12px_rgba(232,0,45,1)] drop-shadow-[0_2px_6px_rgba(232,0,45,0.6)]",
+    glowInactive:  "drop-shadow-[0_0_8px_rgba(232,0,45,0.7)]",
+    bgActive:      "from-[#E8002D]/30 to-[#B8001F]/15",
+    borderActive:  "border-[#E8002D]/70",
+    shadowActive:  "shadow-red-500/30",
+    bgInactive:    "from-[#E8002D]/8 to-[#B8001F]/4",
+    borderInactive:"border-[#E8002D]/25",
+    ping:          "bg-[#E8002D]/25",
+    labelActive:   "text-red-400",
+    labelGlow:     "drop-shadow-[0_0_8px_rgba(232,0,45,0.6)]",
+    labelInactive: "text-red-300/70",
+  },
+  account: {
+    iconActive:    "text-emerald-400",
+    iconInactive:  "text-emerald-300/80",
+    glowActive:    "drop-shadow-[0_0_12px_rgba(52,211,153,1)] drop-shadow-[0_2px_6px_rgba(52,211,153,0.6)]",
+    glowInactive:  "drop-shadow-[0_0_8px_rgba(52,211,153,0.7)]",
+    bgActive:      "from-emerald-500/30 to-emerald-600/15",
+    borderActive:  "border-emerald-400/70",
+    shadowActive:  "shadow-emerald-500/30",
+    bgInactive:    "from-emerald-500/8 to-emerald-600/4",
+    borderInactive:"border-emerald-400/25",
+    ping:          "bg-emerald-400/25",
+    labelActive:   "text-emerald-400",
+    labelGlow:     "drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]",
+    labelInactive: "text-emerald-300/70",
+  },
+};
+
 export function BottomNav({ onSearchClick }: BottomNavProps) {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
-  const [quickCartOpen, setQuickCartOpen] = useState(false);
   const getTotalItems = useCartStore((state) => state.getTotalItems);
 
   useEffect(() => {
@@ -28,8 +90,9 @@ export function BottomNav({ onSearchClick }: BottomNavProps) {
       href: "/shop",
       icon: Home,
       label: "Shop",
-      active: pathname === "/shop",
+      active: pathname === "/" || pathname === "/shop",
       type: "link" as const,
+      colors: COLORS.shop,
     },
     {
       icon: Search,
@@ -37,14 +100,16 @@ export function BottomNav({ onSearchClick }: BottomNavProps) {
       active: false,
       type: "button" as const,
       onClick: onSearchClick,
+      colors: COLORS.search,
     },
     {
+      href: "/cart",
       icon: ShoppingCart,
       label: "Cart",
-      active: pathname === "/cart" || quickCartOpen,
+      active: pathname === "/cart",
       badge: count,
-      type: "button" as const,
-      onClick: () => setQuickCartOpen(true),
+      type: "link" as const,
+      colors: COLORS.cart,
     },
     {
       href: "/account",
@@ -52,82 +117,95 @@ export function BottomNav({ onSearchClick }: BottomNavProps) {
       label: "Account",
       active: pathname === "/account",
       type: "link" as const,
+      colors: COLORS.account,
     },
   ];
 
   return (
-    <>
-      <nav className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-t from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] backdrop-blur-xl border-t border-blue-400/20 shadow-2xl shadow-blue-900/40 md:hidden">
-        <div className="flex items-center justify-around h-14 pb-safe">
-          {navItems.map((item, index) => {
-            const Icon = item.icon;
-            const content = (
-              <>
-                <div className="relative group">
-                  {/* Icon glow effect */}
-                  <div className={`absolute inset-0 rounded-full blur-md transition-all duration-300 ${
-                    item.active
-                      ? "bg-amber-400/30 opacity-100"
-                      : "bg-blue-400/0 opacity-0 group-hover:bg-blue-400/20 group-hover:opacity-100"
-                  }`}></div>
+    <nav className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-t from-[#080808] via-[#111111] to-[#080808] backdrop-blur-xl border-t border-white/5 shadow-2xl shadow-black/80 md:hidden">
+      {/* Ultra-thin top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-                  {/* Icon with realistic depth */}
-                  <Icon className={`relative h-5 w-5 transition-all duration-300 ${
-                    item.active
-                      ? "text-amber-300 drop-shadow-[0_2px_8px_rgba(251,191,36,0.6)]"
-                      : "text-blue-200/80 drop-shadow-[0_1px_4px_rgba(96,165,250,0.3)] group-hover:text-blue-100 group-hover:scale-110"
-                  }`} />
+      <div className="flex items-center justify-around h-[56px] pb-safe px-1">
+        {navItems.map((item, index) => {
+          const Icon = item.icon;
+          const c = item.colors;
 
-                  {/* Premium badge with glow */}
-                  {item.badge && item.badge > 0 && (
-                    <span className="absolute -top-1.5 -right-1.5 bg-gradient-to-br from-amber-400 to-amber-600 text-white text-[10px] font-bold rounded-full h-4 min-w-[16px] px-1 flex items-center justify-center shadow-lg shadow-amber-500/50 animate-pulse-subtle border border-amber-200/30">
-                      {item.badge}
-                    </span>
-                  )}
-                </div>
-
-                {/* Refined label text */}
-                <span className={`text-[10px] mt-0.5 font-medium tracking-wide transition-all duration-300 ${
-                  item.active
-                    ? "text-amber-200 drop-shadow-[0_1px_4px_rgba(251,191,36,0.4)]"
-                    : "text-blue-200/70 group-hover:text-blue-100"
-                }`}>
-                  {item.label}
-                </span>
-              </>
-            );
-
-            const className = `flex flex-col items-center justify-center flex-1 h-full transition-all duration-300 group ${
-              item.active ? "scale-105" : "hover:scale-105"
-            }`;
-
-            if (item.type === "button") {
-              return (
-                <button
-                  key={`button-${index}`}
-                  onClick={item.onClick}
-                  className={className}
-                >
-                  {content}
-                </button>
-              );
-            }
-
-            return (
-              <Link
-                key={item.href}
-                href={item.href!}
-                className={className}
+          const iconPill = (
+            <div className="flex flex-col items-center justify-center gap-1">
+              {/* Icon pill */}
+              <div
+                className={`
+                  relative flex items-center justify-center
+                  w-[44px] h-[30px] rounded-xl
+                  bg-gradient-to-br
+                  transition-all duration-300
+                  ${item.active
+                    ? `${c.bgActive} border ${c.borderActive} shadow-md ${c.shadowActive} scale-[1.08] -translate-y-0.5`
+                    : `${c.bgInactive} border ${c.borderInactive}`
+                  }
+                `}
               >
-                {content}
-              </Link>
-            );
-          })}
-        </div>
-      </nav>
+                {/* Pulse ring when active */}
+                {item.active && (
+                  <div
+                    className={`absolute inset-0 rounded-xl ${c.ping} animate-ping opacity-50 pointer-events-none`}
+                  />
+                )}
 
-      {/* Quick Cart Modal */}
-      <QuickCart open={quickCartOpen} onClose={() => setQuickCartOpen(false)} />
-    </>
+                {/* The icon itself */}
+                <Icon
+                  className={`
+                    relative h-[18px] w-[18px] transition-all duration-300
+                    ${item.active ? `${c.iconActive} ${c.glowActive}` : `${c.iconInactive} ${c.glowInactive}`}
+                  `}
+                />
+
+                {/* Cart badge */}
+                {"badge" in item && item.badge && item.badge > 0 ? (
+                  <span className="absolute -top-2 -right-1.5 bg-gradient-to-br from-[#E8002D] to-[#B8001F] text-white text-[9px] font-bold rounded-full h-[18px] min-w-[18px] px-1 flex items-center justify-center shadow-lg shadow-red-900/60 border border-white/40 leading-none">
+                    {item.badge > 99 ? "99+" : item.badge}
+                  </span>
+                ) : null}
+              </div>
+
+              {/* Label */}
+              <span
+                className={`
+                  text-[8px] font-bold tracking-widest uppercase transition-all duration-300
+                  ${item.active ? `${c.labelActive} ${c.labelGlow}` : c.labelInactive}
+                `}
+              >
+                {item.label}
+              </span>
+            </div>
+          );
+
+          if (item.type === "button") {
+            return (
+              <button
+                key={`btn-${index}`}
+                onClick={item.onClick}
+                className="flex flex-col items-center justify-center flex-1 h-full"
+                aria-label={item.label}
+              >
+                {iconPill}
+              </button>
+            );
+          }
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href!}
+              className="flex flex-col items-center justify-center flex-1 h-full"
+              aria-label={item.label}
+            >
+              {iconPill}
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
   );
 }

@@ -56,7 +56,7 @@ export function SmartFilterBar() {
               <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-gray-900 mb-2 tracking-tight">
                 Find Your Auto Parts
               </h2>
-              <div className="h-1 w-20 lg:w-20 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
+              <div className="h-1 w-20 lg:w-20 bg-gradient-to-r from-[#E8002D] to-[#B8001F] mx-auto rounded-full"></div>
             </div>
             <p className="text-sm md:text-base lg:text-base text-gray-600 mt-3 max-w-2xl mx-auto">
               Browse by vehicle model or shop by part category
@@ -74,22 +74,22 @@ export function SmartFilterBar() {
                 rounded-xl md:rounded-2xl lg:rounded-2xl
                 px-6 md:px-8 lg:px-8 py-6 md:py-6 lg:py-6
                 transition-all duration-300
-                hover:border-blue-500 hover:shadow-xl
-                focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20
+                hover:border-[#E8002D] hover:shadow-xl
+                focus:outline-none focus:border-[#E8002D] focus:ring-4 focus:ring-[#E8002D]/20
               "
             >
               {/* Background Gradient Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-blue-50/0 to-blue-50/0 group-hover:from-blue-50/80 group-hover:via-blue-50/40 group-hover:to-transparent transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-red-50/0 via-red-50/0 to-red-50/0 group-hover:from-red-50/80 group-hover:via-red-50/40 group-hover:to-transparent transition-all duration-500"></div>
 
               <div className="relative flex items-center gap-4 lg:gap-4">
                 {/* Icon */}
-                <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 rounded-xl bg-gradient-to-br from-[#E8002D] to-[#B8001F] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Car className="w-7 h-7 md:w-8 md:h-8 lg:w-8 lg:h-8 text-white" />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 text-left">
-                  <div className="text-xs lg:text-xs font-semibold text-blue-600 uppercase tracking-wider mb-1">
+                  <div className="text-xs lg:text-xs font-semibold text-[#E8002D] uppercase tracking-wider mb-1">
                     Shop by Vehicle
                   </div>
                   <div className="text-base md:text-lg lg:text-lg font-bold text-gray-900 mb-1">
@@ -101,7 +101,7 @@ export function SmartFilterBar() {
                 </div>
 
                 {/* Arrow */}
-                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 text-gray-400 group-hover:text-[#E8002D] group-hover:translate-x-1 transition-all duration-300" />
               </div>
             </button>
 
@@ -154,7 +154,7 @@ export function SmartFilterBar() {
             </div>
             <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-[#E8002D]"></div>
               <span>Same-Day Delivery</span>
             </div>
             <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
@@ -171,7 +171,7 @@ export function SmartFilterBar() {
         <div className="fixed inset-0 z-50 overflow-y-auto animate-fadeIn">
           {/* Backdrop - Elegant blur */}
           <div
-            className="fixed inset-0 bg-gradient-to-br from-gray-900/80 via-blue-900/60 to-gray-900/80 backdrop-blur-md transition-opacity duration-300"
+            className="fixed inset-0 bg-gradient-to-br from-gray-900/80 via-[#8A0015]/60 to-gray-900/80 backdrop-blur-md transition-opacity duration-300"
             onClick={() => setVehicleModalOpen(false)}
           />
 
@@ -205,7 +205,7 @@ export function SmartFilterBar() {
                     value={vehicleSearch}
                     onChange={(e) => setVehicleSearch(e.target.value)}
                     placeholder="Search by name or model code (e.g., Fielder, NZE141)..."
-                    className="w-full pl-12 pr-4 py-4 text-base bg-gray-50 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-blue-500 focus:bg-white transition-all placeholder:text-gray-400"
+                    className="w-full pl-12 pr-4 py-4 text-base bg-gray-50 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-[#E8002D] focus:bg-white transition-all placeholder:text-gray-400"
                     autoFocus
                   />
                 </div>
@@ -223,7 +223,7 @@ export function SmartFilterBar() {
                     {/* Mobile: Swipe hint */}
                     <div className="md:hidden mb-4 flex items-center justify-center gap-2 text-sm text-gray-500">
                       <span>Swipe to browse</span>
-                      <span className="text-blue-600">→</span>
+                      <span className="text-[#E8002D]">→</span>
                     </div>
 
                     <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 pb-4 snap-x snap-mandatory md:snap-none scroll-smooth">
@@ -234,11 +234,11 @@ export function SmartFilterBar() {
                         className="group relative overflow-hidden text-left flex-shrink-0 w-[280px] md:w-auto snap-start"
                       >
                         {/* Premium Card with Luxury Design */}
-                        <div className="relative h-full bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 min-h-[200px]">
+                        <div className="relative h-full bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#E8002D] hover:shadow-2xl transition-all duration-300 min-h-[200px]">
                           {/* Popular Badge - Top Right */}
                           {vehicle.popular && index < 6 && (
                             <div className="absolute top-4 right-4">
-                              <div className="px-2.5 py-1 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-[10px] font-bold rounded-full shadow-lg">
+                              <div className="px-2.5 py-1 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white text-[10px] font-bold rounded-full shadow-lg">
                                 POPULAR
                               </div>
                             </div>
@@ -252,7 +252,7 @@ export function SmartFilterBar() {
                           </div>
 
                           {/* Vehicle Name - Large, Bold, Premium Typography */}
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">
+                          <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#E8002D] transition-colors leading-tight">
                             {vehicle.name}
                           </h3>
 
@@ -271,7 +271,7 @@ export function SmartFilterBar() {
                           {/* Parts Count - Premium Display */}
                           <div className="flex items-baseline justify-between">
                             <div>
-                              <span className="text-3xl font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
+                              <span className="text-3xl font-bold text-[#E8002D] group-hover:text-[#B8001F] transition-colors">
                                 {vehicle.productCount}
                               </span>
                               <span className="text-sm text-gray-500 ml-2 font-medium">
@@ -280,13 +280,13 @@ export function SmartFilterBar() {
                             </div>
 
                             {/* Arrow - Minimal */}
-                            <div className="w-10 h-10 rounded-full bg-gray-50 group-hover:bg-blue-600 flex items-center justify-center transition-all duration-300">
+                            <div className="w-10 h-10 rounded-full bg-gray-50 group-hover:bg-[#E8002D] flex items-center justify-center transition-all duration-300">
                               <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                             </div>
                           </div>
 
                           {/* Hover Effect - Premium Glow */}
-                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 to-blue-600/0 group-hover:from-blue-500/5 group-hover:to-blue-600/10 transition-all duration-300 pointer-events-none"></div>
+                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#E8002D]/0 to-[#B8001F]/0 group-hover:from-[#E8002D]/5 group-hover:to-[#B8001F]/10 transition-all duration-300 pointer-events-none"></div>
                         </div>
                       </button>
                       ))}
@@ -347,7 +347,7 @@ export function SmartFilterBar() {
                     value={categorySearch}
                     onChange={(e) => setCategorySearch(e.target.value)}
                     placeholder="Search categories (e.g., Suspension, Brakes, Engine)..."
-                    className="w-full pl-12 pr-4 py-4 text-base bg-gray-50 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-blue-500 focus:bg-white transition-all placeholder:text-gray-400"
+                    className="w-full pl-12 pr-4 py-4 text-base bg-gray-50 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-[#E8002D] focus:bg-white transition-all placeholder:text-gray-400"
                     autoFocus
                   />
                 </div>

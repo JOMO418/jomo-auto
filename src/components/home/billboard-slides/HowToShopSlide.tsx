@@ -6,11 +6,11 @@
  */
 export function HowToShopSlide() {
   return (
-    <div className="relative w-full h-full bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 overflow-hidden flex items-center justify-center px-4 py-8">
+    <div className="relative w-full h-full bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#B8001F] overflow-hidden flex items-center justify-center px-4 py-8">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-300 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-red-300 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
@@ -25,7 +25,7 @@ export function HowToShopSlide() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3">
             3 Easy Steps
           </h2>
-          <p className="text-sm md:text-base text-blue-100">
+          <p className="text-sm md:text-base text-white/70">
             Finding parts has never been easier
           </p>
         </div>
@@ -35,13 +35,13 @@ export function HowToShopSlide() {
           {/* Step 1 */}
           <div className="flex items-center gap-4 md:flex-col md:gap-3 text-left md:text-center w-full md:w-auto max-w-sm">
             <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg">
-              <div className="text-2xl md:text-3xl font-bold text-blue-600">1</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#E8002D]">1</div>
             </div>
             <div className="flex-1 md:flex-initial">
               <h3 className="text-base md:text-lg font-bold text-white mb-1">
                 Find Your Part
               </h3>
-              <p className="text-xs md:text-sm text-blue-100">
+              <p className="text-xs md:text-sm text-white/70">
                 Search by vehicle or category
               </p>
             </div>
@@ -57,13 +57,13 @@ export function HowToShopSlide() {
           {/* Step 2 */}
           <div className="flex items-center gap-4 md:flex-col md:gap-3 text-left md:text-center w-full md:w-auto max-w-sm">
             <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg">
-              <div className="text-2xl md:text-3xl font-bold text-blue-600">2</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#E8002D]">2</div>
             </div>
             <div className="flex-1 md:flex-initial">
               <h3 className="text-base md:text-lg font-bold text-white mb-1">
                 Add to Cart
               </h3>
-              <p className="text-xs md:text-sm text-blue-100">
+              <p className="text-xs md:text-sm text-white/70">
                 Select quantity & checkout
               </p>
             </div>
@@ -79,13 +79,13 @@ export function HowToShopSlide() {
           {/* Step 3 */}
           <div className="flex items-center gap-4 md:flex-col md:gap-3 text-left md:text-center w-full md:w-auto max-w-sm">
             <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg">
-              <div className="text-2xl md:text-3xl font-bold text-blue-600">3</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#E8002D]">3</div>
             </div>
             <div className="flex-1 md:flex-initial">
               <h3 className="text-base md:text-lg font-bold text-white mb-1">
                 Fast Delivery
               </h3>
-              <p className="text-xs md:text-sm text-blue-100">
+              <p className="text-xs md:text-sm text-white/70">
                 Same-day in Nairobi
               </p>
             </div>

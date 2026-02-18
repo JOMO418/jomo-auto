@@ -1,27 +1,39 @@
 /**
  * JOMO AUTO WORLD - Design System Constants
- * Apple/Amazon Professional Standard
+ * Premium Black & Red Automotive Theme
  *
- * Clean, minimal, efficient design tokens
+ * Black structure · Red action · White space
  */
 
 // ============================================
-// COLORS - Professional B2B Palette
+// COLORS - Premium Black + Red Palette
 // ============================================
 
 export const colors = {
-  // Primary Navy (Brand)
-  navy: {
-    900: '#0A1E3D',
-    700: '#1E3A5F',
-    600: '#2A4A70',
-    500: '#3A5A80',
-    400: '#5A7A9F',
+  // Brand Reds
+  red: {
+    tint:   '#FFF0F3',   // Barely-there red backgrounds
+    100:    '#FFD6DE',   // Light red (badges, tags)
+    300:    '#FF6B85',   // Mid-light red
+    400:    '#FF3355',   // Bright red (highlights)
+    500:    '#E8002D',   // PRIMARY — CTAs, prices, active states
+    600:    '#B8001F',   // Hover/depth (gradient end)
+    700:    '#8A0015',   // Pressed states
+    800:    '#5C000D',   // Deep red (shadows)
   },
 
-  // Neutral Grays (Apple-inspired)
+  // Carbon Black Palette
+  black: {
+    pure:     '#000000',   // Absolute black (rare accents)
+    jet:      '#0A0A0A',   // Header, footer, sidebar backgrounds
+    carbon:   '#1A1A1A',   // Elevated dark surfaces, dropdowns
+    graphite: '#2D2D2D',   // Borders on dark surfaces
+    smoke:    '#404040',   // Muted icons on dark bg
+  },
+
+  // Neutral Grays (kept from original — these are correct)
   gray: {
-    50: '#F9FAFB',
+    50:  '#F9FAFB',
     100: '#F3F4F6',
     200: '#E5E7EB',
     300: '#D1D5DB',
@@ -34,29 +46,44 @@ export const colors = {
   },
 
   // Semantic Colors
-  primary: '#3B82F6',      // Blue - CTAs, links (professional, trustworthy)
-  success: '#10B981',      // Green - In stock, success states
-  warning: '#F59E0B',      // Amber - Low stock, warnings
-  error: '#EF4444',        // Red - Out of stock, errors
+  primary: '#E8002D',      // Racing Red — CTAs, links, active
+  success: '#16A34A',      // Green — cart confirmations, in-stock
+  warning: '#D97706',      // Amber — promotions, deals, low stock
+  error:   '#E8002D',      // Same as primary red
 
   // Background & Surface
-  white: '#FFFFFF',
-  background: '#FAFBFC',   // Slight off-white for main bg
-  surface: '#FFFFFF',      // Card backgrounds
+  white:      '#FFFFFF',
+  background: '#F8F8F8',   // Slightly off-white page background
+  surface:    '#FFFFFF',   // Card backgrounds
 
   // Borders
   border: {
-    light: '#E5E7EB',
-    default: '#D1D5DB',
-    dark: '#9CA3AF',
+    light:   '#E5E7EB',    // Light dividers on white
+    default: '#D4D4D4',    // Standard borders
+    dark:    '#404040',    // Borders on dark surfaces
+    red:     '#E8002D',    // Red highlight borders (hover states)
   },
 
   // Text
   text: {
-    primary: '#111827',
-    secondary: '#4B5563',
-    tertiary: '#6B7280',
-    inverse: '#FFFFFF',
+    primary:   '#0A0A0A',  // Body text on white
+    secondary: '#4B5563',  // Supporting text
+    tertiary:  '#6B7280',  // Muted/meta text
+    inverse:   '#FFFFFF',  // Text on dark backgrounds
+    red:       '#E8002D',  // Red emphasis (prices, active labels)
+  },
+
+  // Gradients — defined once, used everywhere
+  gradient: {
+    // Structural: Header, Sidebar, Footer, dark bars
+    structural:    'from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A]',
+    // Primary CTA: Order Now, Checkout, Shop All buttons
+    primary:       'from-[#E8002D] to-[#B8001F]',
+    primaryHover:  'from-[#B8001F] to-[#8A0015]',
+    // Hero / banner sections: dramatic diagonal black-to-red
+    hero:          'from-[#0A0A0A] via-[#1A1A1A] to-[#B8001F]',
+    // Subtle red tint for section accents
+    redAccent:     'from-[#E8002D] via-[#FF3355] to-[#E8002D]',
   },
 } as const;
 
@@ -290,11 +317,11 @@ export const responsive = {
  */
 export const focusRing = {
   default: `
-    outline: 2px solid ${colors.primary};
+    outline: 2px solid ${colors.red[500]};
     outline-offset: 2px;
   `,
   within: `
-    outline: 2px solid ${colors.primary};
+    outline: 2px solid ${colors.red[500]};
     outline-offset: -2px;
   `,
 };

@@ -60,10 +60,10 @@ export function SearchBar({ isOpen, onClose, onSearch, initialQuery = "" }: Sear
       {/* Search Bar - Slim and positioned below header */}
       <div className="fixed top-[120px] md:top-[136px] left-0 right-0 z-50 px-4 animate-in slide-in-from-top-2 duration-200">
         <div className="max-w-4xl mx-auto relative">
-          <div className="bg-white rounded-2xl shadow-2xl border border-blue-200/50 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-2xl border border-[#E8002D]/20 overflow-hidden">
             {/* Search Input */}
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-600" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#E8002D]" />
               <input
                 ref={inputRef}
                 type="text"
@@ -87,10 +87,10 @@ export function SearchBar({ isOpen, onClose, onSearch, initialQuery = "" }: Sear
                 {/* Elegant Close Button */}
                 <button
                   onClick={handleClose}
-                  className="p-1.5 hover:bg-blue-50 rounded-lg transition-all duration-300 group/close border border-transparent hover:border-blue-200/50"
+                  className="p-1.5 hover:bg-red-50 rounded-lg transition-all duration-300 group/close border border-transparent hover:border-[#E8002D]/30"
                   aria-label="Close search"
                 >
-                  <X className="h-5 w-5 text-blue-500 group-hover/close:text-blue-700 group-hover/close:rotate-90 transition-all duration-300" />
+                  <X className="h-5 w-5 text-[#E8002D]/70 group-hover/close:text-[#E8002D] group-hover/close:rotate-90 transition-all duration-300" />
                 </button>
               </div>
             </div>

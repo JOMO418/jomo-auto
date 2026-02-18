@@ -6,11 +6,11 @@
  */
 export function WhyChooseUsSlide() {
   return (
-    <div className="relative w-full h-full bg-gradient-to-br from-teal-600 via-cyan-700 to-blue-800 overflow-hidden flex items-center justify-center px-4 py-8">
+    <div className="relative w-full h-full bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#B8001F] overflow-hidden flex items-center justify-center px-4 py-8">
       {/* Elegant Background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-1/4 w-72 h-72 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-teal-300 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-red-400 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
@@ -28,7 +28,7 @@ export function WhyChooseUsSlide() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3">
             Trusted by <span className="text-yellow-300">Thousands</span>
           </h2>
-          <p className="text-sm md:text-base text-teal-100">
+          <p className="text-sm md:text-base text-white/70">
             Excellence in every part, every time
           </p>
         </div>
@@ -40,7 +40,7 @@ export function WhyChooseUsSlide() {
             <div className="text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">
               5K+
             </div>
-            <div className="text-xs md:text-sm text-teal-100 font-medium">
+            <div className="text-xs md:text-sm text-white/70 font-medium">
               Happy Customers
             </div>
           </div>
@@ -50,7 +50,7 @@ export function WhyChooseUsSlide() {
             <div className="text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">
               15+
             </div>
-            <div className="text-xs md:text-sm text-teal-100 font-medium">
+            <div className="text-xs md:text-sm text-white/70 font-medium">
               Years Experience
             </div>
           </div>
@@ -63,7 +63,7 @@ export function WhyChooseUsSlide() {
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             </div>
-            <div className="text-xs md:text-sm text-teal-100 font-medium">
+            <div className="text-xs md:text-sm text-white/70 font-medium">
               Average Rating
             </div>
           </div>
@@ -73,7 +73,7 @@ export function WhyChooseUsSlide() {
             <div className="text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">
               24/7
             </div>
-            <div className="text-xs md:text-sm text-teal-100 font-medium">
+            <div className="text-xs md:text-sm text-white/70 font-medium">
               Support Available
             </div>
           </div>

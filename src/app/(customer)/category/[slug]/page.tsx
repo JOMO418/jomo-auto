@@ -1,14 +1,9 @@
-"use client";
-
-import { use } from "react";
 import Link from "next/link";
 import { ChevronRight, Home, Package } from "lucide-react";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { getProductsByCategory } from "@/lib/dummy-data";
 import { groupProductsByVehicle } from "@/lib/vehicle-utils";
-import { useCartStore } from "@/lib/store";
 import { CATEGORIES } from "@/lib/constants";
-import type { Product } from "@/lib/types";
 import { notFound } from "next/navigation";
 import { slugify } from "@/lib/utils";
 
@@ -17,12 +12,10 @@ interface CategoryPageProps {
 }
 
 /**
- * Category Page - Shows all parts in a category, grouped by vehicle
- * Professional Apple/Amazon-standard design
+ * Category Page - Server Component for instant product card display
  */
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const { slug } = use(params);
-  const addItem = useCartStore((state) => state.addItem);
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { slug } = await params;
 
   // Find category by slug
   const category = CATEGORIES.find(
@@ -37,10 +30,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   const productsByVehicle = groupProductsByVehicle(category);
   const vehicles = Object.keys(productsByVehicle).sort();
 
-  const handleAddToCart = (product: Product) => {
-    addItem(product, 1);
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Breadcrumb Navigation */}
@@ -49,7 +38,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           <nav className="flex items-center gap-2 text-sm" aria-label="Breadcrumb">
             <Link
               href="/"
-              className="flex items-center gap-1 text-gray-600 hover:text-blue-600 transition-colors"
+              className="flex items-center gap-1 text-gray-600 hover:text-[#E8002D] transition-colors"
             >
               <Home className="w-4 h-4" />
               <span className="hidden sm:inline">Home</span>
@@ -101,13 +90,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               No Parts Available
             </h2>
             <p className="text-gray-600 mb-6">
-              We currently don't have any {category} parts listed.
+              We currently don&apos;t have any {category} parts listed.
               <br />
               Check back soon or contact us for availability.
             </p>
             <Link
               href="/"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-block px-6 py-3 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white font-semibold rounded-lg hover:from-[#B8001F] hover:to-[#8A0015] transition-all"
             >
               Browse All Categories
             </Link>
@@ -119,8 +108,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 {/* Vehicle Section Header */}
                 <div className="flex items-center justify-between mb-6 border-b border-gray-200 pb-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
-                      <Package className="w-4 h-4 text-blue-600" />
+                    <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center">
+                      <Package className="w-4 h-4 text-[#E8002D]" />
                     </div>
                     <div>
                       <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
@@ -135,7 +124,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
                   <Link
                     href={`/vehicle/${slugify(vehicleName)}`}
-                    className="hidden sm:flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+                    className="hidden sm:flex items-center gap-1 text-sm font-medium text-[#E8002D] hover:text-[#B8001F] transition-colors"
                   >
                     View all {vehicleName} parts
                     <ChevronRight className="w-4 h-4" />
@@ -145,14 +134,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 {/* Products Grid for this Vehicle */}
                 <ProductGrid
                   products={productsByVehicle[vehicleName]}
-                  onAddToCart={handleAddToCart}
                 />
 
                 {/* Mobile: View All Link */}
                 <div className="sm:hidden mt-4 text-center">
                   <Link
                     href={`/vehicle/${slugify(vehicleName)}`}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-[#E8002D] hover:text-[#B8001F] transition-colors"
                   >
                     View all {vehicleName} parts
                     <ChevronRight className="w-4 h-4" />
@@ -169,7 +157,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         <div className="text-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-[#E8002D] hover:text-[#B8001F] font-medium transition-colors"
           >
             <ChevronRight className="w-4 h-4 rotate-180" />
             Browse other categories

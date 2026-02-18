@@ -33,11 +33,11 @@ export function PremiumShopSearch({
   };
 
   return (
-    <div className="sticky top-[100px] md:top-28 lg:top-28 z-40 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] border-b border-blue-400/20 shadow-lg">
+    <div className="sticky top-[100px] md:top-28 lg:top-28 z-40 bg-white border-b-2 border-[#E8002D]/20 shadow-sm">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 max-w-[1920px] 2xl:max-w-full py-4 md:py-5 lg:py-6">
         <div className="relative">
           {/* Search Icon */}
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 text-blue-300/70" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 text-gray-400" />
 
           {/* Search Input */}
           <input
@@ -45,7 +45,7 @@ export function PremiumShopSearch({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={placeholder}
-            className="w-full pl-12 md:pl-14 lg:pl-16 pr-12 md:pr-14 lg:pr-16 py-3.5 md:py-4 lg:py-5 bg-white/95 backdrop-blur-sm border-2 border-blue-400/30 rounded-xl md:rounded-2xl text-gray-900 placeholder:text-gray-500 font-medium text-sm md:text-base lg:text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all shadow-lg focus:shadow-xl"
+            className="w-full pl-12 md:pl-14 lg:pl-16 pr-12 md:pr-14 lg:pr-16 py-3.5 md:py-4 lg:py-5 bg-gray-50 border-2 border-gray-200 rounded-xl md:rounded-2xl text-gray-900 placeholder:text-gray-400 font-medium text-sm md:text-base lg:text-lg focus:outline-none focus:ring-2 focus:ring-[#E8002D] focus:border-transparent focus:bg-white transition-all shadow-sm focus:shadow-md"
           />
 
           {/* Clear Button */}
@@ -62,8 +62,8 @@ export function PremiumShopSearch({
 
         {/* Active Search Indicator */}
         {query && (
-          <p className="mt-2 text-xs md:text-sm lg:text-base text-blue-200/80 font-medium">
-            Searching for "{query}"...
+          <p className="mt-2 text-xs md:text-sm lg:text-base text-gray-500 font-medium">
+            Searching for &ldquo;{query}&rdquo;...
           </p>
         )}
       </div>

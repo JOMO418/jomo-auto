@@ -12,8 +12,8 @@ export function AboutSection() {
     <section className="relative py-16 md:py-20 bg-gradient-to-br from-white via-gray-50/50 to-white overflow-hidden">
       {/* Elegant Ambient Glow */}
       <div className="absolute inset-0 opacity-[0.015]">
-        <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-blue-600 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 left-0 w-[600px] h-[600px] bg-slate-800 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-[#E8002D] rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 left-0 w-[600px] h-[600px] bg-[#0A0A0A] rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
@@ -21,11 +21,11 @@ export function AboutSection() {
         <div className="text-center mb-10 md:mb-12">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-[1.15] tracking-tight">
             Where{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-slate-800">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8002D] via-[#D0001F] to-[#0A0A0A]">
               Quality
             </span>{" "}
             Meets{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-blue-700 to-blue-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A0A0A] via-[#B8001F] to-[#E8002D]">
               Variety
             </span>
           </h2>
@@ -50,10 +50,10 @@ export function AboutSection() {
         {/* Trust Cards - 2 Compact Cards Side-by-Side */}
         <div className="grid md:grid-cols-2 gap-5 mb-12 max-w-5xl mx-auto">
           {/* Card 1: Ex-Japan Excellence */}
-          <div className="group relative bg-white rounded-2xl p-6 md:p-7 shadow-lg hover:shadow-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1">
+          <div className="group relative bg-white rounded-2xl p-6 md:p-7 shadow-lg hover:shadow-xl border border-gray-200 hover:border-[#E8002D]/40 transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-start gap-4">
               {/* Icon */}
-              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#E8002D] to-[#B8001F] rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                 <Package className="h-6 w-6 text-white" />
               </div>
 
@@ -72,10 +72,10 @@ export function AboutSection() {
           </div>
 
           {/* Card 2: Serving the Industry */}
-          <div className="group relative bg-white rounded-2xl p-6 md:p-7 shadow-lg hover:shadow-xl border border-gray-200 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1">
+          <div className="group relative bg-white rounded-2xl p-6 md:p-7 shadow-lg hover:shadow-xl border border-gray-200 hover:border-[#0A0A0A]/20 transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-start gap-4">
               {/* Icon */}
-              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#0A0A0A] to-[#2D2D2D] rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                 <Users className="h-6 w-6 text-white" />
               </div>
 
@@ -98,8 +98,8 @@ export function AboutSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {/* Indicator 1 */}
           <div className="text-center group">
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100/80 rounded-xl mb-3 group-hover:scale-110 transition-transform duration-300">
-              <Shield className="h-6 w-6 text-blue-600" />
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100/80 rounded-xl mb-3 group-hover:scale-110 transition-transform duration-300">
+              <Shield className="h-6 w-6 text-[#E8002D]" />
             </div>
             <h4 className="font-bold text-gray-900 mb-1 text-sm">
               100% Authentic

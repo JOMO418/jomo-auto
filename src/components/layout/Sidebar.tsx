@@ -23,17 +23,17 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       <SheetContent
         side="left"
         hideCloseButton
-        className="w-full max-w-[50vw] sm:max-w-[40vw] p-0 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] border-r border-blue-400/20"
+        className="w-full max-w-[50vw] sm:max-w-[40vw] p-0 bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] border-r border-[#E8002D]/20"
       >
         <div className="flex flex-col h-full">
           {/* Premium Header - Compact */}
           <div className="relative px-4 py-4 border-b border-white/10">
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-blue-600/10 opacity-50"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600/8 via-transparent to-red-600/8 opacity-50"></div>
 
             {/* Title & Close Button */}
             <div className="relative flex items-center justify-between gap-2">
-              <h2 className="font-heading text-xl font-bold text-transparent bg-gradient-to-br from-white via-blue-50 to-amber-50 bg-clip-text">
+              <h2 className="font-heading text-xl font-bold text-transparent bg-gradient-to-br from-white via-gray-100 to-red-50 bg-clip-text">
                 Menu
               </h2>
 
@@ -54,7 +54,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
             <Link
               href="/shop"
               onClick={onClose}
-              className="block w-full py-3 px-4 bg-gradient-to-r from-amber-400 to-amber-500 text-gray-900 font-bold rounded-lg hover:from-amber-500 hover:to-amber-600 transition-all duration-200 shadow-lg text-center"
+              className="block w-full py-3 px-4 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white font-bold rounded-lg hover:from-[#B8001F] hover:to-[#8A0015] transition-all duration-200 shadow-lg shadow-red-900/40 text-center"
             >
               <div className="flex items-center justify-center gap-2">
                 <ShoppingBag className="h-4 w-4" />
@@ -64,7 +64,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
 
             {/* Shop by Part */}
             <div>
-              <h3 className="font-heading text-[10px] font-semibold text-amber-200/90 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <h3 className="font-heading text-[10px] font-semibold text-red-300/90 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <ShoppingBag className="h-3.5 w-3.5" />
                 Shop by Part
               </h3>
@@ -79,14 +79,14 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                     <span className="font-sans text-sm text-white/90 group-hover:text-white font-medium">
                       {category}
                     </span>
-                    <ChevronRight className="h-3.5 w-3.5 text-white/40 group-hover:text-amber-400 group-hover:translate-x-0.5 transition-all" />
+                    <ChevronRight className="h-3.5 w-3.5 text-white/40 group-hover:text-red-400 group-hover:translate-x-0.5 transition-all" />
                   </Link>
                 ))}
                 {CATEGORIES.length > 5 && (
                   <Link
                     href="/categories"
                     onClick={onClose}
-                    className="flex items-center gap-1.5 py-2 px-3 text-xs text-amber-300 hover:text-amber-200 font-medium transition-colors mt-1"
+                    className="flex items-center gap-1.5 py-2 px-3 text-xs text-red-300 hover:text-red-200 font-medium transition-colors mt-1"
                   >
                     <ChevronRight className="h-3 w-3" />
                     View All Categories
@@ -100,7 +100,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
 
             {/* Shop by Vehicle */}
             <div>
-              <h3 className="font-heading text-[10px] font-semibold text-amber-200/90 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <h3 className="font-heading text-[10px] font-semibold text-red-300/90 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <Car className="h-3.5 w-3.5" />
                 Shop by Vehicle
               </h3>
@@ -115,14 +115,14 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                     <span className="font-sans text-sm text-white/90 group-hover:text-white font-medium">
                       Toyota {model}
                     </span>
-                    <ChevronRight className="h-3.5 w-3.5 text-white/40 group-hover:text-amber-400 group-hover:translate-x-0.5 transition-all" />
+                    <ChevronRight className="h-3.5 w-3.5 text-white/40 group-hover:text-red-400 group-hover:translate-x-0.5 transition-all" />
                   </Link>
                 ))}
                 {VEHICLE_MODELS.length > 5 && (
                   <Link
                     href="/vehicles"
                     onClick={onClose}
-                    className="flex items-center gap-1.5 py-2 px-3 text-xs text-amber-300 hover:text-amber-200 font-medium transition-colors mt-1"
+                    className="flex items-center gap-1.5 py-2 px-3 text-xs text-red-300 hover:text-red-200 font-medium transition-colors mt-1"
                   >
                     <ChevronRight className="h-3 w-3" />
                     View All Vehicles
@@ -139,7 +139,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               onClick={onClose}
               className="flex items-center gap-2.5 py-2 px-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg transition-all duration-200 group"
             >
-              <History className="h-4 w-4 text-blue-300 group-hover:text-blue-200" />
+              <History className="h-4 w-4 text-red-300 group-hover:text-red-200" />
               <span className="font-sans text-sm text-white/90 group-hover:text-white font-medium flex-1">
                 Order History
               </span>

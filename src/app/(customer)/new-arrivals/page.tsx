@@ -91,7 +91,7 @@ export default function NewArrivalsPage() {
           <div className="flex items-start justify-between flex-wrap gap-4">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#E8002D] to-[#B8001F] flex items-center justify-center">
                   <Sparkles className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -111,7 +111,7 @@ export default function NewArrivalsPage() {
                 onClick={() => setViewMode("grid")}
                 className={`p-2 rounded transition-colors ${
                   viewMode === "grid"
-                    ? "bg-blue-100 text-blue-600"
+                    ? "bg-red-100 text-[#E8002D]"
                     : "text-gray-600 hover:bg-gray-100"
                 }`}
               >
@@ -121,7 +121,7 @@ export default function NewArrivalsPage() {
                 onClick={() => setViewMode("list")}
                 className={`p-2 rounded transition-colors ${
                   viewMode === "list"
-                    ? "bg-blue-100 text-blue-600"
+                    ? "bg-red-100 text-[#E8002D]"
                     : "text-gray-600 hover:bg-gray-100"
                 }`}
               >
@@ -233,7 +233,7 @@ export default function NewArrivalsPage() {
                 setSelectedVehicle("All Vehicles");
                 setSelectedCategory("All Categories");
               }}
-              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-3 bg-gradient-to-r from-[#E8002D] to-[#B8001F] text-white font-semibold rounded-lg hover:from-[#B8001F] hover:to-[#8A0015] transition-all"
             >
               Clear All Filters
             </button>
@@ -260,7 +260,7 @@ function VehicleDropdown({
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-400 transition-colors min-w-[200px] justify-between"
+        className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-[#E8002D] transition-colors min-w-[200px] justify-between"
       >
         <div className="flex items-center gap-2">
           <Car className="h-4 w-4 text-gray-600" />
@@ -286,7 +286,7 @@ function VehicleDropdown({
                 }}
                 className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
                   selected === "All Vehicles"
-                    ? "bg-blue-50 text-blue-600 font-semibold"
+                    ? "bg-red-50 text-[#E8002D] font-semibold"
                     : "hover:bg-gray-50 text-gray-700"
                 }`}
               >
@@ -302,7 +302,7 @@ function VehicleDropdown({
                   }}
                   className={`w-full text-left px-3 py-2 rounded-lg transition-colors text-sm ${
                     selected === vehicle
-                      ? "bg-blue-50 text-blue-600 font-semibold"
+                      ? "bg-red-50 text-[#E8002D] font-semibold"
                       : "hover:bg-gray-50 text-gray-700"
                   }`}
                 >
@@ -333,7 +333,7 @@ function CategoryDropdown({
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-400 transition-colors min-w-[180px] justify-between"
+        className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-[#E8002D] transition-colors min-w-[180px] justify-between"
       >
         <div className="flex items-center gap-2">
           <Filter className="h-4 w-4 text-gray-600" />
@@ -359,7 +359,7 @@ function CategoryDropdown({
                 }}
                 className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
                   selected === "All Categories"
-                    ? "bg-blue-50 text-blue-600 font-semibold"
+                    ? "bg-red-50 text-[#E8002D] font-semibold"
                     : "hover:bg-gray-50 text-gray-700"
                 }`}
               >
@@ -375,7 +375,7 @@ function CategoryDropdown({
                   }}
                   className={`w-full text-left px-3 py-2 rounded-lg transition-colors text-sm ${
                     selected === category
-                      ? "bg-blue-50 text-blue-600 font-semibold"
+                      ? "bg-red-50 text-[#E8002D] font-semibold"
                       : "hover:bg-gray-50 text-gray-700"
                   }`}
                 >

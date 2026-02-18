@@ -151,7 +151,7 @@ export default function ShopPage() {
             </p>
             <button
               onClick={() => setFilters({ vehicle: '', category: '', searchQuery: '' })}
-              className="px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] text-white font-bold text-base lg:text-lg rounded-xl hover:shadow-xl transition-all border border-blue-400/30 shadow-lg"
+              className="px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-br from-[#E8002D] to-[#B8001F] text-white font-bold text-base lg:text-lg rounded-xl hover:from-[#B8001F] hover:to-[#8A0015] hover:shadow-xl transition-all border border-red-400/30 shadow-lg"
             >
               Clear All Filters
             </button>
@@ -175,7 +175,7 @@ export default function ShopPage() {
                 {isLoadingMore && (
                   <div className="inline-flex flex-col items-center gap-2">
                     {/* Compact Loading Spinner */}
-                    <div className="w-8 h-8 border-3 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                    <div className="w-8 h-8 border-3 border-gray-200 border-t-[#E8002D] rounded-full animate-spin"></div>
                     <p className="text-xs text-gray-500 font-medium">
                       Loading...
                     </p>

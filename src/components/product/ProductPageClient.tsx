@@ -46,15 +46,15 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
         <div className="container mx-auto px-3 sm:px-4 py-4 max-w-7xl">
           <Link
             href="/"
-            className="inline-flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors"
+            className="inline-flex items-center text-sm text-gray-600 hover:text-[#E8002D] transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Link>
           <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
-            <Link href="/" className="hover:text-blue-600">Home</Link>
+            <Link href="/" className="hover:text-[#E8002D]">Home</Link>
             <span>/</span>
-            <Link href={`/category/${product.category.slug}`} className="hover:text-blue-600">
+            <Link href={`/category/${product.category.slug}`} className="hover:text-[#E8002D]">
               {product.category.name}
             </Link>
             <span>/</span>
@@ -96,7 +96,7 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
                     onClick={() => setSelectedImage(index)}
                     className={`relative aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 transition-all ${
                       selectedImage === index
-                        ? "border-blue-600 ring-2 ring-blue-200"
+                        ? "border-[#E8002D] ring-2 ring-red-200"
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                   >
@@ -123,7 +123,7 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
             <div className="flex items-center gap-3 mb-4">
               <Link
                 href={`/category/${product.category.slug}`}
-                className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors"
+                className="text-sm font-semibold text-red-700 bg-red-50 px-3 py-1 rounded-full hover:bg-red-100 transition-colors"
               >
                 {product.category.name}
               </Link>
@@ -237,7 +237,7 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
                       ? "bg-gray-400 cursor-not-allowed"
                       : isAdding
                       ? "bg-green-600 hover:bg-green-700"
-                      : "bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600"
+                      : "bg-gradient-to-r from-[#E8002D] to-[#B8001F] hover:from-[#B8001F] hover:to-[#8A0015]"
                   }
                 `}
               >
@@ -258,21 +258,21 @@ export function ProductPageClient({ product, relatedProducts }: ProductPageClien
             {/* Features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 border-t">
               <div className="flex items-center gap-3">
-                <Shield className="h-5 w-5 text-blue-600" />
+                <Shield className="h-5 w-5 text-[#E8002D]" />
                 <div>
                   <p className="text-xs font-semibold text-gray-900">Quality Assured</p>
                   <p className="text-xs text-gray-600">Genuine Parts</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Truck className="h-5 w-5 text-blue-600" />
+                <Truck className="h-5 w-5 text-[#E8002D]" />
                 <div>
                   <p className="text-xs font-semibold text-gray-900">Fast Delivery</p>
                   <p className="text-xs text-gray-600">Nairobi & Beyond</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Package className="h-5 w-5 text-blue-600" />
+                <Package className="h-5 w-5 text-[#E8002D]" />
                 <div>
                   <p className="text-xs font-semibold text-gray-900">Secure Packaging</p>
                   <p className="text-xs text-gray-600">Safe Shipping</p>

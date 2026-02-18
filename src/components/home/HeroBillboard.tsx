@@ -178,11 +178,13 @@ export function HeroBillboard({
 
       {/* Centered Shop Now Button - Always Visible on All Slides */}
       <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+        {/* Outer pulse ring */}
+        <div className="absolute w-56 md:w-72 lg:w-80 h-16 md:h-20 lg:h-24 rounded-2xl bg-[#E8002D]/20 animate-ping opacity-30 pointer-events-none"></div>
         <a
           href="/shop"
-          className="pointer-events-auto group relative px-8 md:px-12 lg:px-14 py-4 md:py-5 lg:py-6 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold text-base md:text-lg lg:text-xl rounded-xl md:rounded-2xl shadow-2xl shadow-blue-900/50 hover:shadow-blue-800/60 transition-all duration-300 hover:scale-105 active:scale-100 border-2 border-white/20 backdrop-blur-sm"
+          className="pointer-events-auto group relative px-8 md:px-14 lg:px-16 py-4 md:py-5 lg:py-6 bg-gradient-to-r from-[#E8002D] via-[#D0001F] to-[#B8001F] hover:from-[#B8001F] hover:via-[#E8002D] hover:to-[#B8001F] text-white font-bold text-base md:text-xl lg:text-2xl rounded-xl md:rounded-2xl shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all duration-300 hover:scale-105 active:scale-100 border-2 border-white/30 hover:border-white/50 backdrop-blur-sm ring-4 ring-white/10 hover:ring-white/20"
         >
-          <span className="relative z-10 flex items-center gap-2 md:gap-3">
+          <span className="relative z-10 flex items-center gap-2 md:gap-3 tracking-wide">
             <svg
               className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7"
               fill="none"
@@ -198,7 +200,7 @@ export function HeroBillboard({
             </svg>
             Shop Now
             <svg
-              className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform duration-300"
+              className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 group-hover:translate-x-1.5 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -211,8 +213,8 @@ export function HeroBillboard({
               />
             </svg>
           </span>
-          {/* Animated shine effect */}
-          <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+          {/* Animated shine sweep */}
+          <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-transparent via-white/25 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
         </a>
       </div>
 

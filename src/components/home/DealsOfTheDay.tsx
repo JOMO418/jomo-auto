@@ -213,7 +213,7 @@ function DealCard({ deal, index }: { deal: Deal; index: number }) {
         <div className="p-4">
           {/* Category */}
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-[10px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
+            <span className="text-[10px] font-semibold text-[#E8002D] bg-red-50 px-2 py-0.5 rounded">
               {deal.category}
             </span>
           </div>

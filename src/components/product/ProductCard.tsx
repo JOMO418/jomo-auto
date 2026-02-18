@@ -6,6 +6,7 @@ import { PLACEHOLDER_IMAGE } from "@/lib/constants";
 import { useState } from "react";
 import { ShoppingCart, Check, Sparkles } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { useCartStore } from "@/lib/store";
 
 interface ProductCardProps {
   product: Product;
@@ -20,34 +21,26 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
   const [isAdding, setIsAdding] = useState(false);
   const [justAdded, setJustAdded] = useState(false);
   const isOutOfStock = product.stock === 0;
+  const addItem = useCartStore((state) => state.addItem);
 
   const handleOrder = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
-    console.log("Order Now clicked!", { product: product.name, onAddToCart: !!onAddToCart });
-
-    if (isOutOfStock) {
-      console.log("Product is out of stock");
-      return;
-    }
-
-    if (!onAddToCart) {
-      console.error("onAddToCart is not provided to ProductCard!");
-      alert("Error: Cart functionality not connected. Please refresh the page.");
-      return;
-    }
+    if (isOutOfStock) return;
 
     // Trigger adding state
     setIsAdding(true);
-    console.log("Adding to cart...");
-    onAddToCart(product);
+    if (onAddToCart) {
+      onAddToCart(product);
+    } else {
+      addItem(product, 1);
+    }
 
     // Show "Added!" state
     setTimeout(() => {
       setIsAdding(false);
       setJustAdded(true);
-      console.log("Item added to cart!");
     }, 600);
 
     // Reset to normal after showing success
@@ -59,7 +52,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
   const priceNumber = product.price.toLocaleString('en-KE');
 
   return (
-    <div className="group relative bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-blue-300">
+    <div className="group relative bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-[#E8002D]/40">
       {/* Product Image */}
       <Link href={`/product/${product.slug}`} className="block relative overflow-hidden">
         <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100">
@@ -91,7 +84,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
       <div className="p-3 md:p-3.5 lg:p-4 xl:p-5 flex flex-col flex-grow">
         {/* Product Name */}
         <Link href={`/product/${product.slug}`}>
-          <h3 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 line-clamp-2 hover:text-blue-600 transition-colors duration-300 leading-tight mb-1.5 lg:mb-2">
+          <h3 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 line-clamp-2 hover:text-[#E8002D] transition-colors duration-300 leading-tight mb-1.5 lg:mb-2">
             {product.name}
           </h3>
         </Link>
@@ -126,8 +119,8 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
               : justAdded
                 ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white scale-95 shadow-green-500/50'
                 : isAdding
-                  ? 'bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] text-white scale-95'
-                  : 'bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744] text-white hover:from-[#1E3A5F] hover:via-[#0A1E3D] hover:to-[#1E3A5F] hover:scale-[1.02] active:scale-95 shadow-blue-900/40 hover:shadow-blue-800/60 border-blue-400/20 hover:border-blue-400/40'
+                  ? 'bg-gradient-to-br from-[#E8002D] to-[#B8001F] text-white scale-95'
+                  : 'bg-gradient-to-br from-[#E8002D] to-[#B8001F] text-white hover:from-[#B8001F] hover:to-[#8A0015] hover:scale-[1.02] active:scale-95 shadow-red-900/40 hover:shadow-red-800/60 border-red-400/20 hover:border-red-400/40'
             }
             disabled:cursor-not-allowed disabled:opacity-60
           `}
@@ -160,7 +153,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
           {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full animate-ping"
+              className="absolute w-2 h-2 bg-gradient-to-br from-[#E8002D] to-[#FF3355] rounded-full animate-ping"
               style={{
                 top: '50%',
                 left: '50%',

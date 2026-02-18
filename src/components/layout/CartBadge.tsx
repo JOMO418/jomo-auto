@@ -63,12 +63,12 @@ export function CartBadge() {
         onClick={() => setQuickCartOpen(true)}
         className={`
           fixed bottom-20 md:bottom-6 right-4 z-40
-          bg-gradient-to-br from-[#0A1E3D] via-[#1E3A5F] to-[#0F2744]
-          rounded-full shadow-2xl hover:shadow-blue-900/60
+          bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A]
+          rounded-full shadow-2xl hover:shadow-red-900/60
           p-4 md:p-5
           transition-all duration-300
           hover:scale-110 active:scale-95
-          border-2 border-blue-400/30 hover:border-blue-400/50
+          border-2 border-[#E8002D]/30 hover:border-[#E8002D]/50
           group
           backdrop-blur-sm
           ${bounce ? "animate-cart-bounce" : ""}
@@ -77,22 +77,22 @@ export function CartBadge() {
       >
         <div className="relative">
           {/* Premium pulsing glow effect - Enhanced */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/30 via-blue-400/30 to-blue-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+          <div className="absolute -inset-4 bg-gradient-to-r from-[#E8002D]/30 via-red-400/30 to-[#E8002D]/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
 
           {/* Shopping cart icon with premium glow */}
-          <ShoppingCart className="relative h-6 w-6 md:h-7 md:w-7 text-white drop-shadow-[0_2px_12px_rgba(59,130,246,0.6)] group-hover:drop-shadow-[0_4px_16px_rgba(96,165,250,0.8)] transition-all duration-300" />
+          <ShoppingCart className="relative h-6 w-6 md:h-7 md:w-7 text-white drop-shadow-[0_2px_12px_rgba(232,0,45,0.6)] group-hover:drop-shadow-[0_4px_16px_rgba(232,0,45,0.8)] transition-all duration-300" />
 
           {/* Item count badge - Premium with enhanced styling */}
           <span className={`
             absolute -top-2 -right-2
-            bg-gradient-to-br from-amber-500 to-amber-600
+            bg-gradient-to-br from-[#E8002D] to-[#B8001F]
             text-white text-xs md:text-sm font-bold
             rounded-full min-w-[24px] h-6 md:min-w-[28px] md:h-7
             flex items-center justify-center
-            shadow-lg shadow-amber-500/60
+            shadow-lg shadow-red-900/40
             transition-all duration-300
             border-2 border-white
-            drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]
+            drop-shadow-[0_2px_8px_rgba(232,0,45,0.5)]
             ${showItem ? "scale-125 rotate-12" : "scale-100 rotate-0"}
             ${count === 0 ? "opacity-70" : "opacity-100 animate-pulse-subtle"}
           `}>
@@ -119,7 +119,7 @@ export function CartBadge() {
           {/* Ripple effect on add */}
           {showItem && (
             <div className="absolute inset-0 rounded-full">
-              <div className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-75"></div>
+              <div className="absolute inset-0 rounded-full bg-[#E8002D] animate-ping opacity-75"></div>
             </div>
           )}
         </div>

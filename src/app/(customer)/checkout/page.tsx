@@ -208,7 +208,7 @@ Please confirm availability and delivery details.`;
                     onClick={() => setPaymentMethod("mpesa")}
                     className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
                       paymentMethod === "mpesa"
-                        ? "border-blue-700 bg-blue-50"
+                        ? "border-[#E8002D] bg-red-50"
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                   >
@@ -257,7 +257,7 @@ Please confirm availability and delivery details.`;
                     onClick={() => setPaymentMethod("whatsapp")}
                     className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
                       paymentMethod === "whatsapp"
-                        ? "border-blue-700 bg-blue-50"
+                        ? "border-[#E8002D] bg-red-50"
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                   >
