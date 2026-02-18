@@ -82,24 +82,24 @@ export function SmartFilterBar() {
 
   return (
     <section className="w-full bg-white border-b border-gray-100">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-5 max-w-4xl">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-3 md:py-5 max-w-4xl">
 
         {/* ── Section label ── */}
-        <div className="text-center mb-5">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#0A0A0A]">
+        <div className="text-center mb-3 md:mb-5">
+          <h2 className="text-base md:text-2xl lg:text-3xl font-bold tracking-tight text-[#0A0A0A] leading-tight">
             Find Your Parts{" "}
             <span className="relative inline-block">
               <span className="text-[#E8002D]">Fast</span>
-              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#E8002D] rounded-full" />
+              <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-[#E8002D] rounded-full" />
             </span>
           </h2>
-          <p className="text-xs text-gray-400 mt-2 tracking-wide">
+          <p className="text-[10px] md:text-xs text-gray-400 mt-1 tracking-wide">
             Search by vehicle or tap a category below
           </p>
         </div>
 
         {/* ── Vehicle search (primary) ── */}
-        <div ref={wrapRef} className="relative mb-4">
+        <div ref={wrapRef} className="relative mb-3 md:mb-4">
 
           {/* Input */}
           <div className="relative">
@@ -209,24 +209,32 @@ export function SmartFilterBar() {
           )}
         </div>
 
-        {/* ── Category chips (always visible, no click to reveal) ── */}
+        {/* ── Category grid — 4 columns × 2 rows on mobile ── */}
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2.5">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">
             or browse by <span className="text-[#E8002D]">category</span>
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-4 gap-1.5 md:flex md:flex-wrap md:gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => goToCategory(cat)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-[#0A0A0A]
-                           text-xs font-semibold text-gray-700 hover:text-white
-                           border border-transparent hover:border-[#E8002D]/20
-                           transition-all duration-200 group"
+                className="
+                  /* mobile: compact vertical tile */
+                  flex flex-col items-center justify-center gap-0.5
+                  py-2 px-1 rounded-xl
+                  bg-gray-50 hover:bg-[#0A0A0A]
+                  border border-gray-100 hover:border-[#E8002D]/30
+                  transition-all duration-200 group
+                  /* desktop: horizontal chip */
+                  md:flex-row md:gap-1.5 md:px-3 md:py-1.5 md:rounded-full md:bg-gray-100
+                "
               >
-                <span className="text-sm leading-none">{CATEGORY_ICONS[cat] ?? "🔩"}</span>
-                <span>{cat}</span>
-                <ChevronRight className="h-3 w-3 text-gray-400 group-hover:text-white/60 -mr-0.5" />
+                <span className="text-lg md:text-sm leading-none">{CATEGORY_ICONS[cat] ?? "🔩"}</span>
+                <span className="text-[9px] md:text-xs font-semibold text-gray-700 group-hover:text-white text-center leading-tight w-full truncate md:w-auto">
+                  {cat}
+                </span>
+                <ChevronRight className="hidden md:block h-3 w-3 text-gray-400 group-hover:text-white/60 -mr-0.5" />
               </button>
             ))}
           </div>

@@ -80,14 +80,14 @@ function CategoryRow({ category, products, onAddToCart }: RowProps) {
   if (cards.length === 0) return null;
 
   return (
-    <div className="mb-10 lg:mb-12">
+    <div className="mb-5 md:mb-10 lg:mb-12">
       {/* Category header */}
-      <div className="flex items-end justify-between mb-5 border-b border-gray-200 pb-3 px-4 md:px-6 lg:px-8 max-w-[1920px] mx-auto">
+      <div className="flex items-end justify-between mb-3 md:mb-5 border-b border-gray-200 pb-2 md:pb-3 px-4 md:px-6 lg:px-8 max-w-[1920px] mx-auto">
         <div className="relative">
-          <h3 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl lg:text-3xl font-bold text-[#0A0A0A] tracking-tight leading-tight">
+          <h3 className="font-[family-name:var(--font-playfair)] text-base md:text-2xl lg:text-3xl font-bold text-[#0A0A0A] tracking-tight leading-tight">
             {category}
           </h3>
-          <div className="absolute -bottom-3 left-0 h-0.5 w-12 md:w-16 bg-[#E8002D]" />
+          <div className="absolute -bottom-2 md:-bottom-3 left-0 h-0.5 w-10 md:w-16 bg-[#E8002D]" />
         </div>
         <Link
           href={`/category/${slugify(category)}`}
@@ -137,13 +137,13 @@ export function FeaturedProductsCarousel({
   onAddToCart,
 }: FeaturedProductsCarouselProps) {
   return (
-    <section className="py-10 md:py-14 lg:py-16 xl:py-20 bg-gray-50">
+    <section className="pt-4 pb-8 md:pt-10 md:pb-14 lg:py-16 xl:py-20 bg-gray-50">
       {/* Section title */}
-      <div className="text-center px-4 mb-10 lg:mb-14">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-2 lg:mb-3">
+      <div className="text-center px-4 mb-4 md:mb-8 lg:mb-12">
+        <h2 className="text-lg md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-0.5 md:mb-2 lg:mb-3">
           Featured Products
         </h2>
-        <p className="text-gray-500 md:text-lg lg:text-xl">
+        <p className="text-xs md:text-base text-gray-500 lg:text-xl">
           Popular auto parts across all vehicles
         </p>
       </div>
