@@ -2,6 +2,7 @@
 
 import { ContactBar } from "@/components/layout/ContactBar";
 import { Header } from "@/components/layout/Header";
+import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { CartBadge } from "@/components/layout/CartBadge";
 import { BottomNav } from "@/components/layout/BottomNav";
@@ -88,6 +89,9 @@ export function RootLayoutClient({ children }: { children: React.ReactNode }) {
         onSearch={handleSearch}
         initialQuery={searchQuery}
       />
+
+      {/* Breadcrumb — hidden on homepage, hidden during search */}
+      {!showSearchResults && <Breadcrumb />}
 
       {/* Main Content - Show search results or normal content */}
       <main className="flex-1 pb-16 md:pb-0">
