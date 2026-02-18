@@ -85,12 +85,17 @@ export function SmartFilterBar() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-5 max-w-4xl">
 
         {/* ── Section label ── */}
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px flex-1 bg-gray-100" />
-          <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-400">
-            Find Your Parts
-          </span>
-          <div className="h-px flex-1 bg-gray-100" />
+        <div className="text-center mb-5">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#0A0A0A]">
+            Find Your Parts{" "}
+            <span className="relative inline-block">
+              <span className="text-[#E8002D]">Fast</span>
+              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#E8002D] rounded-full" />
+            </span>
+          </h2>
+          <p className="text-xs text-gray-400 mt-2 tracking-wide">
+            Search by vehicle or tap a category below
+          </p>
         </div>
 
         {/* ── Vehicle search (primary) ── */}
@@ -207,7 +212,7 @@ export function SmartFilterBar() {
         {/* ── Category chips (always visible, no click to reveal) ── */}
         <div>
           <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2.5">
-            or browse by category
+            or browse by <span className="text-[#E8002D]">category</span>
           </p>
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
