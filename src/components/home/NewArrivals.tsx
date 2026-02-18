@@ -28,14 +28,14 @@ export function NewArrivals({ products, onAddToCart }: NewArrivalsProps) {
   };
 
   return (
-    <section className="relative py-16 md:py-20 bg-white overflow-hidden">
+    <section className="relative py-8 md:py-12 bg-white overflow-hidden">
       {/* Decorative Elements - Subtle */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full blur-3xl opacity-20 -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-50 rounded-full blur-3xl opacity-20 -z-10"></div>
 
       <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
         {/* Header Section - Premium Design */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-50 to-orange-50 rounded-full mb-4">
             <Sparkles className="h-4 w-4 text-orange-600" />

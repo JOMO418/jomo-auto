@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Zap, Clock, Tag, Percent, TrendingDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { Zap, Clock, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Product } from "@/lib/types";
 import { PLACEHOLDER_IMAGE } from "@/lib/constants";
 import { OptimizedImage } from "@/components/ui/optimized-image";
@@ -68,59 +68,54 @@ export function DealsOfTheDay({ deals }: DealsOfTheDayProps) {
   };
 
   return (
-    <section className="relative py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section className="relative py-6 md:py-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       {/* Clean minimal accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500"></div>
 
       <div className="relative container mx-auto px-3 sm:px-4 max-w-7xl">
-        {/* Header with Countdown Timer - Cleaner Design */}
-        <div className="mb-8">
-          {/* Title Section */}
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
-                  <Zap className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900">
-                    Flash Deals
-                  </h2>
-                  <p className="text-gray-600 text-sm">Limited time offers</p>
-                </div>
+        {/* Header with Countdown Timer */}
+        <div className="mb-5">
+          <div className="flex items-center justify-between">
+            {/* Title */}
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-[#E8002D] flex items-center justify-center">
+                <Zap className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <h2 className="font-heading text-xl md:text-2xl font-bold text-gray-900 leading-none">
+                  Flash Deals
+                </h2>
+                <p className="text-gray-500 text-xs mt-0.5">Limited time offers</p>
               </div>
             </div>
 
-            {/* Countdown Timer - Clean Minimal */}
+            {/* Countdown Timer — brand pattern */}
             {mounted && (
-              <div className="flex items-center gap-2 bg-white border-2 border-orange-200 rounded-xl px-4 py-3 shadow-sm">
-                <Clock className="h-4 w-4 text-orange-600" />
-                <div className="flex items-center gap-1.5">
-                  <div className="text-center">
-                    <div className="text-xl font-bold text-gray-900 font-mono">
-                      {String(timeLeft.hours).padStart(2, "0")}
+              <div className="flex items-center gap-2">
+                <Clock className="h-3.5 w-3.5 text-gray-400" />
+                <div className="flex items-center gap-1">
+                  {[
+                    { val: timeLeft.hours, label: "H" },
+                    { val: timeLeft.minutes, label: "M" },
+                    { val: timeLeft.seconds, label: "S" },
+                  ].map(({ val, label }, i) => (
+                    <div key={label} className="flex items-center gap-1">
+                      {i > 0 && <span className="text-[#E8002D] font-bold text-sm leading-none mb-2">:</span>}
+                      <div className="flex flex-col items-center">
+                        <div className="bg-[#0A0A0A] text-white font-mono font-bold text-sm w-8 h-7 flex items-center justify-center rounded">
+                          {String(val).padStart(2, "0")}
+                        </div>
+                        <span className="text-[9px] text-gray-400 uppercase tracking-wider mt-0.5">{label}</span>
+                      </div>
                     </div>
-                  </div>
-                  <span className="text-gray-400 font-bold">:</span>
-                  <div className="text-center">
-                    <div className="text-xl font-bold text-gray-900 font-mono">
-                      {String(timeLeft.minutes).padStart(2, "0")}
-                    </div>
-                  </div>
-                  <span className="text-gray-400 font-bold">:</span>
-                  <div className="text-center">
-                    <div className="text-xl font-bold text-orange-600 font-mono">
-                      {String(timeLeft.seconds).padStart(2, "0")}
-                    </div>
-                  </div>
+                  ))}
                 </div>
-                <span className="text-xs text-gray-500 ml-1">left</span>
               </div>
             )}
           </div>
 
-          {/* Clean divider */}
-          <div className="h-px bg-gray-200"></div>
+          {/* Divider */}
+          <div className="h-px bg-gray-200 mt-4"></div>
         </div>
 
         {/* Scroll hint - Above cards */}
@@ -179,16 +174,6 @@ function DealCard({ deal, index }: { deal: Deal; index: number }) {
       className="group relative flex-shrink-0 w-[260px] md:w-[280px] snap-start"
     >
       <div className="relative h-full bg-white rounded-xl overflow-hidden border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 hover:shadow-lg">
-        {/* Discount Badge - Clean & Prominent */}
-        <div className="absolute top-3 left-3 z-10">
-          <div className="bg-red-600 text-white px-2.5 py-1 rounded-lg shadow-md">
-            <div className="flex items-center gap-1">
-              <Percent className="h-3 w-3" />
-              <span className="font-bold text-sm">-{deal.discountPercent}%</span>
-            </div>
-          </div>
-        </div>
-
         {/* Stock Badge - Clean */}
         {deal.stock && deal.stock <= 10 && (
           <div className="absolute top-3 right-3 z-10">

@@ -164,16 +164,6 @@ export function FeaturedProductsCarousel({
         );
       })}
 
-      {/* Live indicator */}
-      <div className="flex items-center justify-center gap-2 mt-6">
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8002D] opacity-60" />
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E8002D]" />
-        </span>
-        <p className="text-xs text-gray-400 tracking-wide uppercase font-medium">
-          Live scrolling · Hover to pause
-        </p>
-      </div>
     </section>
   );
 }
