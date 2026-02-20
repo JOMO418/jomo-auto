@@ -82,16 +82,16 @@ function CategoryRow({ category, products, onAddToCart }: RowProps) {
   return (
     <div className="mb-5 md:mb-10 lg:mb-12">
       {/* Category header */}
-      <div className="flex items-end justify-between mb-3 md:mb-5 border-b border-gray-200 pb-2 md:pb-3 px-4 md:px-6 lg:px-8 max-w-[1920px] mx-auto">
-        <div className="relative">
-          <h3 className="font-[family-name:var(--font-playfair)] text-base md:text-2xl lg:text-3xl font-bold text-[#0A0A0A] tracking-tight leading-tight">
+      <div className="flex items-end justify-between mb-4 md:mb-6 border-b border-gray-200 pb-3 md:pb-4 px-4 md:px-6 lg:px-8 max-w-[1920px] mx-auto">
+        <div className="relative pb-1">
+          <h3 className="font-[family-name:var(--font-playfair)] text-2xl md:text-4xl lg:text-5xl font-bold text-[#0A0A0A] tracking-tight leading-none">
             {category}
           </h3>
-          <div className="absolute -bottom-2 md:-bottom-3 left-0 h-0.5 w-10 md:w-16 bg-[#E8002D]" />
+          <div className="absolute -bottom-0.5 left-0 h-[3px] w-12 md:w-20 lg:w-24 bg-[#E8002D] rounded-full" />
         </div>
         <Link
           href={`/category/${slugify(category)}`}
-          className="group flex items-center gap-1 text-xs font-[family-name:var(--font-playfair)] text-[#0A0A0A] hover:text-[#E8002D] uppercase tracking-wider font-semibold transition-colors duration-200 mb-0.5"
+          className="group flex items-center gap-1 text-xs font-[family-name:var(--font-playfair)] text-[#0A0A0A] hover:text-[#E8002D] uppercase tracking-wider font-semibold transition-colors duration-200 mb-1"
         >
           <span className="border-b border-[#0A0A0A]/30 group-hover:border-[#E8002D] pb-0.5">
             View All
@@ -130,7 +130,10 @@ interface FeaturedProductsCarouselProps {
   onAddToCart?: (product: Product) => void;
 }
 
-const FEATURED_CATEGORIES = ["Suspension", "Engine", "Electrical", "Brakes"] as const;
+const FEATURED_CATEGORIES = [
+  "Suspension", "Engine", "Brake", "Electrical",
+  "Bolts & Nuts", "Transmission", "Gear", "Body",
+] as const;
 
 export function FeaturedProductsCarousel({
   allProducts,

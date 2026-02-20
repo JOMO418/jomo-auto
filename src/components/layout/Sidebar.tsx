@@ -1,6 +1,6 @@
 "use client";
 
-import { X, ChevronRight, ShoppingBag, History, LogOut, Car } from "lucide-react";
+import { X, ChevronRight, ShoppingBag, History, Shield, Car } from "lucide-react";
 import Link from "next/link";
 import {
   Sheet,
@@ -146,19 +146,17 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               <ChevronRight className="h-3.5 w-3.5 text-white/40 group-hover:text-white/60" />
             </Link>
 
-            <button
-              onClick={() => {
-                // Add logout logic here
-                console.log("Logout clicked");
-                onClose();
-              }}
-              className="w-full flex items-center gap-2.5 py-2 px-3 bg-gradient-to-r from-red-600/20 to-red-700/20 hover:from-red-600/30 hover:to-red-700/30 border border-red-500/30 hover:border-red-500/50 rounded-lg transition-all duration-200 group"
+            <Link
+              href="/admin/login"
+              onClick={onClose}
+              className="flex items-center gap-2.5 py-2 px-3 bg-gradient-to-r from-red-600/20 to-red-700/20 hover:from-red-600/30 hover:to-red-700/30 border border-red-500/30 hover:border-red-500/50 rounded-lg transition-all duration-200 group"
             >
-              <LogOut className="h-4 w-4 text-red-300 group-hover:text-red-200" />
-              <span className="font-sans text-sm text-red-100 group-hover:text-white font-medium flex-1 text-left">
-                Logout
+              <Shield className="h-4 w-4 text-red-300 group-hover:text-red-200" />
+              <span className="font-sans text-sm text-red-100 group-hover:text-white font-medium flex-1">
+                Admin Login
               </span>
-            </button>
+              <ChevronRight className="h-3.5 w-3.5 text-white/40 group-hover:text-white/60" />
+            </Link>
           </div>
         </div>
       </SheetContent>

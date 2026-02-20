@@ -14,7 +14,8 @@
     "analyze:distribution": "tsx scripts/analyze-and-distribute-products.ts",
     "update:products": "tsx scripts/update-products-in-supabase.ts",
     "distribute:vehicles": "tsx scripts/distribute-products-to-vehicles.ts",
-    "setup:deals": "tsx scripts/setup-deals-of-day.ts"
+    "setup:deals": "tsx scripts/setup-deals-of-day.ts",
+    "fix:images": "tsx scripts/fix-local-images.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.2",

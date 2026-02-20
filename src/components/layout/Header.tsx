@@ -76,9 +76,9 @@ export function Header({ onMenuClick, onSearchClick }: HeaderProps) {
             <Menu className="h-4 w-4 md:h-5 md:w-5 lg:h-5 lg:w-5 text-white/80 group-hover/menu:text-white transition-colors duration-300 drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]" />
           </button>
           <Link
-            href="/account"
+            href="/admin/login"
             className="p-2 md:p-3 lg:p-3 hover:bg-white/10 rounded-lg md:rounded-xl transition-all duration-500 group/user backdrop-blur-sm border border-transparent hover:border-white/20"
-            aria-label="Account"
+            aria-label="Admin Login"
           >
             <User className="h-4 w-4 md:h-5 md:w-5 lg:h-5 lg:w-5 text-white/80 group-hover/user:text-white transition-colors duration-300 drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]" />
           </Link>

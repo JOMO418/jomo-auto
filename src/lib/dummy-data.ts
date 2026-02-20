@@ -2,7 +2,7 @@ import type { Product } from "./types";
 
 // ================================================
 // AUTO-GENERATED FROM SUPABASE
-// Last synced: 2026-02-15T03:39:47.135Z
+// Last synced: 2026-02-19T01:14:12.015Z
 // Products: 160
 // ================================================
 // Run 'npm run sync:data' to update this file
@@ -13,7 +13,7 @@ export const products: Product[] = [
     "slug": "water-pump-assembly",
     "name": "Water Pump Assembly",
     "images": [
-      "/product-images/water pump.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463550/jomo-auto-world/products/water-pump.jpg"
     ],
     "price": 5500,
     "stock": 20,
@@ -66,14 +66,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:20.743+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:31.937665+00:00"
   },
   {
     "id": "cb6eba80-89c5-40c3-becf-313b1c2a9cc2",
     "slug": "vacuum-brake-booster",
     "name": "Vacuum Brake Booster",
     "images": [
-      "/product-images/vbl.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123926/jomo-auto-world/products/vbl.jpg"
     ],
     "price": 8500,
     "stock": 10,
@@ -126,14 +126,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:19.955+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:56.761287+00:00"
   },
   {
     "id": "66126f88-3482-4e46-b0a3-ccd4f41eb50d",
     "slug": "valve-cover-assembly",
     "name": "Valve Cover Assembly",
     "images": [
-      "/product-images/valvecover.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463564/jomo-auto-world/products/valvecover.jpg"
     ],
     "price": 4200,
     "stock": 14,
@@ -186,14 +186,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:19.286+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:45.739479+00:00"
   },
   {
     "id": "0f00d440-a941-4d51-9c49-1cee39b1af76",
     "slug": "jack-stand-set",
     "name": "Jack Stand Set",
     "images": [
-      "/product-images/up.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123921/jomo-auto-world/products/up.jpg"
     ],
     "price": 3500,
     "originalPrice": 4025,
@@ -219,14 +219,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:36:18.601+00:00",
-    "updatedAt": "2026-02-15T03:39:30.903197+00:00"
+    "updatedAt": "2026-02-19T01:12:34.864246+00:00"
   },
   {
     "id": "ca3e5068-b350-4c9a-8308-c059fb21f495",
     "slug": "timing-belt-kit",
     "name": "Timing Belt Kit",
     "images": [
-      "/product-images/timing.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123919/jomo-auto-world/products/timing.jpg"
     ],
     "price": 8500,
     "stock": 15,
@@ -279,14 +279,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:17.906+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:55.182214+00:00"
   },
   {
     "id": "11c47c0c-8b3d-4545-a16c-ba26523330de",
     "slug": "outer-tie-rod-end",
     "name": "Outer Tie Rod End",
     "images": [
-      "/product-images/tierod.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463566/jomo-auto-world/products/tierod.jpg"
     ],
     "price": 1800,
     "originalPrice": 2340,
@@ -331,14 +331,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:36:17.236+00:00",
-    "updatedAt": "2026-02-15T03:39:28.179723+00:00"
+    "updatedAt": "2026-02-19T01:12:47.886401+00:00"
   },
   {
     "id": "e9ef1dae-ed35-415c-be58-66e06b5bd0e9",
     "slug": "inner-tie-rod-set",
     "name": "Inner Tie Rod Set",
     "images": [
-      "/product-images/tierod racks.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463548/jomo-auto-world/products/tierod-racks.jpg"
     ],
     "price": 4500,
     "stock": 25,
@@ -380,14 +380,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:16.572+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:29.648744+00:00"
   },
   {
     "id": "4d706c84-8b7d-41ca-9300-1c6670b063c5",
     "slug": "tie-rod-end-assembly",
     "name": "Tie Rod End Assembly",
     "images": [
-      "/product-images/tie rod.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463632/jomo-auto-world/products/tie-rod.jpg"
     ],
     "price": 2200,
     "stock": 35,
@@ -429,14 +429,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:15.898+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:53.611224+00:00"
   },
   {
     "id": "73f428cd-8258-4944-be7d-efa4f22b7130",
     "slug": "temperature-gauge-sensor",
     "name": "Temperature Gauge Sensor",
     "images": [
-      "/product-images/temp gauge.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463562/jomo-auto-world/products/temp-gauge.jpg"
     ],
     "price": 1500,
     "stock": 30,
@@ -489,14 +489,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:15.219+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:44.001521+00:00"
   },
   {
     "id": "a33b1ea7-df31-4980-b40f-8a9e032c1b98",
     "slug": "steering-gearbox",
     "name": "Steering Gearbox",
     "images": [
-      "/product-images/sterring box.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463547/jomo-auto-world/products/sterring-box.jpg"
     ],
     "price": 16500,
     "stock": 7,
@@ -538,14 +538,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:14.26+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:28.355456+00:00"
   },
   {
     "id": "82c5175f-0043-4caf-9663-ba1f7b95d8a3",
     "slug": "oem-steering-rack",
     "name": "OEM Steering Rack",
     "images": [
-      "/product-images/steering rack.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463631/jomo-auto-world/products/steering-rack.jpg"
     ],
     "price": 15000,
     "stock": 8,
@@ -584,14 +584,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:13.604+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:52.311694+00:00"
   },
   {
     "id": "9b3abf26-418d-4776-8553-1a3cbaf048f2",
     "slug": "complete-steering-rack-kit",
     "name": "Complete Steering Rack Kit",
     "images": [
-      "/product-images/steering rack full.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463561/jomo-auto-world/products/steering-rack-full.jpg"
     ],
     "price": 22000,
     "stock": 6,
@@ -632,14 +632,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:12.947+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:42.365295+00:00"
   },
   {
     "id": "5c95199d-fe5a-426e-8a5d-9d748188dfca",
     "slug": "stabilizer-bar-assembly",
     "name": "Stabilizer Bar Assembly",
     "images": [
-      "/product-images/stebeliser bar.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463546/jomo-auto-world/products/stebeliser-bar.jpg"
     ],
     "price": 5500,
     "stock": 12,
@@ -683,14 +683,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:12.241+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:27.081262+00:00"
   },
   {
     "id": "54267ed3-3456-4ca5-815e-a89138b370e6",
     "slug": "rebuilt-starter-unit",
     "name": "Rebuilt Starter Unit",
     "images": [
-      "/product-images/starters.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123897/jomo-auto-world/products/starters.jpg"
     ],
     "price": 8800,
     "stock": 11,
@@ -743,14 +743,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:11.533+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:50.98962+00:00"
   },
   {
     "id": "8a334523-7c60-41ce-a92c-97fda5926d52",
     "slug": "compact-starter-motor",
     "name": "Compact Starter Motor",
     "images": [
-      "/product-images/starter.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463559/jomo-auto-world/products/starter.jpg"
     ],
     "price": 10500,
     "stock": 14,
@@ -803,14 +803,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:10.878+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:40.522191+00:00"
   },
   {
     "id": "c656156c-4858-415b-9588-062463e749dd",
     "slug": "heavy-duty-starter",
     "name": "Heavy Duty Starter",
     "images": [
-      "/product-images/starter.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463544/jomo-auto-world/products/starter.jpg"
     ],
     "price": 8200,
     "stock": 10,
@@ -863,14 +863,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:10.105+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:25.795293+00:00"
   },
   {
     "id": "87514baf-4c86-4b80-be8f-6f8d8629dc8e",
     "slug": "starter-motor-assembly",
     "name": "Starter Motor Assembly",
     "images": [
-      "/product-images/start.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123889/jomo-auto-world/products/start.jpg"
     ],
     "price": 9500,
     "stock": 12,
@@ -923,14 +923,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:09.43+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:49.513665+00:00"
   },
   {
     "id": "12c9412e-9614-4176-9670-9977af2720f5",
     "slug": "front-stabilizer-link",
     "name": "Front Stabilizer Link",
     "images": [
-      "/product-images/stabaliser link.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463557/jomo-auto-world/products/stabaliser-link.jpg"
     ],
     "price": 1600,
     "stock": 35,
@@ -979,14 +979,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:08.765+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:38.445654+00:00"
   },
   {
     "id": "b19ba61e-1070-4107-8a7f-1fd30a17467a",
     "slug": "iridium-spark-plugs",
     "name": "Iridium Spark Plugs",
     "images": [
-      "/product-images/Spark plug.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463543/jomo-auto-world/products/Spark-plug.jpg"
     ],
     "price": 2800,
     "stock": 40,
@@ -1039,14 +1039,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:08.104+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:24.370582+00:00"
   },
   {
     "id": "46c80ea6-37f7-4ee6-94ef-5856b23a30d8",
     "slug": "brake-shoe-set",
     "name": "Brake Shoe Set",
     "images": [
-      "/product-images/shoe brake.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463626/jomo-auto-world/products/shoe-brake.jpg"
     ],
     "price": 3500,
     "stock": 25,
@@ -1099,14 +1099,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:07.447+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:48.07257+00:00"
   },
   {
     "id": "952a2aee-fa53-4d92-bf75-58b0c2ee7d86",
     "slug": "rear-shock-absorber-pair",
     "name": "Rear Shock Absorber Pair",
     "images": [
-      "/product-images/shockss.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463555/jomo-auto-world/products/shockss.jpg"
     ],
     "price": 8500,
     "stock": 18,
@@ -1151,14 +1151,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:06.787+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:36.70814+00:00"
   },
   {
     "id": "184c1584-fd6b-4772-821e-4b6c3203aba0",
     "slug": "front-shock-absorber-set",
     "name": "Front Shock Absorber Set",
     "images": [
-      "/product-images/shocks.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463542/jomo-auto-world/products/shocks.jpg"
     ],
     "price": 9000,
     "stock": 20,
@@ -1199,14 +1199,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:06.114+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:23.114831+00:00"
   },
   {
     "id": "0289aa91-140d-4829-b193-a867862759f5",
     "slug": "gas-shock-absorber",
     "name": "Gas Shock Absorber",
     "images": [
-      "/product-images/shock.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463624/jomo-auto-world/products/shock.jpg"
     ],
     "price": 4500,
     "stock": 30,
@@ -1247,14 +1247,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:05.45+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:46.128077+00:00"
   },
   {
     "id": "c4dfb2e9-d0e8-46d8-9ca1-8d507a95f7e4",
     "slug": "half-shaft-assembly",
     "name": "Half Shaft Assembly",
     "images": [
-      "/product-images/shaft drive.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463622/jomo-auto-world/products/shaft-drive.jpg"
     ],
     "price": 8800,
     "stock": 16,
@@ -1289,14 +1289,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:04.799+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:44.156443+00:00"
   },
   {
     "id": "fe0f5e0d-5b52-4a89-b56d-a1560913726a",
     "slug": "piston-ring-set",
     "name": "Piston Ring Set",
     "images": [
-      "/product-images/rings.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123872/jomo-auto-world/products/rings.jpg"
     ],
     "price": 6500,
     "stock": 18,
@@ -1349,14 +1349,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:04.148+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:42.371994+00:00"
   },
   {
     "id": "94a8993f-9052-419a-9841-52c2f0ad1aec",
     "slug": "clutch-release-fork",
     "name": "Clutch Release Fork",
     "images": [
-      "/product-images/release.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123870/jomo-auto-world/products/release.jpg"
     ],
     "price": 2200,
     "stock": 15,
@@ -1395,14 +1395,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:03.488+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:41.023154+00:00"
   },
   {
     "id": "1df46ea7-3357-4f45-a025-ce586eaf160f",
     "slug": "clutch-release-bearing",
     "name": "Clutch Release Bearing",
     "images": [
-      "/product-images/release bearing.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463617/jomo-auto-world/products/release-bearing.jpg"
     ],
     "price": 3800,
     "stock": 22,
@@ -1442,14 +1442,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:02.825+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:38.636212+00:00"
   },
   {
     "id": "3b4fa598-7c72-440c-9924-d1ec047bd366",
     "slug": "rear-axle-hub-bearing",
     "name": "Rear Axle Hub Bearing",
     "images": [
-      "/product-images/rear wheel hub.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463615/jomo-auto-world/products/rear-wheel-hub.jpg"
     ],
     "price": 5200,
     "stock": 20,
@@ -1493,14 +1493,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:02.139+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:37.019741+00:00"
   },
   {
     "id": "e119ceb5-ca40-426a-8304-cc16ff6c4c00",
     "slug": "radiator-fan-motor",
     "name": "Radiator Fan Motor",
     "images": [
-      "/product-images/radfan.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123863/jomo-auto-world/products/radfan.jpg"
     ],
     "price": 4500,
     "stock": 12,
@@ -1553,14 +1553,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:01.48+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:34.606972+00:00"
   },
   {
     "id": "024bf6e3-aeeb-4867-ac38-4b7819edac55",
     "slug": "steering-rack-end",
     "name": "Steering Rack End",
     "images": [
-      "/product-images/rackend.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463612/jomo-auto-world/products/rackend.jpg"
     ],
     "price": 2500,
     "stock": 30,
@@ -1598,14 +1598,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:00.761+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:33.060671+00:00"
   },
   {
     "id": "12bccb36-3ca6-4e8d-a681-0d8d6ee69427",
     "slug": "manual-steering-rack",
     "name": "Manual Steering Rack",
     "images": [
-      "/product-images/rack.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463610/jomo-auto-world/products/rack.jpg"
     ],
     "price": 12000,
     "stock": 10,
@@ -1647,14 +1647,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:36:00.098+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:31.335416+00:00"
   },
   {
     "id": "1e2e14fa-ab70-43b5-865f-487439655705",
     "slug": "power-steering-rack",
     "name": "Power Steering Rack",
     "images": [
-      "/product-images/rack.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463607/jomo-auto-world/products/rack.jpg"
     ],
     "price": 18000,
     "stock": 7,
@@ -1697,14 +1697,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:59.431+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:28.810179+00:00"
   },
   {
     "id": "df86c644-6c11-4f6c-b696-c8d54ea032e0",
     "slug": "propeller-shaft-assembly",
     "name": "Propeller Shaft Assembly",
     "images": [
-      "/product-images/propellor shaft.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463598/jomo-auto-world/products/propellor-shaft.jpg"
     ],
     "price": 12500,
     "stock": 9,
@@ -1741,14 +1741,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:58.774+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:19.960433+00:00"
   },
   {
     "id": "3da60c9e-44f5-4926-9fa3-39a9239308b6",
     "slug": "clutch-pressure-plate",
     "name": "Clutch Pressure Plate",
     "images": [
-      "/product-images/presure clutch plate.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463603/jomo-auto-world/products/presure-clutch-plate.jpg"
     ],
     "price": 8500,
     "originalPrice": 11050,
@@ -1791,14 +1791,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:58.111+00:00",
-    "updatedAt": "2026-02-15T03:39:31.67105+00:00"
+    "updatedAt": "2026-02-19T01:13:24.90393+00:00"
   },
   {
     "id": "d2cb13ae-7447-4604-b369-f1e54c32a67f",
     "slug": "spark-plug-wire-set",
     "name": "Spark Plug Wire Set",
     "images": [
-      "/product-images/plug set.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463520/jomo-auto-world/products/plug-set.jpg"
     ],
     "price": 3500,
     "originalPrice": 4060,
@@ -1852,14 +1852,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:57.443+00:00",
-    "updatedAt": "2026-02-15T03:39:30.514462+00:00"
+    "updatedAt": "2026-02-19T01:12:01.960661+00:00"
   },
   {
     "id": "c85b04fd-6c69-47b4-bb00-0e6b67642276",
     "slug": "engine-piston-set",
     "name": "Engine Piston Set",
     "images": [
-      "/product-images/piston.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123846/jomo-auto-world/products/piston.jpg"
     ],
     "price": 15000,
     "stock": 8,
@@ -1912,14 +1912,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:56.767+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:18.356421+00:00"
   },
   {
     "id": "cd83ef08-f4ac-49eb-8883-ee7d52453bc1",
     "slug": "crankshaft-oil-seal",
     "name": "Crankshaft Oil Seal",
     "images": [
-      "/product-images/oil seal.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463537/jomo-auto-world/products/oil-seal.jpg"
     ],
     "price": 1200,
     "stock": 35,
@@ -1972,14 +1972,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:56.042+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:18.023905+00:00"
   },
   {
     "id": "886001e0-5a79-4858-960a-6521beab1f1b",
     "slug": "engine-oil-filter",
     "name": "Engine Oil Filter",
     "images": [
-      "/product-images/oil filter.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463514/jomo-auto-world/products/oil-filter.jpg"
     ],
     "price": 800,
     "stock": 60,
@@ -2032,14 +2032,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:55.356+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:11:55.584621+00:00"
   },
   {
     "id": "fa5039bd-5e25-4ef9-8942-f26521c7b7f5",
     "slug": "suspension-member-arm",
     "name": "Suspension Member Arm",
     "images": [
-      "/product-images/memeber arms.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463596/jomo-auto-world/products/memeber-arms.jpg"
     ],
     "price": 5200,
     "stock": 16,
@@ -2083,14 +2083,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:54.696+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:16.913734+00:00"
   },
   {
     "id": "cb56268b-39ad-413f-8014-b52175e597a9",
     "slug": "brake-master-cylinder",
     "name": "Brake Master Cylinder",
     "images": [
-      "/product-images/master cylinder.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463536/jomo-auto-world/products/master-cylinder.jpg"
     ],
     "price": 7500,
     "stock": 14,
@@ -2143,14 +2143,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:54.026+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:16.922162+00:00"
   },
   {
     "id": "3cb3d997-912e-4906-b75b-6c5a5576bd79",
     "slug": "stabilizer-link-rod",
     "name": "Stabilizer Link Rod",
     "images": [
-      "/product-images/link.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123832/jomo-auto-world/products/link.jpg"
     ],
     "price": 1800,
     "stock": 40,
@@ -2194,14 +2194,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:53.072+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:11:53.634808+00:00"
   },
   {
     "id": "9621eb2e-d0ea-4683-9886-10a808e26e7c",
     "slug": "premium-hub-assembly-set",
     "name": "Premium Hub Assembly Set",
     "images": [
-      "/product-images/hubs.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463594/jomo-auto-world/products/hubs.jpg"
     ],
     "price": 9500,
     "stock": 12,
@@ -2239,14 +2239,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:52.418+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:15.473319+00:00"
   },
   {
     "id": "cd6b3eef-a1fd-41a3-bb73-cedb24d94bb0",
     "slug": "rear-wheel-hub-assembly",
     "name": "Rear Wheel Hub Assembly",
     "images": [
-      "/product-images/hubs.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463534/jomo-auto-world/products/hubs.jpg"
     ],
     "price": 4200,
     "stock": 18,
@@ -2292,14 +2292,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:51.683+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:15.523187+00:00"
   },
   {
     "id": "710d0488-0ac1-457e-a953-9a7afd96d4ae",
     "slug": "wheel-hub-bearing-unit",
     "name": "Wheel Hub Bearing Unit",
     "images": [
-      "/product-images/hubby.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123824/jomo-auto-world/products/hubby.jpg"
     ],
     "price": 4800,
     "stock": 22,
@@ -2344,14 +2344,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:51.01+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:11:52.300867+00:00"
   },
   {
     "id": "72502ecd-27dd-45fe-9ce0-84064c777cca",
     "slug": "front-wheel-hub",
     "name": "Front Wheel Hub",
     "images": [
-      "/product-images/hub.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463602/jomo-auto-world/products/hub.jpg"
     ],
     "price": 5500,
     "originalPrice": 6765,
@@ -2389,14 +2389,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:50.345+00:00",
-    "updatedAt": "2026-02-15T03:39:31.284138+00:00"
+    "updatedAt": "2026-02-19T01:13:23.120605+00:00"
   },
   {
     "id": "b551e160-d1a5-4be7-84b7-4ed5484b6829",
     "slug": "engine-hoist-bracket",
     "name": "Engine Hoist Bracket",
     "images": [
-      "/product-images/horse up.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463529/jomo-auto-world/products/horse-up.jpg"
     ],
     "price": 3500,
     "stock": 8,
@@ -2449,14 +2449,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:49.679+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:13.668198+00:00"
   },
   {
     "id": "8f37de71-4afd-412f-a82e-a7e970f92705",
     "slug": "headlight-switch-assembly",
     "name": "Headlight Switch Assembly",
     "images": [
-      "/product-images/headswitches.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123811/jomo-auto-world/products/headswitches.jpg"
     ],
     "price": 2200,
     "originalPrice": 2706,
@@ -2510,14 +2510,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:49.017+00:00",
-    "updatedAt": "2026-02-15T03:39:30.122016+00:00"
+    "updatedAt": "2026-02-19T01:11:59.326397+00:00"
   },
   {
     "id": "93bdfb99-8899-43dc-baa5-fa14f12201fb",
     "slug": "cylinder-head-gasket",
     "name": "Cylinder Head Gasket",
     "images": [
-      "/product-images/Headgasket.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463592/jomo-auto-world/products/Headgasket.jpg"
     ],
     "price": 4500,
     "stock": 20,
@@ -2570,14 +2570,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:48.352+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:13.639195+00:00"
   },
   {
     "id": "aacb47b1-b5ed-4e53-9482-bb6ac56821d1",
     "slug": "fuel-filter-element",
     "name": "Fuel Filter Element",
     "images": [
-      "/product-images/fuel filter.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463538/jomo-auto-world/products/fuel-filter.jpg"
     ],
     "price": 1500,
     "originalPrice": 1785,
@@ -2631,14 +2631,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:47.687+00:00",
-    "updatedAt": "2026-02-15T03:39:28.955939+00:00"
+    "updatedAt": "2026-02-19T01:12:19.723021+00:00"
   },
   {
     "id": "24979b5a-560c-4096-837e-65324f691b8b",
     "slug": "radiator-cooling-fan",
     "name": "Radiator Cooling Fan",
     "images": [
-      "/product-images/fan.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123804/jomo-auto-world/products/fan.jpg"
     ],
     "price": 6500,
     "stock": 12,
@@ -2691,14 +2691,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:47.029+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:11:50.484985+00:00"
   },
   {
     "id": "04e52b90-87cb-4aec-9495-704b3bbc23e9",
     "slug": "serpentine-belt",
     "name": "Serpentine Belt",
     "images": [
-      "/product-images/fan belt.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463591/jomo-auto-world/products/fan-belt.jpg"
     ],
     "price": 1800,
     "stock": 50,
@@ -2751,14 +2751,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:46.343+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:12.26561+00:00"
   },
   {
     "id": "1d338789-baaa-46f4-9b93-f31455652f8c",
     "slug": "rear-brake-drum",
     "name": "Rear Brake Drum",
     "images": [
-      "/product-images/drum.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463540/jomo-auto-world/products/drum.jpg"
     ],
     "price": 4200,
     "originalPrice": 4998,
@@ -2812,14 +2812,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:45.665+00:00",
-    "updatedAt": "2026-02-15T03:39:29.738936+00:00"
+    "updatedAt": "2026-02-19T01:12:21.299013+00:00"
   },
   {
     "id": "319f6a11-50b0-4bda-999b-be04dd5a11f3",
     "slug": "drive-shaft-complete",
     "name": "Drive Shaft Complete",
     "images": [
-      "/product-images/drive shaft.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463508/jomo-auto-world/products/drive-shaft.jpg"
     ],
     "price": 11000,
     "stock": 10,
@@ -2861,14 +2861,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:44.901+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:11:49.166641+00:00"
   },
   {
     "id": "12c9c1b9-5f58-4765-9138-65c7e7b2b193",
     "slug": "brake-caliper-assembly",
     "name": "Brake Caliper Assembly",
     "images": [
-      "/product-images/drilldown.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123792/jomo-auto-world/products/drilldown.jpg"
     ],
     "price": 5800,
     "originalPrice": 7134,
@@ -2922,14 +2922,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:44.147+00:00",
-    "updatedAt": "2026-02-15T03:39:29.347124+00:00"
+    "updatedAt": "2026-02-19T01:13:21.50695+00:00"
   },
   {
     "id": "e902e997-ce37-470f-b1f5-85c61bdc8714",
     "slug": "control-arm-assembly-kit",
     "name": "Control Arm Assembly Kit",
     "images": [
-      "/product-images/control.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463525/jomo-auto-world/products/control.jpg"
     ],
     "price": 6500,
     "stock": 18,
@@ -2973,14 +2973,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:43.492+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:06.751643+00:00"
   },
   {
     "id": "c38a186a-e549-4540-87d9-f548a3e5589f",
     "slug": "upper-control-arm",
     "name": "Upper Control Arm",
     "images": [
-      "/product-images/control arm.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463506/jomo-auto-world/products/control-arm.jpg"
     ],
     "price": 5800,
     "stock": 24,
@@ -3025,14 +3025,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:42.824+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:11:47.910642+00:00"
   },
   {
     "id": "e376058f-719a-4057-86ba-64729598eddf",
     "slug": "clutch-disc-set",
     "name": "Clutch Disc Set",
     "images": [
-      "/product-images/clutch plate.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463605/jomo-auto-world/products/clutch-plate.jpg"
     ],
     "price": 7500,
     "originalPrice": 8925,
@@ -3073,14 +3073,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:42.162+00:00",
-    "updatedAt": "2026-02-15T03:39:32.058741+00:00"
+    "updatedAt": "2026-02-19T01:13:26.709761+00:00"
   },
   {
     "id": "eac3da74-4d93-42ba-95a4-ba445dd8eb7d",
     "slug": "dashboard-clock-unit",
     "name": "Dashboard Clock Unit",
     "images": [
-      "/product-images/clock.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463524/jomo-auto-world/products/clock.jpg"
     ],
     "price": 2500,
     "stock": 8,
@@ -3109,14 +3109,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:41.489+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:05.164762+00:00"
   },
   {
     "id": "9b706601-ba3e-43c1-bfb1-dd21b57b4a92",
     "slug": "camber-adjustment-bolt-kit",
     "name": "Camber Adjustment Bolt Kit",
     "images": [
-      "/product-images/caber bolt.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463516/jomo-auto-world/products/caber-bolt.jpg"
     ],
     "price": 1500,
     "originalPrice": 1740,
@@ -3160,14 +3160,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:40.823+00:00",
-    "updatedAt": "2026-02-15T03:39:27.566089+00:00"
+    "updatedAt": "2026-02-19T01:11:57.444862+00:00"
   },
   {
     "id": "1abb5a21-8a22-4744-9385-29dd92adc96a",
     "slug": "heavy-duty-ball-joint",
     "name": "Heavy Duty Ball Joint",
     "images": [
-      "/product-images/balll joint.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463589/jomo-auto-world/products/balll-joint.jpg"
     ],
     "price": 3200,
     "stock": 28,
@@ -3205,14 +3205,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:40.156+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:10.88344+00:00"
   },
   {
     "id": "4ca1886e-ee83-4ea7-9c05-887c554fd1c2",
     "slug": "ball-joint-assembly",
     "name": "Ball Joint Assembly",
     "images": [
-      "/product-images/ball joint.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463522/jomo-auto-world/products/ball-joint.jpg"
     ],
     "price": 2800,
     "stock": 35,
@@ -3256,14 +3256,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:39.491+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:03.511411+00:00"
   },
   {
     "id": "a356f52d-54e4-4e06-9286-7ba987592f67",
     "slug": "cv-axle-shaft",
     "name": "CV Axle Shaft",
     "images": [
-      "/product-images/axle.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463504/jomo-auto-world/products/axle.jpg"
     ],
     "price": 9500,
     "stock": 16,
@@ -3308,14 +3308,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:38.81+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:11:45.67842+00:00"
   },
   {
     "id": "67fa3603-ab3b-4770-bd42-38421bddd295",
     "slug": "body-panel-replacement",
     "name": "Body Panel Replacement",
     "images": [
-      "/product-images/audi body.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463584/jomo-auto-world/products/audi-body.jpg"
     ],
     "price": 12000,
     "stock": 5,
@@ -3343,14 +3343,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:38.142+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:05.661582+00:00"
   },
   {
     "id": "2b32b70f-f1ec-4bf5-9521-1bd5875e538c",
     "slug": "lower-control-arm-set",
     "name": "Lower Control Arm Set",
     "images": [
-      "/product-images/arms control.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463581/jomo-auto-world/products/arms-control.jpg"
     ],
     "price": 6800,
     "stock": 20,
@@ -3392,14 +3392,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:37.474+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:03.878671+00:00"
   },
   {
     "id": "17a29179-cc18-4fc4-a939-6898daab167a",
     "slug": "compact-alternator-unit",
     "name": "Compact Alternator Unit",
     "images": [
-      "/product-images/alt.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463579/jomo-auto-world/products/alt.jpg"
     ],
     "price": 7200,
     "stock": 14,
@@ -3452,14 +3452,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:36.373+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:13:00.814923+00:00"
   },
   {
     "id": "18ab15fe-7e9d-4af3-85ab-9bc989253126",
     "slug": "alternator-assembly",
     "name": "Alternator Assembly",
     "images": [
-      "/product-images/alt pump.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463578/jomo-auto-world/products/alt-pump.jpg"
     ],
     "price": 8500,
     "stock": 10,
@@ -3512,14 +3512,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:35.672+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:59.170439+00:00"
   },
   {
     "id": "b1e02b1a-ee99-44dc-aaf3-c5ce3eb2a0c0",
     "slug": "heavy-duty-air-cleaner-box",
     "name": "Heavy Duty Air Cleaner Box",
     "images": [
-      "/product-images/Aircleaner.jpg"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463576/jomo-auto-world/products/Aircleaner.jpg"
     ],
     "price": 2800,
     "stock": 15,
@@ -3572,14 +3572,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:34.896+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:57.778403+00:00"
   },
   {
     "id": "3def64c0-70c9-4c56-b155-5082dd4bd7bb",
     "slug": "complete-air-cleaner-assembly",
     "name": "Complete Air Cleaner Assembly",
     "images": [
-      "/product-images/Aircleaner.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463573/jomo-auto-world/products/Aircleaner.jpg"
     ],
     "price": 3500,
     "stock": 12,
@@ -3632,14 +3632,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:34.219+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:54.950291+00:00"
   },
   {
     "id": "88de5e30-2e25-40d3-81b9-755f4ec1e12b",
     "slug": "air-filter-element",
     "name": "Air Filter Element",
     "images": [
-      "/product-images/air bug.webp"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771463637/jomo-auto-world/products/air-bug.jpg"
     ],
     "price": 1200,
     "originalPrice": 1416,
@@ -3693,14 +3693,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": true,
     "createdAt": "2026-02-15T03:35:33.387+00:00",
-    "updatedAt": "2026-02-15T03:39:28.565924+00:00"
+    "updatedAt": "2026-02-19T01:13:58.574329+00:00"
   },
   {
     "id": "0253a285-70ce-4a0d-9fa8-7aa681f597fc",
     "slug": "brake-drum-set",
     "name": "Brake Drum Set",
     "images": [
-      "/product-images/778.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123739/jomo-auto-world/products/778.jpg"
     ],
     "price": 5200,
     "stock": 18,
@@ -3753,14 +3753,14 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:32.432+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:52.69399+00:00"
   },
   {
     "id": "e476a219-0e0f-4e86-b52a-c34f6f8f1aff",
     "slug": "premium-wheel-hub-assembly",
     "name": "Premium Wheel Hub Assembly",
     "images": [
-      "/product-images/77.jfif"
+      "https://res.cloudinary.com/dzusdhcd2/image/upload/v1771123737/jomo-auto-world/products/77.jpg"
     ],
     "price": 4500,
     "stock": 25,
@@ -3795,7 +3795,7 @@ export const products: Product[] = [
     "origin": "Japan",
     "featured": false,
     "createdAt": "2026-02-15T03:35:31.315+00:00",
-    "updatedAt": "2026-02-15T03:39:24.290483+00:00"
+    "updatedAt": "2026-02-19T01:12:49.589331+00:00"
   },
   {
     "id": "a6a56a70-fcf2-4fe4-8165-32ad0f5118e8",

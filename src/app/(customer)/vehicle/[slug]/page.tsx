@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState, useMemo } from "react";
+import { use, useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { ChevronRight, Home, Car, ChevronDown } from "lucide-react";
 import {
@@ -10,6 +10,7 @@ import {
 import { getVehicleYears, filterProductsByYear } from "@/lib/year-utils";
 import { CategorySection } from "@/components/product/CategorySection";
 import { useCartStore } from "@/lib/store";
+import { getAllProducts } from "@/lib/db";
 import type { Product } from "@/lib/types";
 
 interface VehiclePageProps {
@@ -18,18 +19,19 @@ interface VehiclePageProps {
   }>;
 }
 
-/**
- * Vehicle-Specific Page with Year Selector
- * Shows all parts for a specific vehicle, grouped by category
- * Allows filtering by year
- */
 export default function VehiclePage({ params }: VehiclePageProps) {
   const resolvedParams = use(params);
   const { slug } = resolvedParams;
 
   const addItem = useCartStore((state) => state.addItem);
-  const vehicle = getVehicleBySlug(slug);
-  const allProductsByCategory = groupProductsByCategory(slug);
+  const [supabaseProducts, setSupabaseProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    getAllProducts().then(setSupabaseProducts);
+  }, []);
+
+  const vehicle = getVehicleBySlug(slug, supabaseProducts);
+  const allProductsByCategory = groupProductsByCategory(slug, supabaseProducts);
 
   // Get all products for this vehicle (flattened)
   const allProducts = useMemo(
@@ -142,13 +144,13 @@ export default function VehiclePage({ params }: VehiclePageProps) {
                 Parts for {vehicle.fullName}
               </h1>
               <div className="flex flex-wrap items-center gap-3 text-sm md:text-base text-gray-600">
-                {vehicle.models.length > 0 && (
+                {vehicle.codes.length > 0 && (
                   <span className="flex items-center gap-1">
-                    <span className="font-medium">Models:</span>{" "}
-                    {vehicle.models.join(", ")}
+                    <span className="font-medium">Codes:</span>{" "}
+                    {vehicle.codes.join(", ")}
                   </span>
                 )}
-                {vehicle.models.length > 0 && <span className="text-gray-300">•</span>}
+                {vehicle.codes.length > 0 && <span className="text-gray-300">•</span>}
                 <span className="font-semibold text-[#E8002D]">
                   {filteredProducts.length} parts
                   {selectedYear && ` for ${selectedYear}`}

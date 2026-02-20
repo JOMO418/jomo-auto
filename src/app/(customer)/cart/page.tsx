@@ -17,16 +17,13 @@ import {
 } from "lucide-react";
 import { useCartStore } from "@/lib/store";
 import { PLACEHOLDER_IMAGE } from "@/lib/constants";
-import { getAllProducts } from "@/lib/dummy-data";
+import { getFeaturedProducts } from "@/lib/db";
 import type { Product } from "@/lib/types";
 
-/**
- * Premium Shopping Cart Page
- * Expert UI/UX Implementation with Perfect Mobile Responsiveness
- */
 export default function CartPage() {
   const [mounted, setMounted] = useState(false);
   const [removingId, setRemovingId] = useState<string | null>(null);
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
 
   const items = useCartStore((state) => state.items);
   const updateQuantity = useCartStore((state) => state.updateQuantity);
@@ -39,6 +36,10 @@ export default function CartPage() {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    getFeaturedProducts(8).then(setFeaturedProducts);
+  }, []);
+
   // Handle remove with confirmation animation
   const handleRemove = (productId: string) => {
     setRemovingId(productId);
@@ -49,9 +50,8 @@ export default function CartPage() {
   };
 
   // Get suggested products (not in cart)
-  const suggestedProducts = getAllProducts()
+  const suggestedProducts = featuredProducts
     .filter((p) => !items.some((item) => item.product.id === p.id))
-    .filter((p) => p.featured)
     .slice(0, 4);
 
   // Format price

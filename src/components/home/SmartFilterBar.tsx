@@ -2,23 +2,40 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Car, Search, X, ChevronRight, Flame } from "lucide-react";
-import { getUniqueVehicles, getUniqueCategories, getPopularVehicles } from "@/lib/vehicle-utils";
+import {
+  Car, Search, X, ChevronRight, Flame,
+  Gauge, Cog, StopCircle, Zap, Nut, GitMerge, Settings2, Wrench,
+  type LucideIcon,
+} from "lucide-react";
+import { getUniqueVehicles, getPopularVehicles } from "@/lib/vehicle-utils";
 import type { VehicleInfo } from "@/lib/vehicle-utils";
 import { slugify } from "@/lib/utils";
 
-const CATEGORY_ICONS: Record<string, string> = {
-  Engine:           "⚙️",
-  Brakes:           "🛑",
-  Suspension:       "🔧",
-  Electrical:       "⚡",
-  Body:             "🚗",
-  Transmission:     "🔩",
-  Interior:         "🪑",
-  "Wheels & Tires": "🔄",
+// Case-insensitive icon map — covers all known categories + common variants
+const ICON_MAP: Record<string, LucideIcon> = {
+  suspension:       Gauge,
+  engine:           Cog,
+  brake:            StopCircle,
+  brakes:           StopCircle,
+  electrical:       Zap,
+  "bolts & nuts":   Nut,
+  "bolts and nuts": Nut,
+  bolts:            Nut,
+  transmission:     GitMerge,
+  gear:             Settings2,
+  gears:            Settings2,
+  body:             Car,
 };
 
-export function SmartFilterBar() {
+function getCategoryIcon(name: string): LucideIcon {
+  return ICON_MAP[name.toLowerCase()] ?? Wrench;
+}
+
+interface SmartFilterBarProps {
+  categories: string[];
+}
+
+export function SmartFilterBar({ categories }: SmartFilterBarProps) {
   const router = useRouter();
 
   const [query, setQuery]           = useState("");
@@ -28,9 +45,8 @@ export function SmartFilterBar() {
   const wrapRef  = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const allVehicles    = getUniqueVehicles();
+  const allVehicles     = getUniqueVehicles();
   const popularVehicles = getPopularVehicles();
-  const categories      = getUniqueCategories();
 
   // Suggestions: show popular when no query, filtered when typing
   const suggestions: VehicleInfo[] = query.trim()
@@ -38,7 +54,7 @@ export function SmartFilterBar() {
         .filter((v) =>
           v.name.toLowerCase().includes(query.toLowerCase()) ||
           v.fullName.toLowerCase().includes(query.toLowerCase()) ||
-          v.code.toLowerCase().includes(query.toLowerCase())
+          v.codes.some((c) => c.toLowerCase().includes(query.toLowerCase()))
         )
         .slice(0, 6)
     : popularVehicles.slice(0, 6);
@@ -189,7 +205,7 @@ export function SmartFilterBar() {
                             )}
                           </div>
                           <div className="flex items-center gap-1.5 mt-0.5">
-                            <span className="text-[11px] font-mono text-gray-400">{v.code}</span>
+                            <span className="text-[11px] font-mono text-gray-400">{v.codes.slice(0,2).join(', ')}</span>
                             <span className="text-gray-200">·</span>
                             <span className="text-[11px] font-semibold text-[#E8002D]">{v.productCount} parts</span>
                           </div>
@@ -209,34 +225,29 @@ export function SmartFilterBar() {
           )}
         </div>
 
-        {/* ── Category grid — 4 columns × 2 rows on mobile ── */}
+        {/* ── Browse by category ── */}
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2.5">
             or browse by <span className="text-[#E8002D]">category</span>
           </p>
-          <div className="grid grid-cols-4 gap-1.5 md:flex md:flex-wrap md:gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => goToCategory(cat)}
-                className="
-                  /* mobile: compact vertical tile */
-                  flex flex-col items-center justify-center gap-0.5
-                  py-2 px-1 rounded-xl
-                  bg-gray-50 hover:bg-[#0A0A0A]
-                  border border-gray-100 hover:border-[#E8002D]/30
-                  transition-all duration-200 group
-                  /* desktop: horizontal chip */
-                  md:flex-row md:gap-1.5 md:px-3 md:py-1.5 md:rounded-full md:bg-gray-100
-                "
-              >
-                <span className="text-lg md:text-sm leading-none">{CATEGORY_ICONS[cat] ?? "🔩"}</span>
-                <span className="text-[9px] md:text-xs font-semibold text-gray-700 group-hover:text-white text-center leading-tight w-full truncate md:w-auto">
-                  {cat}
-                </span>
-                <ChevronRight className="hidden md:block h-3 w-3 text-gray-400 group-hover:text-white/60 -mr-0.5" />
-              </button>
-            ))}
+          <div className="grid grid-cols-4 gap-2 md:grid-cols-8">
+            {categories.map((name) => {
+              const Icon = getCategoryIcon(name);
+              return (
+                <button
+                  key={name}
+                  onClick={() => goToCategory(name)}
+                  className="group flex flex-col items-center gap-1.5 py-3 px-1 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-[#E8002D] hover:border-[#E8002D] transition-all duration-200"
+                >
+                  <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white group-hover:bg-white/15 border border-gray-100 group-hover:border-transparent flex items-center justify-center transition-all duration-200 shadow-sm">
+                    <Icon className="h-4 w-4 md:h-5 md:w-5 text-[#E8002D] group-hover:text-white transition-colors duration-200" strokeWidth={1.75} />
+                  </div>
+                  <span className="text-[9px] md:text-[10px] font-bold text-gray-600 group-hover:text-white text-center leading-tight transition-colors duration-200 w-full px-0.5">
+                    {name}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
 

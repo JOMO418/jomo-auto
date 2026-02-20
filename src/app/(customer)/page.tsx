@@ -1,73 +1,25 @@
-"use client";
+import { unstable_cache } from "next/cache";
+import { getAllProducts, getCategories } from "@/lib/db";
+import { HomePageClient } from "./HomePageClient";
 
-import { HeroBillboard, defaultBillboardSlides } from "@/components/home/HeroBillboard";
-import { SmartFilterBar } from "@/components/home/SmartFilterBar";
-import { FeaturedProductsCarousel } from "@/components/home/FeaturedProductsCarousel";
-import { DealsOfTheDay } from "@/components/home/DealsOfTheDay";
-import { NewArrivals } from "@/components/home/NewArrivals";
-import { AboutSection } from "@/components/home/AboutSection";
-import { MapSection } from "@/components/home/MapSection";
-import { getFeaturedProducts, getAllProducts } from "@/lib/dummy-data";
-import { useCartStore } from "@/lib/store";
-import type { Product } from "@/lib/types";
+const getCachedProducts = unstable_cache(
+  () => getAllProducts(),
+  ["home-all-products"],
+  { revalidate: 60, tags: ['products'] }
+);
 
-export default function HomePage() {
-  const addItem = useCartStore((state) => state.addItem);
+// Categories change rarely — cache longer
+const getCachedCategories = unstable_cache(
+  () => getCategories(),
+  ["all-categories"],
+  { revalidate: 300, tags: ['products'] }
+);
 
-  const handleAddToCart = (product: Product) => {
-    addItem(product, 1);
-  };
+export default async function HomePage() {
+  const [allProducts, categories] = await Promise.all([
+    getCachedProducts(),
+    getCachedCategories(),
+  ]);
 
-  // Combine all categories for the featured products carousel
-  const featuredCarouselProducts = getAllProducts();
-
-  // Get featured products and convert to deals
-  const featuredProducts = getFeaturedProducts();
-  const deals = featuredProducts
-    .filter(p => p.originalPrice && p.originalPrice > p.price) // Only products with discounts
-    .map(p => ({
-      ...p,
-      originalPrice: p.originalPrice!,
-      discountPercent: Math.round(((p.originalPrice! - p.price) / p.originalPrice!) * 100),
-      dealEndsAt: new Date(Date.now() + 24 * 60 * 60 * 1000), // Ends in 24 hours
-    }));
-
-  // Get newest products (sorted by createdAt date)
-  const allProducts = getAllProducts();
-  const newArrivals = allProducts
-    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-    .slice(0, 12); // Get 12 newest products
-
-  return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Hero Billboard Carousel */}
-      <HeroBillboard slides={defaultBillboardSlides} />
-
-      {/* Smart Filter Bar - Dual Navigation */}
-      <SmartFilterBar />
-
-      {/* Featured Products — Auto-scrolling Infinite Carousel */}
-      <FeaturedProductsCarousel
-        allProducts={featuredCarouselProducts}
-        onAddToCart={handleAddToCart}
-      />
-
-      {/* Deals of the Day - Premium Section */}
-      {deals.length > 0 && <DealsOfTheDay deals={deals} />}
-
-      {/* New Arrivals - Premium Section */}
-      {newArrivals.length > 0 && (
-        <NewArrivals
-          products={newArrivals}
-          onAddToCart={handleAddToCart}
-        />
-      )}
-
-      {/* About Section - Premium Copy */}
-      <AboutSection />
-
-      {/* Map Section - Location */}
-      <MapSection />
-    </div>
-  );
+  return <HomePageClient allProducts={allProducts} categories={categories} />;
 }

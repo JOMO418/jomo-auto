@@ -112,10 +112,10 @@ export function BottomNav({ onSearchClick }: BottomNavProps) {
       colors: COLORS.cart,
     },
     {
-      href: "/account",
+      href: "/admin/login",
       icon: User,
       label: "Account",
-      active: pathname === "/account",
+      active: pathname === "/admin/login" || pathname.startsWith("/admin"),
       type: "link" as const,
       colors: COLORS.account,
     },
